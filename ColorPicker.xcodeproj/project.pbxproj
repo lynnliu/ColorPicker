@@ -19,6 +19,15 @@
 		BADB820116D1D13D00005C86 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */; };
 		BADB820416D1D13D00005C86 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */; };
 		BADB820716D1D13D00005C86 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB820616D1D13D00005C86 /* ColorPickerViewController.m */; };
+		BADB821316D1D6F200005C86 /* PickerInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821216D1D6F200005C86 /* PickerInitViewController.m */; };
+		BADB821716D1DA5600005C86 /* ColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821616D1DA5600005C86 /* ColorPickerBaseViewController.m */; };
+		BADB821A16D1DAE300005C86 /* LocalPicPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821916D1DAE300005C86 /* LocalPicPicker.m */; };
+		BADB821D16D1DB8F00005C86 /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821C16D1DB8F00005C86 /* WCAlertView.m */; };
+		BADB822016D1DB9E00005C86 /* AlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821F16D1DB9E00005C86 /* AlertViewManager.m */; };
+		BADB822316D1DBBE00005C86 /* TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB822216D1DBBD00005C86 /* TimerManager.m */; };
+		BADB822716D213B600005C86 /* ImageChopperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB822616D213B600005C86 /* ImageChopperViewController.m */; };
+		BADB822916D3163A00005C86 /* ImageChopper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADB822816D3163A00005C86 /* ImageChopper.storyboard */; };
+		BADB822F16D361CC00005C86 /* PickedImageVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB822E16D361CC00005C86 /* PickedImageVIew.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +48,23 @@
 		BADB820316D1D13D00005C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		BADB820516D1D13D00005C86 /* ColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
 		BADB820616D1D13D00005C86 /* ColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
+		BADB821116D1D6F200005C86 /* PickerInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerInitViewController.h; sourceTree = "<group>"; };
+		BADB821216D1D6F200005C86 /* PickerInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerInitViewController.m; sourceTree = "<group>"; };
+		BADB821516D1DA5600005C86 /* ColorPickerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerBaseViewController.h; sourceTree = "<group>"; };
+		BADB821616D1DA5600005C86 /* ColorPickerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerBaseViewController.m; sourceTree = "<group>"; };
+		BADB821816D1DAE300005C86 /* LocalPicPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPicPicker.h; sourceTree = "<group>"; };
+		BADB821916D1DAE300005C86 /* LocalPicPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalPicPicker.m; sourceTree = "<group>"; };
+		BADB821B16D1DB8F00005C86 /* WCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAlertView.h; sourceTree = "<group>"; };
+		BADB821C16D1DB8F00005C86 /* WCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAlertView.m; sourceTree = "<group>"; };
+		BADB821E16D1DB9E00005C86 /* AlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewManager.h; sourceTree = "<group>"; };
+		BADB821F16D1DB9E00005C86 /* AlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewManager.m; sourceTree = "<group>"; };
+		BADB822116D1DBBD00005C86 /* TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager.h; sourceTree = "<group>"; };
+		BADB822216D1DBBD00005C86 /* TimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerManager.m; sourceTree = "<group>"; };
+		BADB822516D213B600005C86 /* ImageChopperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageChopperViewController.h; sourceTree = "<group>"; };
+		BADB822616D213B600005C86 /* ImageChopperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageChopperViewController.m; sourceTree = "<group>"; };
+		BADB822816D3163A00005C86 /* ImageChopper.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageChopper.storyboard; sourceTree = "<group>"; };
+		BADB822D16D361CC00005C86 /* PickedImageVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickedImageVIew.h; sourceTree = "<group>"; };
+		BADB822E16D361CC00005C86 /* PickedImageVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickedImageVIew.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +111,14 @@
 		BADB81ED16D1D13D00005C86 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				BADB81F616D1D13D00005C86 /* ColorPickerAppDelegate.h */,
-				BADB81F716D1D13D00005C86 /* ColorPickerAppDelegate.m */,
 				BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */,
 				BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */,
 				BADB820516D1D13D00005C86 /* ColorPickerViewController.h */,
 				BADB820616D1D13D00005C86 /* ColorPickerViewController.m */,
+				BADB821016D1D6BF00005C86 /* Views */,
+				BADB820F16D1D6B400005C86 /* Controllers */,
+				BADB820E16D1D68E00005C86 /* Tools */,
+				BADB821416D1DA3800005C86 /* BaseClass */,
 				BADB81EE16D1D13D00005C86 /* Supporting Files */,
 			);
 			path = ColorPicker;
@@ -99,15 +127,70 @@
 		BADB81EE16D1D13D00005C86 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BADB81EF16D1D13D00005C86 /* ColorPicker-Info.plist */,
-				BADB81F016D1D13D00005C86 /* InfoPlist.strings */,
+				BADB820D16D1D66D00005C86 /* Resources */,
+				BADB81F616D1D13D00005C86 /* ColorPickerAppDelegate.h */,
+				BADB81F716D1D13D00005C86 /* ColorPickerAppDelegate.m */,
 				BADB81F316D1D13D00005C86 /* main.m */,
 				BADB81F516D1D13D00005C86 /* ColorPicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BADB820D16D1D66D00005C86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BADB81EF16D1D13D00005C86 /* ColorPicker-Info.plist */,
+				BADB81F016D1D13D00005C86 /* InfoPlist.strings */,
 				BADB81F916D1D13D00005C86 /* Default.png */,
 				BADB81FB16D1D13D00005C86 /* Default@2x.png */,
 				BADB81FD16D1D13D00005C86 /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BADB820E16D1D68E00005C86 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BADB821816D1DAE300005C86 /* LocalPicPicker.h */,
+				BADB821916D1DAE300005C86 /* LocalPicPicker.m */,
+				BADB821B16D1DB8F00005C86 /* WCAlertView.h */,
+				BADB821C16D1DB8F00005C86 /* WCAlertView.m */,
+				BADB821E16D1DB9E00005C86 /* AlertViewManager.h */,
+				BADB821F16D1DB9E00005C86 /* AlertViewManager.m */,
+				BADB822116D1DBBD00005C86 /* TimerManager.h */,
+				BADB822216D1DBBD00005C86 /* TimerManager.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		BADB820F16D1D6B400005C86 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BADB821116D1D6F200005C86 /* PickerInitViewController.h */,
+				BADB821216D1D6F200005C86 /* PickerInitViewController.m */,
+				BADB822516D213B600005C86 /* ImageChopperViewController.h */,
+				BADB822616D213B600005C86 /* ImageChopperViewController.m */,
+				BADB822D16D361CC00005C86 /* PickedImageVIew.h */,
+				BADB822E16D361CC00005C86 /* PickedImageVIew.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BADB821016D1D6BF00005C86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BADB822816D3163A00005C86 /* ImageChopper.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BADB821416D1DA3800005C86 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				BADB821516D1DA5600005C86 /* ColorPickerBaseViewController.h */,
+				BADB821616D1DA5600005C86 /* ColorPickerBaseViewController.m */,
+			);
+			name = BaseClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +251,7 @@
 				BADB81FE16D1D13D00005C86 /* Default-568h@2x.png in Resources */,
 				BADB820116D1D13D00005C86 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BADB820416D1D13D00005C86 /* MainStoryboard_iPad.storyboard in Resources */,
+				BADB822916D3163A00005C86 /* ImageChopper.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +265,14 @@
 				BADB81F416D1D13D00005C86 /* main.m in Sources */,
 				BADB81F816D1D13D00005C86 /* ColorPickerAppDelegate.m in Sources */,
 				BADB820716D1D13D00005C86 /* ColorPickerViewController.m in Sources */,
+				BADB821316D1D6F200005C86 /* PickerInitViewController.m in Sources */,
+				BADB821716D1DA5600005C86 /* ColorPickerBaseViewController.m in Sources */,
+				BADB821A16D1DAE300005C86 /* LocalPicPicker.m in Sources */,
+				BADB821D16D1DB8F00005C86 /* WCAlertView.m in Sources */,
+				BADB822016D1DB9E00005C86 /* AlertViewManager.m in Sources */,
+				BADB822316D1DBBE00005C86 /* TimerManager.m in Sources */,
+				BADB822716D213B600005C86 /* ImageChopperViewController.m in Sources */,
+				BADB822F16D361CC00005C86 /* PickedImageVIew.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +318,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -241,6 +334,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -258,6 +353,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -266,6 +362,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -275,10 +372,15 @@
 		BADB820B16D1D13D00005C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -286,10 +388,15 @@
 		BADB820C16D1D13D00005C86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -313,6 +420,7 @@
 				BADB820C16D1D13D00005C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
