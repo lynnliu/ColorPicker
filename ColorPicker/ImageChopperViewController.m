@@ -35,7 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     for (id gesture in  [self.view gestureRecognizers])
         [self.view removeGestureRecognizer:gesture];
     
@@ -85,7 +84,7 @@
     alpha.shadowColor = [UIColor darkTextColor];
     [alpha setShadowOffset:CGSizeMake(0, .3)];
     [colorPatone addSubview:alpha];
-    
+    [colorPatone setUserInteractionEnabled:NO];
     [self.view addSubview:colorPatone];
 }
 

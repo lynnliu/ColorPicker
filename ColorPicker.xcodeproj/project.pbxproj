@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA23901F16D73B85001E79AC /* magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23901E16D73B85001E79AC /* magnifier.png */; };
+		BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902016D7682B001E79AC /* ChoosePhoto.png */; };
 		BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E716D1D13D00005C86 /* UIKit.framework */; };
 		BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E916D1D13D00005C86 /* Foundation.framework */; };
 		BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81EB16D1D13D00005C86 /* CoreGraphics.framework */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA23901E16D73B85001E79AC /* magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier.png; sourceTree = "<group>"; };
+		BA23902016D7682B001E79AC /* ChoosePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChoosePhoto.png; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB81E716D1D13D00005C86 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BADB81E916D1D13D00005C86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +143,8 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA23901E16D73B85001E79AC /* magnifier.png */,
+				BA23902016D7682B001E79AC /* ChoosePhoto.png */,
 				BADB81EF16D1D13D00005C86 /* ColorPicker-Info.plist */,
 				BADB81F016D1D13D00005C86 /* InfoPlist.strings */,
 				BADB81F916D1D13D00005C86 /* Default.png */,
@@ -252,6 +258,8 @@
 				BADB820116D1D13D00005C86 /* MainStoryboard_iPhone.storyboard in Resources */,
 				BADB820416D1D13D00005C86 /* MainStoryboard_iPad.storyboard in Resources */,
 				BADB822916D3163A00005C86 /* ImageChopper.storyboard in Resources */,
+				BA23901F16D73B85001E79AC /* magnifier.png in Resources */,
+				BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
