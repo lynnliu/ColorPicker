@@ -155,8 +155,7 @@
 -(UIImage *)magnifierImageView:(int)x and:(int)y
 {
     CGImageRef img = CGImageCreateWithImageInRect(self.sendImage.CGImage, CGRectMake(x - 10, y - 10, 20, 20));
-    UIImage* newimage = [UIImage imageWithCGImage:img];
-    
+    UIImage *newimage = [UIImage imageWithCGImage:img];
     return newimage;
 }
 

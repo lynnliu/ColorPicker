@@ -9,6 +9,7 @@
 #import "ImageChopperViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "PickedImageVIew.h"
+#import "AlertViewManager.h"
 
 @interface ImageChopperViewController ()<UIGestureRecognizerDelegate,PickedImageVIewDelegate>
 {
@@ -51,7 +52,7 @@
 -(void)patoneCanvas
 {
     colorPatone = [[UIView alloc] initWithFrame:CGRectMake(0, 320, 320, self.view.frame.size.height - 320)];
-    colorPatone.backgroundColor = [UIColor whiteColor];
+    colorPatone.backgroundColor = [UIColor clearColor];
     
     red = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 80, 20)];
     red.textColor = [UIColor lightGrayColor];
@@ -90,21 +91,11 @@
 
 -(void)saveButton
 {
-    UIView *button = [[UIView alloc] initWithFrame:CGRectMake(220, 320, 100, self.view.frame.size.height - 320)];
-    button.backgroundColor = [UIColor blackColor];
-    
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(13, 30, 80, 35)];
-    title.text = @"保  存";
-    title.textAlignment = UITextAlignmentCenter;
-    title.backgroundColor = [UIColor clearColor];
-    title.font = [UIFont boldSystemFontOfSize:18];
-    title.textColor = [UIColor lightGrayColor];
-    [button addSubview:title];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(saveTheColor:)];
-    tap.numberOfTouchesRequired = 1;
-    tap.numberOfTapsRequired = 1;
-    [button addGestureRecognizer:tap];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(230, 330, 80, 80)];
+    [button setTitle:@"保存" forState:UIControlStateNormal];
+    [button.titleLabel setTextAlignment:UITextAlignmentCenter];
+    [button addTarget:self action:@selector(saveTheColor:) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundImage:[UIImage imageNamed:@"SaveButton.png"] forState:UIControlStateNormal];
     
     [self.view addSubview:button];
 }
@@ -125,7 +116,10 @@
 
 -(void)saveTheColor:(id)sender
 {
-    NSLog(@"save");
+    if (!red.text.length && !green.text.length && !blue.text.length && !alpha.text.length)
+        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"请先触摸图片，选择颜色"];
+    else
+        NSLog(@"save");
 }
 
 - (void)didReceiveMemoryWarning
