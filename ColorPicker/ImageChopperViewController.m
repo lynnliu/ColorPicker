@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PickedImageVIew.h"
 #import "AlertViewManager.h"
+#import "ColorsData+Operator.h"
+#import "ImageOperate.h"
 
 @interface ImageChopperViewController ()<UIGestureRecognizerDelegate,PickedImageVIewDelegate>
 {
@@ -18,6 +20,7 @@
     UILabel *green;
     UILabel *blue;
     UILabel *alpha;
+    CGPoint savedPoint;
 }
 @property (strong, nonatomic) UIImageView *choosedImageView;
 @end
@@ -100,7 +103,7 @@
     [self.view addSubview:button];
 }
 
--(void)getColor:(NSArray *)colorArray
+-(void)getColor:(NSArray *)colorArray point:(CGPoint)point
 {
     UIColor *color = [[UIColor alloc] initWithRed:[[colorArray objectAtIndex:0] floatValue] / 255.0f
                                             green:[[colorArray objectAtIndex:1] floatValue] / 255.0f
@@ -108,6 +111,7 @@
                                             alpha:[[colorArray objectAtIndex:3] floatValue] /255.0f];
     
     colorPatone.backgroundColor = color;
+    savedPoint = point;
     red.text = [NSString stringWithFormat:@"red     : %.0f",[[colorArray objectAtIndex:0] floatValue]];
     green.text = [NSString stringWithFormat:@"green : %.0f",[[colorArray objectAtIndex:1] floatValue]];
     blue.text = [NSString stringWithFormat:@"blue   : %.0f",[[colorArray objectAtIndex:2] floatValue]];
@@ -118,8 +122,53 @@
 {
     if (!red.text.length && !green.text.length && !blue.text.length && !alpha.text.length)
         [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"请先触摸图片，选择颜色"];
-    else
-        NSLog(@"save");
+    else{
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        [url URLByAppendingPathComponent:@"Default Color Database"];
+        UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:[document.fileURL path]]){
+            [document openWithCompletionHandler:^(BOOL success){
+                if (success) [self documentIsReady:document];
+                if (!success) NSLog(@"couldn’t open document at %@", url);
+            }];
+        }else{
+            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+                if (success) [self documentIsReady:document];
+                if (!success) NSLog(@"couldn’t create document at %@", url);
+            }];
+        }
+    }
+}
+
+-(void)documentIsReady:(UIManagedDocument *)document
+{
+    if (document.documentState == UIDocumentStateNormal) {
+        NSManagedObjectContext *context = document.managedObjectContext;
+        // do something with the Core Data context
+        UIImage *image = [self.choosedImageInfo objectForKey:@"UIImagePickerControllerEditedImage"];
+        NSUInteger width = CGImageGetWidth([image CGImage]);
+        NSUInteger height = CGImageGetHeight([image CGImage]);
+        NSData *imageData = [ImageOperate getImageData:image height:height width:width];
+        
+        NSDate *date = [NSDate date];
+        NSTimeZone *zone = [NSTimeZone systemTimeZone];
+        NSInteger interval = [zone secondsFromGMTForDate: date];
+        NSDate *localDate = [date dateByAddingTimeInterval: interval];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *dataString = [formatter stringFromDate:localDate];
+        
+        NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:[red.text intValue]],@"red",
+                                                                        [NSNumber numberWithInt:[green.text intValue]],@"green",
+                                                                        [NSNumber numberWithInt:[blue.text intValue]],@"blue",
+                                                                        [NSNumber numberWithInt:[alpha.text intValue]],@"alpha",
+                                                                        [NSNumber numberWithInt:savedPoint.x],@"pointx",
+                                                                        imageData,@"savedimage",
+                                                                        dataString,@"createtime",
+                                                                        nil];
+        [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+    }
 }
 
 - (void)didReceiveMemoryWarning

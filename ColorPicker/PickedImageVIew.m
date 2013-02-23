@@ -8,6 +8,7 @@
 
 #import "PickedImageVIew.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ImageOperate.h"
 
 @interface PickedImageVIew ()
 {
@@ -29,30 +30,8 @@
         self.image = sendImage;
         width = CGImageGetWidth([self.image CGImage]);
         height = CGImageGetHeight([self.image CGImage]);
-        imageData = [NSData dataWithData:[self getImageData:sendImage]];
+        imageData = [NSData dataWithData:[ImageOperate getImageData:sendImage height:height width:width]];
     }
-}
-
--(NSData *)getImageData:(UIImage *)image
-{
-    CGImageRef imageRef = image.CGImage;
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    unsigned char *rawData = malloc(height * width * 4);
-    NSUInteger bytesPerPixel = 4;
-    NSUInteger bytesPerRow = bytesPerPixel * width;
-    NSUInteger bitsPerComponent = 8;
-    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
-                                                 bitsPerComponent, bytesPerRow, colorSpace,
-                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
-    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
-    CGColorSpaceRelease(colorSpace);
-    CGContextRelease(context);
-    
-    NSData *imageNSData = [NSData dataWithBytes:rawData length:height * width * 4];
-    free(rawData);
-    
-    return imageNSData;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -78,7 +57,7 @@
 
     if (point.y < self.frame.size.height && point.x < 320){
         [self addMagnifier:point.x and:point.y];
-        [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+        [self.delegate getColor:[self fetchColor:point.x and:point.y] point:point];
     }
 }
 
@@ -88,7 +67,7 @@
     
     if (point.y < self.frame.size.height && point.x < 320){
         [self moveMagnifier:point.x and:point.y];
-        [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+        [self.delegate getColor:[self fetchColor:point.x and:point.y] point:point];
         [self magnifierImageView:point.x and:point.y];
     }
 }

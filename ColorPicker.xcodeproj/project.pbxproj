@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA05DB7B16D8579300F44750 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */; };
+		BA05DB7E16D85FD800F44750 /* ColorTable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */; };
+		BA05DB8516D871DE00F44750 /* ColorsData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB8416D871DE00F44750 /* ColorsData.m */; };
+		BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05DB8716D895D000F44750 /* CoreData.framework */; };
+		BA05DB8A16D895E700F44750 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05DB8916D895E700F44750 /* CoreFoundation.framework */; };
+		BA05DB8C16D897E100F44750 /* TakePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05DB8B16D897E100F44750 /* TakePhoto.png */; };
+		BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */; };
+		BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9516D8AF6600F44750 /* ImageOperate.m */; };
+		BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */; };
 		BA23901F16D73B85001E79AC /* magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23901E16D73B85001E79AC /* magnifier.png */; };
 		BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902016D7682B001E79AC /* ChoosePhoto.png */; };
 		BA23902816D76EF8001E79AC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902216D76EF8001E79AC /* Icon-72.png */; };
@@ -41,6 +50,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		BA05DB7D16D85FD800F44750 /* ColorTable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ColorTable.xcdatamodel; sourceTree = "<group>"; };
+		BA05DB8316D871DE00F44750 /* ColorsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsData.h; sourceTree = "<group>"; };
+		BA05DB8416D871DE00F44750 /* ColorsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorsData.m; sourceTree = "<group>"; };
+		BA05DB8716D895D000F44750 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BA05DB8916D895E700F44750 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BA05DB8B16D897E100F44750 /* TakePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TakePhoto.png; sourceTree = "<group>"; };
+		BA05DB9016D89EFC00F44750 /* ColorHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHistoryTableViewController.h; sourceTree = "<group>"; };
+		BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHistoryTableViewController.m; sourceTree = "<group>"; };
+		BA05DB9416D8AF6600F44750 /* ImageOperate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageOperate.h; sourceTree = "<group>"; };
+		BA05DB9516D8AF6600F44750 /* ImageOperate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOperate.m; sourceTree = "<group>"; };
+		BA05DB9B16D8B5CF00F44750 /* ColorsData+Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ColorsData+Operator.h"; sourceTree = "<group>"; };
+		BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ColorsData+Operator.m"; sourceTree = "<group>"; };
 		BA23901E16D73B85001E79AC /* magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier.png; sourceTree = "<group>"; };
 		BA23902016D7682B001E79AC /* ChoosePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChoosePhoto.png; sourceTree = "<group>"; };
 		BA23902216D76EF8001E79AC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -92,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA05DB8A16D895E700F44750 /* CoreFoundation.framework in Frameworks */,
+				BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */,
 				BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */,
 				BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */,
 				BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */,
@@ -101,6 +126,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA05DB7F16D86FE400F44750 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA05DB8316D871DE00F44750 /* ColorsData.h */,
+				BA05DB8416D871DE00F44750 /* ColorsData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		BA05DB9316D8A8E000F44750 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				BA05DB9B16D8B5CF00F44750 /* ColorsData+Operator.h */,
+				BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
 		BADB81DB16D1D13D00005C86 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +164,8 @@
 		BADB81E616D1D13D00005C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA05DB8916D895E700F44750 /* CoreFoundation.framework */,
+				BA05DB8716D895D000F44750 /* CoreData.framework */,
 				BADB81E716D1D13D00005C86 /* UIKit.framework */,
 				BADB81E916D1D13D00005C86 /* Foundation.framework */,
 				BADB81EB16D1D13D00005C86 /* CoreGraphics.framework */,
@@ -135,6 +180,8 @@
 				BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */,
 				BADB820516D1D13D00005C86 /* ColorPickerViewController.h */,
 				BADB820616D1D13D00005C86 /* ColorPickerViewController.m */,
+				BA05DB7F16D86FE400F44750 /* Data */,
+				BA05DB9316D8A8E000F44750 /* Business */,
 				BADB821016D1D6BF00005C86 /* Views */,
 				BADB820F16D1D6B400005C86 /* Controllers */,
 				BADB820E16D1D68E00005C86 /* Tools */,
@@ -159,6 +206,7 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA05DB8B16D897E100F44750 /* TakePhoto.png */,
 				BA23903016D7708C001E79AC /* SaveButton.png */,
 				BA23902E16D76F02001E79AC /* iTunesArtwork */,
 				BA23902216D76EF8001E79AC /* Icon-72.png */,
@@ -174,6 +222,7 @@
 				BADB81F916D1D13D00005C86 /* Default.png */,
 				BADB81FB16D1D13D00005C86 /* Default@2x.png */,
 				BADB81FD16D1D13D00005C86 /* Default-568h@2x.png */,
+				BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -181,6 +230,8 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */,
+				BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */,
 				BADB821816D1DAE300005C86 /* LocalPicPicker.h */,
 				BADB821916D1DAE300005C86 /* LocalPicPicker.m */,
 				BADB821B16D1DB8F00005C86 /* WCAlertView.h */,
@@ -189,6 +240,8 @@
 				BADB821F16D1DB9E00005C86 /* AlertViewManager.m */,
 				BADB822116D1DBBD00005C86 /* TimerManager.h */,
 				BADB822216D1DBBD00005C86 /* TimerManager.m */,
+				BA05DB9416D8AF6600F44750 /* ImageOperate.h */,
+				BA05DB9516D8AF6600F44750 /* ImageOperate.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -202,6 +255,8 @@
 				BADB822616D213B600005C86 /* ImageChopperViewController.m */,
 				BADB822D16D361CC00005C86 /* PickedImageVIew.h */,
 				BADB822E16D361CC00005C86 /* PickedImageVIew.m */,
+				BA05DB9016D89EFC00F44750 /* ColorHistoryTableViewController.h */,
+				BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -292,6 +347,7 @@
 				BA23902D16D76EF8001E79AC /* Icon@2x.png in Resources */,
 				BA23902F16D76F02001E79AC /* iTunesArtwork in Resources */,
 				BA23903116D7708C001E79AC /* SaveButton.png in Resources */,
+				BA05DB8C16D897E100F44750 /* TakePhoto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +369,12 @@
 				BADB822316D1DBBE00005C86 /* TimerManager.m in Sources */,
 				BADB822716D213B600005C86 /* ImageChopperViewController.m in Sources */,
 				BADB822F16D361CC00005C86 /* PickedImageVIew.m in Sources */,
+				BA05DB7B16D8579300F44750 /* CoreDataTableViewController.m in Sources */,
+				BA05DB7E16D85FD800F44750 /* ColorTable.xcdatamodeld in Sources */,
+				BA05DB8516D871DE00F44750 /* ColorsData.m in Sources */,
+				BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */,
+				BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */,
+				BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +525,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA05DB7D16D85FD800F44750 /* ColorTable.xcdatamodel */,
+			);
+			currentVersion = BA05DB7D16D85FD800F44750 /* ColorTable.xcdatamodel */;
+			path = ColorTable.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BADB81DC16D1D13D00005C86 /* Project object */;
 }
