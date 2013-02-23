@@ -127,34 +127,33 @@
 {
     magnifier = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"magnifier.png"]];
     magnifier.frame =  CGRectMake(x - 38, y - 65, 60, 70);
-    [[self superview] addSubview:magnifier];
     
     magnifierImage = [[UIImageView alloc] initWithImage:[self magnifierImageView:x and:y]];
-    magnifierImage.frame = CGRectMake(x - 33, y - 60, 50, 50);
+    magnifierImage.frame = CGRectMake(5, 5, 50, 50);
     [[magnifierImage layer] setCornerRadius:20];
     [[magnifierImage layer] setShadowOffset:CGSizeMake(1, 1)];
-    [[magnifierImage layer] setShadowRadius:2];
+    [[magnifierImage layer] setShadowRadius:6];
     [[magnifierImage layer] setShadowOpacity:1];
     [[magnifierImage layer] setShadowColor:[UIColor grayColor].CGColor];
-    [[self superview] addSubview:magnifierImage];
+    [magnifier addSubview:magnifierImage];
+
+    [[self superview] addSubview:magnifier];
 }
 
 -(void)moveMagnifier:(int)x and:(int)y
 {
     magnifier.frame = CGRectMake(x - 38, y - 65, 60, 70);
-    magnifierImage.frame = CGRectMake(x - 33, y - 60, 50, 50);
     magnifierImage.image = [self magnifierImageView:x and:y];
 }
 
 -(void)removeMagnifier
 {
     [magnifier removeFromSuperview];
-    [magnifierImage removeFromSuperview];
 }
 
 -(UIImage *)magnifierImageView:(int)x and:(int)y
 {
-    CGImageRef img = CGImageCreateWithImageInRect(self.sendImage.CGImage, CGRectMake(x - 10, y - 10, 20, 20));
+    CGImageRef img = CGImageCreateWithImageInRect(self.image.CGImage, CGRectMake(x, y, 5, 5));
     UIImage *newimage = [UIImage imageWithCGImage:img];
     return newimage;
 }
