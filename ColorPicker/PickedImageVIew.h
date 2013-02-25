@@ -21,6 +21,6 @@
 
 @protocol PickedImageVIewDelegate <NSObject>
 
--(void)getColor:(NSArray *)colorArray point:(CGPoint)point;
+-(void)getColor:(NSDictionary *)colorInfo;
 
 @end

@@ -57,7 +57,7 @@
 
     if (point.y < self.frame.size.height && point.x < 320){
         [self addMagnifier:point.x and:point.y];
-        [self.delegate getColor:[self fetchColor:point.x and:point.y] point:point];
+        [self.delegate getColor:[self fetchColor:point.x and:point.y]];
     }
 }
 
@@ -67,7 +67,7 @@
     
     if (point.y < self.frame.size.height && point.x < 320){
         [self moveMagnifier:point.x and:point.y];
-        [self.delegate getColor:[self fetchColor:point.x and:point.y] point:point];
+        [self.delegate getColor:[self fetchColor:point.x and:point.y]];
     }
 }
 
@@ -77,7 +77,7 @@
     [self removeMagnifier];
 }
 
-- (NSArray *)fetchColor:(int)x and:(int)y{
+- (NSDictionary *)fetchColor:(int)x and:(int)y{
     Byte *bytes = (Byte *)[imageData bytes];
     NSUInteger bytesPerPixel = 4;
     NSUInteger bytesPerRow = bytesPerPixel * width;
@@ -97,8 +97,14 @@
         a = bytes[byteIndex + 3];   
     }
     
-    NSArray *array = [NSArray arrayWithObjects:[NSNumber numberWithFloat:r],[NSNumber numberWithFloat:g],[NSNumber numberWithFloat:b],[NSNumber numberWithFloat:a], nil];
-    return array;
+    NSDictionary *colorInfo = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:r],@"red",
+                                                                        [NSNumber numberWithFloat:g],@"green",
+                                                                        [NSNumber numberWithFloat:b],@"blue",
+                                                                        [NSNumber numberWithFloat:a],@"alpha",
+                                                                        [NSNumber numberWithInt:x],@"pointx",
+                                                                        [NSNumber numberWithInt:y],@"pointy",
+                               nil];
+    return colorInfo;
 }
 
 -(void)addMagnifier:(int)x and:(int)y

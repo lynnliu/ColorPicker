@@ -11,12 +11,19 @@
 		7E8F819016D9059D0086258D /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F818F16D9059D0086258D /* DomobAdSDKBundle.bundle */; };
 		BA05DB7B16D8579300F44750 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */; };
 		BA05DB7E16D85FD800F44750 /* ColorTable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */; };
-		BA05DB8516D871DE00F44750 /* ColorsData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB8416D871DE00F44750 /* ColorsData.m */; };
 		BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05DB8716D895D000F44750 /* CoreData.framework */; };
 		BA05DB8C16D897E100F44750 /* TakePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05DB8B16D897E100F44750 /* TakePhoto.png */; };
 		BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */; };
 		BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9516D8AF6600F44750 /* ImageOperate.m */; };
 		BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */; };
+		BA0C5F2716DB0B99001EB5DB /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F2616DB0B99001EB5DB /* Placeholder.png */; };
+		BA0C5F2A16DB0CB4001EB5DB /* ColorHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */; };
+		BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */; };
+		BA0C5F3016DB31F9001EB5DB /* ColorsData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */; };
+		BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */; };
+		BA0C5F3616DB3F4B001EB5DB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */; };
+		BA0C5F3916DB3FA2001EB5DB /* SMSAndMailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */; };
+		BA0C5F3B16DB40BA001EB5DB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */; };
 		BA23901F16D73B85001E79AC /* magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23901E16D73B85001E79AC /* magnifier.png */; };
 		BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902016D7682B001E79AC /* ChoosePhoto.png */; };
 		BA23902816D76EF8001E79AC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902216D76EF8001E79AC /* Icon-72.png */; };
@@ -60,8 +67,6 @@
 		BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		BA05DB7D16D85FD800F44750 /* ColorTable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ColorTable.xcdatamodel; sourceTree = "<group>"; };
-		BA05DB8316D871DE00F44750 /* ColorsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsData.h; sourceTree = "<group>"; };
-		BA05DB8416D871DE00F44750 /* ColorsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorsData.m; sourceTree = "<group>"; };
 		BA05DB8716D895D000F44750 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BA05DB8916D895E700F44750 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		BA05DB8B16D897E100F44750 /* TakePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TakePhoto.png; sourceTree = "<group>"; };
@@ -71,6 +76,18 @@
 		BA05DB9516D8AF6600F44750 /* ImageOperate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOperate.m; sourceTree = "<group>"; };
 		BA05DB9B16D8B5CF00F44750 /* ColorsData+Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ColorsData+Operator.h"; sourceTree = "<group>"; };
 		BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ColorsData+Operator.m"; sourceTree = "<group>"; };
+		BA0C5F2616DB0B99001EB5DB /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		BA0C5F2816DB0CB4001EB5DB /* ColorHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHistoryTableViewCell.h; sourceTree = "<group>"; };
+		BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHistoryTableViewCell.m; sourceTree = "<group>"; };
+		BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		BA0C5F2E16DB31F9001EB5DB /* ColorsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsData.h; sourceTree = "<group>"; };
+		BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorsData.m; sourceTree = "<group>"; };
+		BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorHistoryTableViewController.storyboard; sourceTree = "<group>"; };
+		BA0C5F3416DB3F4B001EB5DB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		BA0C5F3716DB3FA2001EB5DB /* SMSAndMailManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSAndMailManager.h; sourceTree = "<group>"; };
+		BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSAndMailManager.m; sourceTree = "<group>"; };
+		BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BA23901E16D73B85001E79AC /* magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier.png; sourceTree = "<group>"; };
 		BA23902016D7682B001E79AC /* ChoosePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChoosePhoto.png; sourceTree = "<group>"; };
 		BA23902216D76EF8001E79AC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -122,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0C5F3B16DB40BA001EB5DB /* MessageUI.framework in Frameworks */,
 				BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */,
 				BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */,
 				BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */,
@@ -148,8 +166,8 @@
 		BA05DB7F16D86FE400F44750 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BA05DB8316D871DE00F44750 /* ColorsData.h */,
-				BA05DB8416D871DE00F44750 /* ColorsData.m */,
+				BA0C5F2E16DB31F9001EB5DB /* ColorsData.h */,
+				BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -166,6 +184,7 @@
 		BADB81DB16D1D13D00005C86 = {
 			isa = PBXGroup;
 			children = (
+				BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */,
 				BADB81ED16D1D13D00005C86 /* ColorPicker */,
 				BADB81E616D1D13D00005C86 /* Frameworks */,
 				BADB81E516D1D13D00005C86 /* Products */,
@@ -222,6 +241,7 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA0C5F2616DB0B99001EB5DB /* Placeholder.png */,
 				BA05DB8B16D897E100F44750 /* TakePhoto.png */,
 				BA23903016D7708C001E79AC /* SaveButton.png */,
 				BA23902E16D76F02001E79AC /* iTunesArtwork */,
@@ -259,6 +279,8 @@
 				BADB822216D1DBBD00005C86 /* TimerManager.m */,
 				BA05DB9416D8AF6600F44750 /* ImageOperate.h */,
 				BA05DB9516D8AF6600F44750 /* ImageOperate.m */,
+				BA0C5F3716DB3FA2001EB5DB /* SMSAndMailManager.h */,
+				BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -276,6 +298,10 @@
 				BADB822E16D361CC00005C86 /* PickedImageVIew.m */,
 				BA05DB9016D89EFC00F44750 /* ColorHistoryTableViewController.h */,
 				BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */,
+				BA0C5F2816DB0CB4001EB5DB /* ColorHistoryTableViewCell.h */,
+				BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */,
+				BA0C5F3416DB3F4B001EB5DB /* AboutViewController.h */,
+				BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +312,8 @@
 				BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */,
 				BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */,
 				BADB822816D3163A00005C86 /* ImageChopper.storyboard */,
+				BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */,
+				BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -370,6 +398,9 @@
 				BA23903116D7708C001E79AC /* SaveButton.png in Resources */,
 				BA05DB8C16D897E100F44750 /* TakePhoto.png in Resources */,
 				7E8F819016D9059D0086258D /* DomobAdSDKBundle.bundle in Resources */,
+				BA0C5F2716DB0B99001EB5DB /* Placeholder.png in Resources */,
+				BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */,
+				BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,10 +424,13 @@
 				BADB822F16D361CC00005C86 /* PickedImageVIew.m in Sources */,
 				BA05DB7B16D8579300F44750 /* CoreDataTableViewController.m in Sources */,
 				BA05DB7E16D85FD800F44750 /* ColorTable.xcdatamodeld in Sources */,
-				BA05DB8516D871DE00F44750 /* ColorsData.m in Sources */,
 				BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */,
 				BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */,
 				BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */,
+				BA0C5F2A16DB0CB4001EB5DB /* ColorHistoryTableViewCell.m in Sources */,
+				BA0C5F3016DB31F9001EB5DB /* ColorsData.m in Sources */,
+				BA0C5F3616DB3F4B001EB5DB /* AboutViewController.m in Sources */,
+				BA0C5F3916DB3FA2001EB5DB /* SMSAndMailManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

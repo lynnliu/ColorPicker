@@ -7,7 +7,8 @@
 //
 
 #import "ColorHistoryTableViewController.h"
-#import "ColorsData.h"
+#import "ColorHistoryTableViewCell.h"
+#import "ColorsData+Operator.h"
 
 @interface ColorHistoryTableViewController ()
 
@@ -44,7 +45,7 @@
 -(void)setupFetchedResultsController
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ColorsData"];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:NO];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -56,11 +57,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!self.colorDatabase){
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        [url URLByAppendingPathComponent:@"Default Color Database"];
-        self.colorDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
-    }
+    self.tableView.rowHeight = 60;
+    
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Default Color Database"];
+    self.colorDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,13 +72,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Color Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    UINib *nib = [UINib nibWithNibName:@"ColorHistoryTableViewCell" bundle:nil];
+    [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+    ColorHistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
     ColorsData *color = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"%@",color);
-    
+    cell.colorValue = [NSString stringWithFormat:@"r:%d g:%d b:%d a:%d",[color.red intValue],[color.green intValue],[color.blue intValue],[color.alpha intValue]];
+    cell.time = [NSString stringWithFormat:@"%@",color.createtime];
+    cell.color = [UIColor colorWithRed:[color.red intValue]/255.0f green:[color.green intValue]/255.0f blue:[color.blue intValue]/255.0 alpha:[color.alpha intValue]/255.0];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //先行删除阵列中的物件
+    ColorsData *color = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    NSDictionary *colorInfo = [NSDictionary dictionaryWithObjectsAndKeys:color.red,@"red",
+                               color.green,@"green",
+                               color.blue,@"blue",
+                               color.alpha,@"alpha",nil];
+    [ColorsData prepareToDeletion:colorInfo inManagedObjectContext:self.fetchedResultsController.managedObjectContext];
 }
 
 @end

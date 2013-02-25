@@ -12,6 +12,7 @@
 #import "AlertViewManager.h"
 #import "ColorsData+Operator.h"
 #import "ImageOperate.h"
+#import "ColorHistoryTableViewController.h"
 
 @interface ImageChopperViewController ()<UIGestureRecognizerDelegate,PickedImageVIewDelegate>
 {
@@ -20,7 +21,7 @@
     UILabel *green;
     UILabel *blue;
     UILabel *alpha;
-    CGPoint savedPoint;
+    NSDictionary *colorsDictionary;
 }
 @property (strong, nonatomic) UIImageView *choosedImageView;
 @end
@@ -103,19 +104,19 @@
     [self.view addSubview:button];
 }
 
--(void)getColor:(NSArray *)colorArray point:(CGPoint)point
+-(void)getColor:(NSDictionary *)colorInfo
 {
-    UIColor *color = [[UIColor alloc] initWithRed:[[colorArray objectAtIndex:0] floatValue] / 255.0f
-                                            green:[[colorArray objectAtIndex:1] floatValue] / 255.0f
-                                             blue:[[colorArray objectAtIndex:2] floatValue] /255.0f
-                                            alpha:[[colorArray objectAtIndex:3] floatValue] /255.0f];
-    
+    float redValue = [(NSNumber *)[colorInfo valueForKey:@"red"] floatValue];
+    float greenValue = [(NSNumber *)[colorInfo valueForKey:@"green"] floatValue];
+    float blueValue = [(NSNumber *)[colorInfo valueForKey:@"blue"] floatValue];
+    float alphaValue = [(NSNumber *)[colorInfo valueForKey:@"alpha"] floatValue];
+    UIColor *color = [[UIColor alloc] initWithRed:redValue / 255.0f green:greenValue / 255.0f blue:blueValue /255.0f alpha:alphaValue /255.0f];
     colorPatone.backgroundColor = color;
-    savedPoint = point;
-    red.text = [NSString stringWithFormat:@"red     : %.0f",[[colorArray objectAtIndex:0] floatValue]];
-    green.text = [NSString stringWithFormat:@"green : %.0f",[[colorArray objectAtIndex:1] floatValue]];
-    blue.text = [NSString stringWithFormat:@"blue   : %.0f",[[colorArray objectAtIndex:2] floatValue]];
-    alpha.text = [NSString stringWithFormat:@"alpha : %.0f",[[colorArray objectAtIndex:3] floatValue]];
+    colorsDictionary = colorInfo;
+    red.text = [NSString stringWithFormat:@"red     : %.0f",redValue];
+    green.text = [NSString stringWithFormat:@"green : %.0f",greenValue];
+    blue.text = [NSString stringWithFormat:@"blue   : %.0f",blueValue];
+    alpha.text = [NSString stringWithFormat:@"alpha : %.0f",alphaValue];
 }
 
 -(void)saveTheColor:(id)sender
@@ -124,9 +125,9 @@
         [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"请先触摸图片，选择颜色"];
     else{
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        [url URLByAppendingPathComponent:@"Default Color Database"];
-        UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+        url = [url URLByAppendingPathComponent:@"Default Color Database"];
         
+        UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
         if ([[NSFileManager defaultManager] fileExistsAtPath:[document.fileURL path]]){
             [document openWithCompletionHandler:^(BOOL success){
                 if (success) [self documentIsReady:document];
@@ -146,10 +147,8 @@
     if (document.documentState == UIDocumentStateNormal) {
         NSManagedObjectContext *context = document.managedObjectContext;
         // do something with the Core Data context
-        UIImage *image = [self.choosedImageInfo objectForKey:@"UIImagePickerControllerEditedImage"];
-        NSUInteger width = CGImageGetWidth([image CGImage]);
-        NSUInteger height = CGImageGetHeight([image CGImage]);
-        NSData *imageData = [ImageOperate getImageData:image height:height width:width];
+        NSURL *imageURL = [self.choosedImageInfo objectForKey:@"UIImagePickerControllerReferenceURL"];
+        NSString *imageURLString = [NSString stringWithFormat:@"%@",imageURL];
         
         NSDate *date = [NSDate date];
         NSTimeZone *zone = [NSTimeZone systemTimeZone];
@@ -159,16 +158,23 @@
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *dataString = [formatter stringFromDate:localDate];
         
-        NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:[red.text intValue]],@"red",
-                                                                        [NSNumber numberWithInt:[green.text intValue]],@"green",
-                                                                        [NSNumber numberWithInt:[blue.text intValue]],@"blue",
-                                                                        [NSNumber numberWithInt:[alpha.text intValue]],@"alpha",
-                                                                        [NSNumber numberWithInt:savedPoint.x],@"pointx",
-                                                                        imageData,@"savedimage",
+        NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:[colorsDictionary valueForKey:@"red"],@"red",
+                                                                        [colorsDictionary valueForKey:@"green"],@"green",
+                                                                        [colorsDictionary valueForKey:@"blue"],@"blue",
+                                                                        [colorsDictionary valueForKey:@"alpha"],@"alpha",
+                                                                        [colorsDictionary valueForKey:@"pointx"],@"pointx",
+                                                                        [colorsDictionary valueForKey:@"pointy"],@"pointy",
+                                                                        imageURLString,@"savedimage",
                                                                         dataString,@"createtime",
                                                                         nil];
         [document.managedObjectContext performBlock:^{
             [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                ColorHistoryTableViewController *chtvc = [[ColorHistoryTableViewController alloc] init];
+                UIStoryboard *story = [UIStoryboard storyboardWithName:@"ColorHistoryTableViewController" bundle:nil];
+                chtvc = story.instantiateInitialViewController;
+                [self.navigationController pushViewController:chtvc animated:YES];
+            });
         }];
     }
 }

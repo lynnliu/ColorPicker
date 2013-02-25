@@ -2,7 +2,7 @@
 //  ColorsData.m
 //  ColorPicker
 //
-//  Created by  lynn on 2/23/13.
+//  Created by  lynn on 2/25/13.
 //  Copyright (c) 2013 uLynn. All rights reserved.
 //
 
@@ -11,13 +11,13 @@
 
 @implementation ColorsData
 
-@dynamic red;
-@dynamic green;
-@dynamic blue;
 @dynamic alpha;
+@dynamic blue;
 @dynamic createtime;
-@dynamic savedimage;
+@dynamic green;
 @dynamic pointx;
 @dynamic pointy;
+@dynamic red;
+@dynamic savedimage;
 
 @end

@@ -2,7 +2,7 @@
 //  ColorsData.h
 //  ColorPicker
 //
-//  Created by  lynn on 2/23/13.
+//  Created by  lynn on 2/25/13.
 //  Copyright (c) 2013 uLynn. All rights reserved.
 //
 
@@ -12,13 +12,13 @@
 
 @interface ColorsData : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * red;
-@property (nonatomic, retain) NSNumber * green;
-@property (nonatomic, retain) NSNumber * blue;
 @property (nonatomic, retain) NSNumber * alpha;
+@property (nonatomic, retain) NSNumber * blue;
 @property (nonatomic, retain) NSString * createtime;
-@property (nonatomic, retain) NSData * savedimage;
+@property (nonatomic, retain) NSNumber * green;
 @property (nonatomic, retain) NSNumber * pointx;
 @property (nonatomic, retain) NSNumber * pointy;
+@property (nonatomic, retain) NSNumber * red;
+@property (nonatomic, retain) NSString * savedimage;
 
 @end

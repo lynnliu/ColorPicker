@@ -12,4 +12,5 @@
 
 +(ColorsData *)ColorWithPickerInfo:(NSDictionary *)colorInfo inManagedObjectContext:(NSManagedObjectContext *)context;
 
++(void)prepareToDeletion:(NSDictionary *)colorInfo inManagedObjectContext:(NSManagedObjectContext *)context;
 @end

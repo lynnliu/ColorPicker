@@ -8,7 +8,7 @@
         <attribute name="pointx" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="pointy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="red" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="savedimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="savedimage" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="ColorsData" positionX="-63" positionY="146" width="128" height="163"/>

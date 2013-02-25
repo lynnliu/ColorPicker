@@ -20,13 +20,13 @@
                                                                                                                  [colorInfo valueForKey:@"green"],
                                                                                                                  [colorInfo valueForKey:@"blue"],
                                                                                                                  [colorInfo valueForKey:@"alpha"]];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:NO];
     request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     NSError *error = nil;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     
     if (!matches || [matches count] > 1) {
-        NSLog(@"错误发生了！matches in ColorsData(Operator) ");
+        NSLog(@"错误发生了！matches in ColorsData(Operator, ColorWithPickerInfo) ");
     }else if ([matches count] == 0) {
         color = [NSEntityDescription insertNewObjectForEntityForName:@"ColorsData" inManagedObjectContext:(NSManagedObjectContext *)context];
         color.red = [colorInfo valueForKey:@"red"];
@@ -41,6 +41,26 @@
         [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"您已经保存了此颜色"];
 
     return color;
+}
+
++(void)prepareToDeletion:(NSDictionary *)colorInfo inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ColorsData"];
+    request.predicate = [NSPredicate predicateWithFormat:@"red = %@ and green = %@ and blue = %@ and alpha = %@",[colorInfo valueForKey:@"red"],
+                         [colorInfo valueForKey:@"green"],
+                         [colorInfo valueForKey:@"blue"],
+                         [colorInfo valueForKey:@"alpha"]];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSError *error = nil;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+
+    if (!matches || [matches count] > 1) {
+        NSLog(@"错误发生了！matches in ColorsData(Operator, prepareToDeletion) ");
+    }else if ([matches count] == 1) 
+        [context deleteObject:[matches lastObject]];
+    else
+        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"发生错误！"];
 }
 
 @end
