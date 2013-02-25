@@ -167,7 +167,9 @@
                                                                         imageData,@"savedimage",
                                                                         dataString,@"createtime",
                                                                         nil];
-        [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+        [document.managedObjectContext performBlock:^{
+            [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+        }];
     }
 }
 

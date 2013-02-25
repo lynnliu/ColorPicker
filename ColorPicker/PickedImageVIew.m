@@ -68,7 +68,6 @@
     if (point.y < self.frame.size.height && point.x < 320){
         [self moveMagnifier:point.x and:point.y];
         [self.delegate getColor:[self fetchColor:point.x and:point.y] point:point];
-        [self magnifierImageView:point.x and:point.y];
     }
 }
 
@@ -132,7 +131,8 @@
 
 -(UIImage *)magnifierImageView:(int)x and:(int)y
 {
-    CGImageRef img = CGImageCreateWithImageInRect(self.image.CGImage, CGRectMake(x, y, 5, 5));
+    float pixelToPoint = width / 320;
+    CGImageRef img = CGImageCreateWithImageInRect(self.image.CGImage, CGRectMake(x * pixelToPoint - 5 , y * pixelToPoint - 5, 10, 10));
     UIImage *newimage = [UIImage imageWithCGImage:img];
     return newimage;
 }

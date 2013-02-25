@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E8F818916D9056F0086258D /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8F818816D9056F0086258D /* libDomobAdSDK.a */; };
+		7E8F819016D9059D0086258D /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F818F16D9059D0086258D /* DomobAdSDKBundle.bundle */; };
 		BA05DB7B16D8579300F44750 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */; };
 		BA05DB7E16D85FD800F44750 /* ColorTable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */; };
 		BA05DB8516D871DE00F44750 /* ColorsData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB8416D871DE00F44750 /* ColorsData.m */; };
 		BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05DB8716D895D000F44750 /* CoreData.framework */; };
-		BA05DB8A16D895E700F44750 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05DB8916D895E700F44750 /* CoreFoundation.framework */; };
 		BA05DB8C16D897E100F44750 /* TakePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05DB8B16D897E100F44750 /* TakePhoto.png */; };
 		BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */; };
 		BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9516D8AF6600F44750 /* ImageOperate.m */; };
@@ -50,6 +51,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E8F818816D9056F0086258D /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDomobAdSDK.a; path = DomobAdSDK/libDomobAdSDK.a; sourceTree = "<group>"; };
+		7E8F818B16D905930086258D /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMAdView.h; path = DomobAdSDK/DMAdView.h; sourceTree = SOURCE_ROOT; };
+		7E8F818C16D905930086258D /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMInterstitialAdController.h; path = DomobAdSDK/DMInterstitialAdController.h; sourceTree = SOURCE_ROOT; };
+		7E8F818D16D905930086258D /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMSplashAdController.h; path = DomobAdSDK/DMSplashAdController.h; sourceTree = SOURCE_ROOT; };
+		7E8F818E16D905930086258D /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMTools.h; path = DomobAdSDK/DMTools.h; sourceTree = SOURCE_ROOT; };
+		7E8F818F16D9059D0086258D /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DomobAdSDKBundle.bundle; path = DomobAdSDK/DomobAdSDKBundle/DomobAdSDKBundle.bundle; sourceTree = SOURCE_ROOT; };
 		BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		BA05DB7D16D85FD800F44750 /* ColorTable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ColorTable.xcdatamodel; sourceTree = "<group>"; };
@@ -115,17 +122,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA05DB8A16D895E700F44750 /* CoreFoundation.framework in Frameworks */,
 				BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */,
 				BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */,
 				BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */,
 				BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */,
+				7E8F818916D9056F0086258D /* libDomobAdSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E8F818A16D9057E0086258D /* AdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7E8F818F16D9059D0086258D /* DomobAdSDKBundle.bundle */,
+				7E8F818B16D905930086258D /* DMAdView.h */,
+				7E8F818C16D905930086258D /* DMInterstitialAdController.h */,
+				7E8F818D16D905930086258D /* DMSplashAdController.h */,
+				7E8F818E16D905930086258D /* DMTools.h */,
+			);
+			name = AdSDK;
+			sourceTree = "<group>";
+		};
 		BA05DB7F16D86FE400F44750 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +183,7 @@
 		BADB81E616D1D13D00005C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E8F818816D9056F0086258D /* libDomobAdSDK.a */,
 				BA05DB8916D895E700F44750 /* CoreFoundation.framework */,
 				BA05DB8716D895D000F44750 /* CoreData.framework */,
 				BADB81E716D1D13D00005C86 /* UIKit.framework */,
@@ -176,10 +196,6 @@
 		BADB81ED16D1D13D00005C86 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */,
-				BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */,
-				BADB820516D1D13D00005C86 /* ColorPickerViewController.h */,
-				BADB820616D1D13D00005C86 /* ColorPickerViewController.m */,
 				BA05DB7F16D86FE400F44750 /* Data */,
 				BA05DB9316D8A8E000F44750 /* Business */,
 				BADB821016D1D6BF00005C86 /* Views */,
@@ -230,6 +246,7 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7E8F818A16D9057E0086258D /* AdSDK */,
 				BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */,
 				BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */,
 				BADB821816D1DAE300005C86 /* LocalPicPicker.h */,
@@ -249,6 +266,8 @@
 		BADB820F16D1D6B400005C86 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BADB820516D1D13D00005C86 /* ColorPickerViewController.h */,
+				BADB820616D1D13D00005C86 /* ColorPickerViewController.m */,
 				BADB821116D1D6F200005C86 /* PickerInitViewController.h */,
 				BADB821216D1D6F200005C86 /* PickerInitViewController.m */,
 				BADB822516D213B600005C86 /* ImageChopperViewController.h */,
@@ -264,6 +283,8 @@
 		BADB821016D1D6BF00005C86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */,
+				BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */,
 				BADB822816D3163A00005C86 /* ImageChopper.storyboard */,
 			);
 			name = Views;
@@ -348,6 +369,7 @@
 				BA23902F16D76F02001E79AC /* iTunesArtwork in Resources */,
 				BA23903116D7708C001E79AC /* SaveButton.png in Resources */,
 				BA05DB8C16D897E100F44750 /* TakePhoto.png in Resources */,
+				7E8F819016D9059D0086258D /* DomobAdSDKBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +443,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zechen Liu";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -437,7 +459,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52180073-5C68-40E8-909A-D63D629D6A9A";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -456,7 +478,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zechen Liu";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -465,6 +487,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "629F01EE-3AAA-48D1-9889-8DB52A667CE5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -480,9 +503,14 @@
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DomobAdSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -496,9 +524,14 @@
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DomobAdSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -61,7 +61,6 @@
         [url URLByAppendingPathComponent:@"Default Color Database"];
         self.colorDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
