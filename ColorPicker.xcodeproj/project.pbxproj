@@ -184,7 +184,6 @@
 		BADB81DB16D1D13D00005C86 = {
 			isa = PBXGroup;
 			children = (
-				BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */,
 				BADB81ED16D1D13D00005C86 /* ColorPicker */,
 				BADB81E616D1D13D00005C86 /* Frameworks */,
 				BADB81E516D1D13D00005C86 /* Products */,
@@ -202,6 +201,7 @@
 		BADB81E616D1D13D00005C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */,
 				7E8F818816D9056F0086258D /* libDomobAdSDK.a */,
 				BA05DB8916D895E700F44750 /* CoreFoundation.framework */,
 				BA05DB8716D895D000F44750 /* CoreData.framework */,
@@ -536,7 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DomobAdSDK\"",
@@ -557,7 +557,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DomobAdSDK\"",

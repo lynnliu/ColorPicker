@@ -12,6 +12,7 @@
 
 @interface AboutViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *version;
 @end
 
 @implementation AboutViewController
@@ -28,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    self.version.text = [NSString stringWithFormat:@"Version:%@",version];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,4 +52,8 @@
     [mail sendMail];
 }
 
+- (void)viewDidUnload {
+    [self setVersion:nil];
+    [super viewDidUnload];
+}
 @end
