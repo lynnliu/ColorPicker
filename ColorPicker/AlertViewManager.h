@@ -14,4 +14,6 @@
 
 -(void)alertNewView:(id)viewController msg:(NSString *)msg;
 
++ (UIImage *)closeButtonImage;
+
 @end
