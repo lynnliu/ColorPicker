@@ -145,9 +145,6 @@
 {
     if (document.documentState == UIDocumentStateNormal) {
         NSManagedObjectContext *context = document.managedObjectContext;
-        // do something with the Core Data context
-        NSURL *imageURL = [self.choosedImageInfo objectForKey:@"UIImagePickerControllerReferenceURL"];
-        NSString *imageURLString = [NSString stringWithFormat:@"%@",imageURL];
         
         NSDate *date = [NSDate date];
         NSTimeZone *zone = [NSTimeZone systemTimeZone];
@@ -163,15 +160,16 @@
                                                                         [colorsDictionary valueForKey:@"alpha"],@"alpha",
                                                                         [colorsDictionary valueForKey:@"pointx"],@"pointx",
                                                                         [colorsDictionary valueForKey:@"pointy"],@"pointy",
-                                                                        imageURLString,@"savedimage",
                                                                         dataString,@"createtime",
                                                                         nil];
         [document.managedObjectContext performBlock:^{
-            [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+            ColorsData *color = [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [AlertViewManager alertViewShow:self cancel:@"返回" confirm:@"查看" msg:@"保存成功，您可以进行如下操作！"];    
-            });
+            if (color){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [AlertViewManager alertViewShow:self cancel:@"返回" confirm:@"查看" msg:@"保存成功，您可以进行如下操作！"];
+                });
+            }
         }];
     }
 }
@@ -187,7 +185,6 @@
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"ColorHistoryTableViewController" bundle:nil];
             chtvc = story.instantiateInitialViewController;
             [self.navigationController pushViewController:chtvc animated:YES];
-
         }
             break;
         default:

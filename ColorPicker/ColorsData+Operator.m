@@ -27,6 +27,7 @@
     
     if (!matches || [matches count] > 1) {
         NSLog(@"错误发生了！matches in ColorsData(Operator, ColorWithPickerInfo) ");
+        return nil;
     }else if ([matches count] == 0) {
         color = [NSEntityDescription insertNewObjectForEntityForName:@"ColorsData" inManagedObjectContext:(NSManagedObjectContext *)context];
         color.red = [colorInfo valueForKey:@"red"];
@@ -35,12 +36,12 @@
         color.alpha = [colorInfo valueForKey:@"alpha"];
         color.pointx = [colorInfo valueForKey:@"pointx"];
         color.pointy = [colorInfo valueForKey:@"pointy"];
-        color.savedimage = [colorInfo valueForKey:@"savedimage"];
         color.createtime = [colorInfo valueForKey:@"createtime"];
-    }else
+        return color;
+    }else{
         [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"您已经保存了此颜色"];
-
-    return color;
+        return nil;
+    }
 }
 
 +(void)prepareToDeletion:(NSDictionary *)colorInfo inManagedObjectContext:(NSManagedObjectContext *)context
