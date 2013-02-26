@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="WWK-es-OgQ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Oauth View Controller-->
+        <scene sceneID="5ki-LM-r6e">
+            <objects>
+                <viewController id="kek-mc-hRF" customClass="OauthViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RDs-Qs-yze">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="gER-5m-KWO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="微博绑定" id="JKh-5w-HxK">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Xda-is-NAE">
+                                            <connections>
+                                                <action selector="leftConfirm:" destination="kek-mc-hRF" id="7w4-Ev-R9e"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" id="Zti-oY-WfQ">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kek-mc-hRF" id="Ldz-mt-ZQt"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XHX-4T-GwD"/>
+                    <connections>
+                        <outlet property="backButton" destination="Xda-is-NAE" id="jLj-Zg-mya"/>
+                        <outlet property="navigation" destination="gER-5m-KWO" id="jrJ-AG-zj8"/>
+                        <outlet property="webview" destination="Zti-oY-WfQ" id="DXD-VJ-T85"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIw-7x-jLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6594" y="2221"/>
+        </scene>
+        <!--Share Send View Controller-->
+        <scene sceneID="M1O-3j-cgV">
+            <objects>
+                <viewController id="WWK-es-OgQ" customClass="ShareSendViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qsi-Cv-9Bb">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="cxF-JK-Psk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="分享" id="Jsh-yq-9HM">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="k73-YC-ii5">
+                                            <connections>
+                                                <action selector="leftConfirm:" destination="WWK-es-OgQ" id="hwn-jD-aAQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="i88-Vb-7cu">
+                                            <connections>
+                                                <action selector="rightConfirm:" destination="WWK-es-OgQ" id="flr-kz-4dZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="O1J-aI-FOD">
+                                <rect key="frame" x="20" y="90" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GNb-fL-Yys">
+                                <rect key="frame" x="106" y="46" width="40" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" image="weibo32.png">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sinaAuth:" destination="WWK-es-OgQ" eventType="touchUpInside" id="Xeq-Im-A4D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="APt-xS-7LL">
+                                <rect key="frame" x="179" y="46" width="40" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="TCweiboicon32.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tcAuth:" destination="WWK-es-OgQ" eventType="touchUpInside" id="jFK-SQ-JFv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W5l-W1-X0W"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="k73-YC-ii5" id="DEY-Mm-i7C"/>
+                        <outlet property="navigation" destination="cxF-JK-Psk" id="KAc-Ql-cjI"/>
+                        <outlet property="rightButton" destination="i88-Vb-7cu" id="v7z-zb-Q1W"/>
+                        <outlet property="sendTextView" destination="O1J-aI-FOD" id="wu7-MM-9CW"/>
+                        <outlet property="sina" destination="GNb-fL-Yys" id="3fU-B8-901"/>
+                        <outlet property="tc" destination="APt-xS-7LL" id="yqu-Cd-1oc"/>
+                        <outlet property="view" destination="qsi-Cv-9Bb" id="045-w6-mkw"/>
+                        <segue destination="kek-mc-hRF" kind="modal" identifier="oauth 2.0" id="slT-xe-Rkm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dn-k6-sHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6036" y="2221"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TCweiboicon32.png" width="32" height="32"/>
+        <image name="weibo32.png" width="32" height="32"/>
+    </resources>
+    <classes>
+        <class className="ColorPickerBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerBaseViewController.h"/>
+        </class>
+        <class className="OauthViewController" superclassName="ColorPickerBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OauthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="leftConfirm:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="navigation" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ShareSendViewController" superclassName="ColorPickerBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareSendViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="leftConfirm:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="rightConfirm:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="sinaAuth:" candidateClass="UIButton"/>
+                <relationship kind="action" name="tcAuth:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="navigation" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="rightButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="sendTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="sina" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tc" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

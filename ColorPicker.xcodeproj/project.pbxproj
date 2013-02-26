@@ -16,6 +16,19 @@
 		BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */; };
 		BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9516D8AF6600F44750 /* ImageOperate.m */; };
 		BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */; };
+		BA0C1D9716DC8D30000D534A /* ShareSend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */; };
+		BA0C1D9A16DC8D42000D534A /* ShareSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */; };
+		BA0C1DA116DC8DAA000D534A /* Tc32_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */; };
+		BA0C1DA216DC8DAA000D534A /* TCweiboicon32.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */; };
+		BA0C1DA316DC8DAA000D534A /* weibo32_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */; };
+		BA0C1DA416DC8DAA000D534A /* weibo32.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9E16DC8DAA000D534A /* weibo32.png */; };
+		BA0C1DA516DC8DAA000D534A /* weibo64_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */; };
+		BA0C1DA616DC8DAA000D534A /* weibo64.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1DA016DC8DAA000D534A /* weibo64.png */; };
+		BA0C1DA916DC8DE2000D534A /* OauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1DA816DC8DE2000D534A /* OauthViewController.m */; };
+		BA0C1DAC16DC8E47000D534A /* UserTokenFileOperate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1DAB16DC8E47000D534A /* UserTokenFileOperate.m */; };
+		BA0C1DAE16DC8E83000D534A /* UserInfoPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */; };
+		BA0C1DB116DC8EA7000D534A /* UserOauthData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1DB016DC8EA7000D534A /* UserOauthData.m */; };
+		BA0C1DB416DC8F08000D534A /* OauthKey.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1DB316DC8F08000D534A /* OauthKey.m */; };
 		BA0C5F2716DB0B99001EB5DB /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F2616DB0B99001EB5DB /* Placeholder.png */; };
 		BA0C5F2A16DB0CB4001EB5DB /* ColorHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */; };
 		BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */; };
@@ -89,6 +102,27 @@
 		BA05DB9516D8AF6600F44750 /* ImageOperate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOperate.m; sourceTree = "<group>"; };
 		BA05DB9B16D8B5CF00F44750 /* ColorsData+Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ColorsData+Operator.h"; sourceTree = "<group>"; };
 		BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ColorsData+Operator.m"; sourceTree = "<group>"; };
+		BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShareSend.storyboard; sourceTree = "<group>"; };
+		BA0C1D9816DC8D42000D534A /* ShareSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSendViewController.h; sourceTree = "<group>"; };
+		BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSendViewController.m; sourceTree = "<group>"; };
+		BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tc32_Black.png; sourceTree = "<group>"; };
+		BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TCweiboicon32.png; sourceTree = "<group>"; };
+		BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo32_Black.png; sourceTree = "<group>"; };
+		BA0C1D9E16DC8DAA000D534A /* weibo32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo32.png; sourceTree = "<group>"; };
+		BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo64_Black.png; sourceTree = "<group>"; };
+		BA0C1DA016DC8DAA000D534A /* weibo64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo64.png; sourceTree = "<group>"; };
+		BA0C1DA716DC8DE2000D534A /* OauthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OauthViewController.h; sourceTree = "<group>"; };
+		BA0C1DA816DC8DE2000D534A /* OauthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthViewController.m; sourceTree = "<group>"; };
+		BA0C1DAA16DC8E47000D534A /* UserTokenFileOperate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTokenFileOperate.h; sourceTree = "<group>"; };
+		BA0C1DAB16DC8E47000D534A /* UserTokenFileOperate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTokenFileOperate.m; sourceTree = "<group>"; };
+		BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInfoPropertyList.plist; sourceTree = "<group>"; };
+		BA0C1DAF16DC8EA7000D534A /* UserOauthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOauthData.h; sourceTree = "<group>"; };
+		BA0C1DB016DC8EA7000D534A /* UserOauthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOauthData.m; sourceTree = "<group>"; };
+		BA0C1DB216DC8F08000D534A /* OauthKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OauthKey.h; sourceTree = "<group>"; };
+		BA0C1DB316DC8F08000D534A /* OauthKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthKey.m; sourceTree = "<group>"; };
+		BA0C1DB516DC9B03000D534A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
+		BA0C1DB616DC9B03000D534A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
+		BA0C1DB716DC9B03000D534A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BA0C5F2616DB0B99001EB5DB /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		BA0C5F2816DB0CB4001EB5DB /* ColorHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHistoryTableViewCell.h; sourceTree = "<group>"; };
 		BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHistoryTableViewCell.m; sourceTree = "<group>"; };
@@ -207,6 +241,8 @@
 			children = (
 				BA0C5F2E16DB31F9001EB5DB /* ColorsData.h */,
 				BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */,
+				BA0C1DAF16DC8EA7000D534A /* UserOauthData.h */,
+				BA0C1DB016DC8EA7000D534A /* UserOauthData.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -306,6 +342,13 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
+				BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */,
+				BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */,
+				BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */,
+				BA0C1D9E16DC8DAA000D534A /* weibo32.png */,
+				BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */,
+				BA0C1DA016DC8DAA000D534A /* weibo64.png */,
 				BA0C5F2616DB0B99001EB5DB /* Placeholder.png */,
 				BA05DB8B16D897E100F44750 /* TakePhoto.png */,
 				BA23903016D7708C001E79AC /* SaveButton.png */,
@@ -347,6 +390,10 @@
 				BA05DB9516D8AF6600F44750 /* ImageOperate.m */,
 				BA0C5F3716DB3FA2001EB5DB /* SMSAndMailManager.h */,
 				BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */,
+				BA0C1DAA16DC8E47000D534A /* UserTokenFileOperate.h */,
+				BA0C1DAB16DC8E47000D534A /* UserTokenFileOperate.m */,
+				BA0C1DB216DC8F08000D534A /* OauthKey.h */,
+				BA0C1DB316DC8F08000D534A /* OauthKey.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -370,6 +417,10 @@
 				BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */,
 				BA0C5F3416DB3F4B001EB5DB /* AboutViewController.h */,
 				BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */,
+				BA0C1D9816DC8D42000D534A /* ShareSendViewController.h */,
+				BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */,
+				BA0C1DA716DC8DE2000D534A /* OauthViewController.h */,
+				BA0C1DA816DC8DE2000D534A /* OauthViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -382,6 +433,7 @@
 				BADB822816D3163A00005C86 /* ImageChopper.storyboard */,
 				BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */,
 				BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */,
+				BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -431,6 +483,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = BADB81DB16D1D13D00005C86;
 			productRefGroup = BADB81E516D1D13D00005C86 /* Products */;
@@ -470,6 +523,14 @@
 				BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */,
 				BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */,
 				BA7D5A5516DC5B2F005E21F7 /* InfColorPickerView.xib in Resources */,
+				BA0C1D9716DC8D30000D534A /* ShareSend.storyboard in Resources */,
+				BA0C1DA116DC8DAA000D534A /* Tc32_Black.png in Resources */,
+				BA0C1DA216DC8DAA000D534A /* TCweiboicon32.png in Resources */,
+				BA0C1DA316DC8DAA000D534A /* weibo32_Black.png in Resources */,
+				BA0C1DA416DC8DAA000D534A /* weibo32.png in Resources */,
+				BA0C1DA516DC8DAA000D534A /* weibo64_Black.png in Resources */,
+				BA0C1DA616DC8DAA000D534A /* weibo64.png in Resources */,
+				BA0C1DAE16DC8E83000D534A /* UserInfoPropertyList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +568,11 @@
 				BA7D5A5716DC5B2F005E21F7 /* InfHSBSupport.m in Sources */,
 				BA7D5A5816DC5B2F005E21F7 /* InfSourceColorView.m in Sources */,
 				BA7D5A5C16DC6420005E21F7 /* ColorPickerTabBarController.m in Sources */,
+				BA0C1D9A16DC8D42000D534A /* ShareSendViewController.m in Sources */,
+				BA0C1DA916DC8DE2000D534A /* OauthViewController.m in Sources */,
+				BA0C1DAC16DC8E47000D534A /* UserTokenFileOperate.m in Sources */,
+				BA0C1DB116DC8EA7000D534A /* UserOauthData.m in Sources */,
+				BA0C1DB416DC8F08000D534A /* OauthKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +583,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BADB81F116D1D13D00005C86 /* en */,
+				BA0C1DB716DC9B03000D534A /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -525,6 +592,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BADB820016D1D13D00005C86 /* en */,
+				BA0C1DB516DC9B03000D534A /* zh-Hans */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -533,6 +601,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BADB820316D1D13D00005C86 /* en */,
+				BA0C1DB616DC9B03000D534A /* zh-Hans */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";

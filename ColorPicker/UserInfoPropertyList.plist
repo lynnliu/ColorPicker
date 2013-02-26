@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>username</key>
+	<string></string>
+	<key>userToken_Sina</key>
+	<string></string>
+	<key>userBond_Sina</key>
+	<string></string>
+	<key>userBondTime_Sina</key>
+	<string></string>
+	<key>UID_Sina</key>
+	<string></string>
+	<key>userToken_TC</key>
+	<string></string>
+	<key>userBond_TC</key>
+	<string></string>
+	<key>userBondTime_TC</key>
+	<string></string>
+	<key>UID_TC</key>
+	<string></string>
+	<key>versionNO</key>
+	<string></string>
+</dict>
+</plist>
