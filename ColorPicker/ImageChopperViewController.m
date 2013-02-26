@@ -14,7 +14,7 @@
 #import "ImageOperate.h"
 #import "ColorHistoryTableViewController.h"
 
-@interface ImageChopperViewController ()<UIGestureRecognizerDelegate,PickedImageVIewDelegate>
+@interface ImageChopperViewController ()<UIGestureRecognizerDelegate,PickedImageVIewDelegate,UIAlertViewDelegate>
 {
     UIView *colorPatone;
     UILabel *red;
@@ -168,13 +168,30 @@
                                                                         nil];
         [document.managedObjectContext performBlock:^{
             [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
-                ColorHistoryTableViewController *chtvc = [[ColorHistoryTableViewController alloc] init];
-                UIStoryboard *story = [UIStoryboard storyboardWithName:@"ColorHistoryTableViewController" bundle:nil];
-                chtvc = story.instantiateInitialViewController;
-                [self.navigationController pushViewController:chtvc animated:YES];
+                [AlertViewManager alertViewShow:self cancel:@"返回" confirm:@"查看" msg:@"保存成功，您可以进行如下操作！"];    
             });
         }];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        case 1:{
+            ColorHistoryTableViewController *chtvc = [[ColorHistoryTableViewController alloc] init];
+            UIStoryboard *story = [UIStoryboard storyboardWithName:@"ColorHistoryTableViewController" bundle:nil];
+            chtvc = story.instantiateInitialViewController;
+            [self.navigationController pushViewController:chtvc animated:YES];
+
+        }
+            break;
+        default:
+            break;
     }
 }
 
