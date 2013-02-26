@@ -55,12 +55,10 @@
     NSError *error = nil;
     NSArray *matches = [context executeFetchRequest:request error:&error];
 
-    if (!matches || [matches count] > 1) {
+    if (!matches || [matches count] == 0) {
         NSLog(@"错误发生了！matches in ColorsData(Operator, prepareToDeletion) ");
-    }else if ([matches count] == 1) 
+    }else
         [context deleteObject:[matches lastObject]];
-    else
-        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"发生错误！"];
 }
 
 @end
