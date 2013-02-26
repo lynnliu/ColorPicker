@@ -55,16 +55,15 @@
     
     CGSize labelSize = [msg sizeWithFont:[UIFont boldSystemFontOfSize:17.0f]
                        constrainedToSize:CGSizeMake(220, 1000)
-                           lineBreakMode:UILineBreakModeCharacterWrap];
+                           lineBreakMode:NSLineBreakByCharWrapping];
+
     int height = 100;
     if (labelSize.height > height) height = labelSize.height;
     msgLabel.frame = CGRectMake(50, 160, 220, height);
     msgLabel.text = [NSString stringWithFormat:@"  %@",msg];
     msgLabel.font = [UIFont boldSystemFontOfSize:17];
     msgLabel.textColor = [UIColor blackColor];
-    msgLabel.textAlignment = UITextAlignmentCenter;
     msgLabel.numberOfLines = 100;// 不可少Label属性之一
-    msgLabel.lineBreakMode = UILineBreakModeCharacterWrap;// 不可少Label属性之二
     [alertBackView addSubview:msgLabel];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(253, 147, 30, 30)];

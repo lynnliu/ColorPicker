@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(goBackward:)];
     swipe.delegate = self;

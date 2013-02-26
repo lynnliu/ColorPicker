@@ -34,6 +34,19 @@
 		BA23902D16D76EF8001E79AC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902716D76EF8001E79AC /* Icon@2x.png */; };
 		BA23902F16D76F02001E79AC /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = BA23902E16D76F02001E79AC /* iTunesArtwork */; };
 		BA23903116D7708C001E79AC /* SaveButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23903016D7708C001E79AC /* SaveButton.png */; };
+		BA7D5A5216DC5B2F005E21F7 /* InfColorBarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7D5A5316DC5B2F005E21F7 /* InfColorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4716DC5B2F005E21F7 /* InfColorIndicatorView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7D5A5416DC5B2F005E21F7 /* InfColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4A16DC5B2F005E21F7 /* InfColorPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7D5A5516DC5B2F005E21F7 /* InfColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA7D5A4B16DC5B2F005E21F7 /* InfColorPickerView.xib */; };
+		BA7D5A5616DC5B2F005E21F7 /* InfColorSquarePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4D16DC5B2F005E21F7 /* InfColorSquarePicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7D5A5716DC5B2F005E21F7 /* InfHSBSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4F16DC5B2F005E21F7 /* InfHSBSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7D5A5816DC5B2F005E21F7 /* InfSourceColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A5116DC5B2F005E21F7 /* InfSourceColorView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7D5A5C16DC6420005E21F7 /* ColorPickerTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A5B16DC6420005E21F7 /* ColorPickerTabBarController.m */; };
+		BA7D5A5E16DC6782005E21F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A5D16DC6782005E21F7 /* SystemConfiguration.framework */; };
+		BA7D5A6016DC678C005E21F7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A5F16DC678C005E21F7 /* AdSupport.framework */; };
+		BA7D5A6216DC6797005E21F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */; };
+		BA7D5A6416DC67A0005E21F7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6316DC679F005E21F7 /* StoreKit.framework */; };
+		BA7D5A6616DC67A9005E21F7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6516DC67A9005E21F7 /* PassKit.framework */; };
 		BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E716D1D13D00005C86 /* UIKit.framework */; };
 		BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E916D1D13D00005C86 /* Foundation.framework */; };
 		BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81EB16D1D13D00005C86 /* CoreGraphics.framework */; };
@@ -98,6 +111,27 @@
 		BA23902716D76EF8001E79AC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BA23902E16D76F02001E79AC /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		BA23903016D7708C001E79AC /* SaveButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveButton.png; sourceTree = "<group>"; };
+		BA7D5A4416DC5B2F005E21F7 /* InfColorBarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorBarPicker.h; sourceTree = "<group>"; };
+		BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorBarPicker.m; sourceTree = "<group>"; };
+		BA7D5A4616DC5B2F005E21F7 /* InfColorIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorIndicatorView.h; sourceTree = "<group>"; };
+		BA7D5A4716DC5B2F005E21F7 /* InfColorIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorIndicatorView.m; sourceTree = "<group>"; };
+		BA7D5A4816DC5B2F005E21F7 /* InfColorPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorPicker.h; sourceTree = "<group>"; };
+		BA7D5A4916DC5B2F005E21F7 /* InfColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorPickerController.h; sourceTree = "<group>"; };
+		BA7D5A4A16DC5B2F005E21F7 /* InfColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorPickerController.m; sourceTree = "<group>"; };
+		BA7D5A4B16DC5B2F005E21F7 /* InfColorPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfColorPickerView.xib; sourceTree = "<group>"; };
+		BA7D5A4C16DC5B2F005E21F7 /* InfColorSquarePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorSquarePicker.h; sourceTree = "<group>"; };
+		BA7D5A4D16DC5B2F005E21F7 /* InfColorSquarePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorSquarePicker.m; sourceTree = "<group>"; };
+		BA7D5A4E16DC5B2F005E21F7 /* InfHSBSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfHSBSupport.h; sourceTree = "<group>"; };
+		BA7D5A4F16DC5B2F005E21F7 /* InfHSBSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfHSBSupport.m; sourceTree = "<group>"; };
+		BA7D5A5016DC5B2F005E21F7 /* InfSourceColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfSourceColorView.h; sourceTree = "<group>"; };
+		BA7D5A5116DC5B2F005E21F7 /* InfSourceColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfSourceColorView.m; sourceTree = "<group>"; };
+		BA7D5A5A16DC6420005E21F7 /* ColorPickerTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerTabBarController.h; sourceTree = "<group>"; };
+		BA7D5A5B16DC6420005E21F7 /* ColorPickerTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerTabBarController.m; sourceTree = "<group>"; };
+		BA7D5A5D16DC6782005E21F7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BA7D5A5F16DC678C005E21F7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BA7D5A6316DC679F005E21F7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BA7D5A6516DC67A9005E21F7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB81E716D1D13D00005C86 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BADB81E916D1D13D00005C86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,6 +173,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7D5A6616DC67A9005E21F7 /* PassKit.framework in Frameworks */,
+				BA7D5A6416DC67A0005E21F7 /* StoreKit.framework in Frameworks */,
+				BA7D5A6216DC6797005E21F7 /* CoreLocation.framework in Frameworks */,
+				BA7D5A6016DC678C005E21F7 /* AdSupport.framework in Frameworks */,
+				BA7D5A5E16DC6782005E21F7 /* SystemConfiguration.framework in Frameworks */,
 				BA0C5F3B16DB40BA001EB5DB /* MessageUI.framework in Frameworks */,
 				BA05DB8816D895D000F44750 /* CoreData.framework in Frameworks */,
 				BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */,
@@ -181,6 +220,27 @@
 			name = Business;
 			sourceTree = "<group>";
 		};
+		BA7D5A4316DC5B2F005E21F7 /* InfColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				BA7D5A4416DC5B2F005E21F7 /* InfColorBarPicker.h */,
+				BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */,
+				BA7D5A4616DC5B2F005E21F7 /* InfColorIndicatorView.h */,
+				BA7D5A4716DC5B2F005E21F7 /* InfColorIndicatorView.m */,
+				BA7D5A4816DC5B2F005E21F7 /* InfColorPicker.h */,
+				BA7D5A4916DC5B2F005E21F7 /* InfColorPickerController.h */,
+				BA7D5A4A16DC5B2F005E21F7 /* InfColorPickerController.m */,
+				BA7D5A4B16DC5B2F005E21F7 /* InfColorPickerView.xib */,
+				BA7D5A4C16DC5B2F005E21F7 /* InfColorSquarePicker.h */,
+				BA7D5A4D16DC5B2F005E21F7 /* InfColorSquarePicker.m */,
+				BA7D5A4E16DC5B2F005E21F7 /* InfHSBSupport.h */,
+				BA7D5A4F16DC5B2F005E21F7 /* InfHSBSupport.m */,
+				BA7D5A5016DC5B2F005E21F7 /* InfSourceColorView.h */,
+				BA7D5A5116DC5B2F005E21F7 /* InfSourceColorView.m */,
+			);
+			path = InfColorPicker;
+			sourceTree = "<group>";
+		};
 		BADB81DB16D1D13D00005C86 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +261,11 @@
 		BADB81E616D1D13D00005C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA7D5A6516DC67A9005E21F7 /* PassKit.framework */,
+				BA7D5A6316DC679F005E21F7 /* StoreKit.framework */,
+				BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */,
+				BA7D5A5F16DC678C005E21F7 /* AdSupport.framework */,
+				BA7D5A5D16DC6782005E21F7 /* SystemConfiguration.framework */,
 				BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */,
 				7E8F818816D9056F0086258D /* libDomobAdSDK.a */,
 				BA05DB8916D895E700F44750 /* CoreFoundation.framework */,
@@ -266,6 +331,7 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA7D5A4316DC5B2F005E21F7 /* InfColorPicker */,
 				7E8F818A16D9057E0086258D /* AdSDK */,
 				BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */,
 				BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */,
@@ -288,6 +354,8 @@
 		BADB820F16D1D6B400005C86 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA7D5A5A16DC6420005E21F7 /* ColorPickerTabBarController.h */,
+				BA7D5A5B16DC6420005E21F7 /* ColorPickerTabBarController.m */,
 				BADB820516D1D13D00005C86 /* ColorPickerViewController.h */,
 				BADB820616D1D13D00005C86 /* ColorPickerViewController.m */,
 				BADB821116D1D6F200005C86 /* PickerInitViewController.h */,
@@ -401,6 +469,7 @@
 				BA0C5F2716DB0B99001EB5DB /* Placeholder.png in Resources */,
 				BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */,
 				BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */,
+				BA7D5A5516DC5B2F005E21F7 /* InfColorPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +500,13 @@
 				BA0C5F3016DB31F9001EB5DB /* ColorsData.m in Sources */,
 				BA0C5F3616DB3F4B001EB5DB /* AboutViewController.m in Sources */,
 				BA0C5F3916DB3FA2001EB5DB /* SMSAndMailManager.m in Sources */,
+				BA7D5A5216DC5B2F005E21F7 /* InfColorBarPicker.m in Sources */,
+				BA7D5A5316DC5B2F005E21F7 /* InfColorIndicatorView.m in Sources */,
+				BA7D5A5416DC5B2F005E21F7 /* InfColorPickerController.m in Sources */,
+				BA7D5A5616DC5B2F005E21F7 /* InfColorSquarePicker.m in Sources */,
+				BA7D5A5716DC5B2F005E21F7 /* InfHSBSupport.m in Sources */,
+				BA7D5A5816DC5B2F005E21F7 /* InfSourceColorView.m in Sources */,
+				BA7D5A5C16DC6420005E21F7 /* ColorPickerTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +566,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52180073-5C68-40E8-909A-D63D629D6A9A";
@@ -518,7 +594,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "629F01EE-3AAA-48D1-9889-8DB52A667CE5";
@@ -536,7 +612,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DomobAdSDK\"",
@@ -557,7 +633,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ColorPicker/ColorPicker-Prefix.pch";
 				INFOPLIST_FILE = "ColorPicker/ColorPicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DomobAdSDK\"",

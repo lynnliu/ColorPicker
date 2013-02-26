@@ -97,7 +97,6 @@
 {
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(230, 330, 80, 80)];
     [button setTitle:@"保存" forState:UIControlStateNormal];
-    [button.titleLabel setTextAlignment:UITextAlignmentCenter];
     [button addTarget:self action:@selector(saveTheColor:) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundImage:[UIImage imageNamed:@"SaveButton.png"] forState:UIControlStateNormal];
     

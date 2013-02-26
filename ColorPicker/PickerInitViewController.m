@@ -9,8 +9,9 @@
 #import "PickerInitViewController.h"
 #import "LocalPicPicker.h"
 #import "ImageChopperViewController.h"
+#import "InfColorPickerController.h"
 
-@interface PickerInitViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface PickerInitViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,InfColorPickerControllerDelegate>
 
 @end
 
@@ -52,4 +53,18 @@
     [LocalPicPicker localPicPicker:self pickerSource:UIImagePickerControllerSourceTypeCamera];
 }
 
+- (IBAction)showColors:(id)sender
+{
+    InfColorPickerController* picker = [ InfColorPickerController colorPickerViewController ];
+    
+//    picker.sourceColor = self.color;
+    picker.delegate = self;
+    [self.navigationController pushViewController:picker animated:YES];
+//    [ picker presentModallyOverViewController: self ];
+//
+//    AllColorsViewController *chtvc = [[AllColorsViewController alloc] init];
+//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"AllColorsViewController" bundle:nil];
+//    chtvc = story.instantiateInitialViewController;
+//    [self.navigationController pushViewController:chtvc animated:YES];
+}
 @end

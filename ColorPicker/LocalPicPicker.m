@@ -27,8 +27,7 @@
 
 +(void)picProcesser:(UIImagePickerController *)picker viewController:(id)viewController mediaInfo:(NSDictionary *)info
 {
-    [picker dismissModalViewControllerAnimated:YES];
-
+    [picker dismissViewControllerAnimated:YES completion:^{}];
     ImageChopperViewController *imageChopper = [[ImageChopperViewController alloc] init];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"ImageChopper" bundle:nil];
     imageChopper = story.instantiateInitialViewController;
