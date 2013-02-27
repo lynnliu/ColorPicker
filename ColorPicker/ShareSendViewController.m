@@ -187,7 +187,7 @@
     NSString *url = OAUTH_URL_TC;
     url = [url stringByAppendingFormat:@"?client_id=%@",APP_KEY_TC];
     url = [url stringByAppendingString:@"&response_type=token"];
-    url = [url stringByAppendingFormat:@"&redirect_uri=%@",YOUR_REGISTERED_REDIRECT_URI];
+    url = [url stringByAppendingFormat:@"&redirect_uri=%@",TC_Redirect_URL];
     NSArray *senderObj = [NSArray arrayWithObjects:url,@"TC", nil];
     [self performSegueWithIdentifier:@"oauth 2.0" sender:senderObj];
 }

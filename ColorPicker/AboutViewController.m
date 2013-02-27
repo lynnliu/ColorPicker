@@ -5,7 +5,7 @@
 //  Created by  lynn on 2/25/13.
 //  Copyright (c) 2013 uLynn. All rights reserved.
 //
-#define ITUNESURL @"http://itunes.apple.com/us/app/vgolf/id543834543?ls=1&mt=8"
+#define ITUNESURL @"https://itunes.apple.com/us/app/color-picker-for-developer/id608956277?ls=1&mt=8"
 
 #import "AboutViewController.h"
 #import "SMSAndMailManager.h"

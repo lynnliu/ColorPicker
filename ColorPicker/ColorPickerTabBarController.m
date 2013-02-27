@@ -89,7 +89,7 @@
     ShareSendViewController *ssvc = [[ShareSendViewController alloc] init];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"ShareSend" bundle:nil];
     ssvc = story.instantiateInitialViewController;
-    ssvc.txt = @"发现这样一个程序，屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! http://www.vgolf.cn/indexm.aspx";
+    ssvc.txt = @"发现这个程序，屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! https://itunes.apple.com/us/app/color-picker-for-developer/id608956277?ls=1&mt=8";
     [self presentModalViewController:ssvc animated:YES];
 }
 
