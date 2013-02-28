@@ -208,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="-7" y="-5"/>
         </scene>
-        <!--Navigation Controller - 取色-->
+        <!--Color Picker Root View Controller - 取色-->
         <scene sceneID="XfD-of-cQ5">
             <objects>
-                <navigationController id="ENR-Tz-tGm" sceneMemberID="viewController">
+                <navigationController id="ENR-Tz-tGm" customClass="ColorPickerRootViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="取色" id="ETu-hg-Ynu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LWf-cQ-fNb">
@@ -234,7 +234,7 @@
         <image name="TakePhoto.png" width="548" height="89"/>
     </resources>
     <classes>
-        <class className="AboutViewController" superclassName="UIViewController">
+        <class className="AboutViewController" superclassName="ColorPickerBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
             <relationships>
                 <relationship kind="action" name="mailMe:"/>
@@ -248,11 +248,11 @@
         <class className="ColorPickerBaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerBaseViewController.h"/>
         </class>
+        <class className="ColorPickerRootViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerRootViewController.h"/>
+        </class>
         <class className="ColorPickerTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerTabBarController.h"/>
-            <relationships>
-                <relationship kind="action" name="addWeiboShare:" candidateClass="UIBarButtonItem"/>
-            </relationships>
         </class>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
