@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0E73AD16DE592000DBA37D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73AC16DE592000DBA37D /* AVFoundation.framework */; };
+		7E0E73AF16DE593100DBA37D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73AE16DE593100DBA37D /* AudioToolbox.framework */; };
+		7E0E73B116DE593B00DBA37D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73B016DE593B00DBA37D /* AddressBook.framework */; };
+		7E0E73B316DE594800DBA37D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73B216DE594800DBA37D /* CoreMedia.framework */; };
+		7E0E73B516DE595000DBA37D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73B416DE595000DBA37D /* CoreTelephony.framework */; };
+		7E0E73B716DE595C00DBA37D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73B616DE595C00DBA37D /* EventKit.framework */; };
+		7E0E73B916DE597400DBA37D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0E73B816DE597400DBA37D /* QuartzCore.framework */; };
 		7E8F818916D9056F0086258D /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E8F818816D9056F0086258D /* libDomobAdSDK.a */; };
 		7E8F819016D9059D0086258D /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F818F16D9059D0086258D /* DomobAdSDKBundle.bundle */; };
 		BA05DB7B16D8579300F44750 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB7A16D8579300F44750 /* CoreDataTableViewController.m */; };
@@ -47,6 +54,10 @@
 		BA23902D16D76EF8001E79AC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902716D76EF8001E79AC /* Icon@2x.png */; };
 		BA23902F16D76F02001E79AC /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = BA23902E16D76F02001E79AC /* iTunesArtwork */; };
 		BA23903116D7708C001E79AC /* SaveButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23903016D7708C001E79AC /* SaveButton.png */; };
+		BA4DF9FA16DDF1C90065AB04 /* WebChat.png in Resources */ = {isa = PBXBuildFile; fileRef = BA4DF9F916DDF1C90065AB04 /* WebChat.png */; };
+		BA66343B16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA66343A16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a */; };
+		BA66343D16DF15EE00F160CD /* History.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66343C16DF15EE00F160CD /* History.png */; };
+		BA66343F16DF15F400F160CD /* Favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66343E16DF15F400F160CD /* Favourite.png */; };
 		BA7D5A5216DC5B2F005E21F7 /* InfColorBarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA7D5A5316DC5B2F005E21F7 /* InfColorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4716DC5B2F005E21F7 /* InfColorIndicatorView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA7D5A5416DC5B2F005E21F7 /* InfColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4A16DC5B2F005E21F7 /* InfColorPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -60,6 +71,7 @@
 		BA7D5A6216DC6797005E21F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */; };
 		BA7D5A6416DC67A0005E21F7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6316DC679F005E21F7 /* StoreKit.framework */; };
 		BA7D5A6616DC67A9005E21F7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6516DC67A9005E21F7 /* PassKit.framework */; };
+		BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */; };
 		BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E716D1D13D00005C86 /* UIKit.framework */; };
 		BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E916D1D13D00005C86 /* Foundation.framework */; };
 		BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81EB16D1D13D00005C86 /* CoreGraphics.framework */; };
@@ -71,7 +83,6 @@
 		BADB81FE16D1D13D00005C86 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BADB81FD16D1D13D00005C86 /* Default-568h@2x.png */; };
 		BADB820116D1D13D00005C86 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */; };
 		BADB820416D1D13D00005C86 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */; };
-		BADB820716D1D13D00005C86 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB820616D1D13D00005C86 /* ColorPickerViewController.m */; };
 		BADB821316D1D6F200005C86 /* PickerInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821216D1D6F200005C86 /* PickerInitViewController.m */; };
 		BADB821716D1DA5600005C86 /* ColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821616D1DA5600005C86 /* ColorPickerBaseViewController.m */; };
 		BADB821A16D1DAE300005C86 /* LocalPicPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB821916D1DAE300005C86 /* LocalPicPicker.m */; };
@@ -84,6 +95,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0E73AC16DE592000DBA37D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7E0E73AE16DE593100DBA37D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7E0E73B016DE593B00DBA37D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		7E0E73B216DE594800DBA37D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7E0E73B416DE595000DBA37D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7E0E73B616DE595C00DBA37D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		7E0E73B816DE597400DBA37D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E8F818816D9056F0086258D /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDomobAdSDK.a; path = DomobAdSDK/libDomobAdSDK.a; sourceTree = "<group>"; };
 		7E8F818B16D905930086258D /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMAdView.h; path = DomobAdSDK/DMAdView.h; sourceTree = SOURCE_ROOT; };
 		7E8F818C16D905930086258D /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMInterstitialAdController.h; path = DomobAdSDK/DMInterstitialAdController.h; sourceTree = SOURCE_ROOT; };
@@ -145,6 +163,15 @@
 		BA23902716D76EF8001E79AC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BA23902E16D76F02001E79AC /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		BA23903016D7708C001E79AC /* SaveButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveButton.png; sourceTree = "<group>"; };
+		BA4DF9EF16DDE8C00065AB04 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		BA4DF9F016DDE8C00065AB04 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		BA4DF9F116DDE8C00065AB04 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BA4DF9F516DDF0AA0065AB04 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		BA4DF9F616DDF0AA0065AB04 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		BA4DF9F916DDF1C90065AB04 /* WebChat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WebChat.png; sourceTree = "<group>"; };
+		BA66343A16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		BA66343C16DF15EE00F160CD /* History.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = History.png; sourceTree = "<group>"; };
+		BA66343E16DF15F400F160CD /* Favourite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favourite.png; sourceTree = "<group>"; };
 		BA7D5A4416DC5B2F005E21F7 /* InfColorBarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorBarPicker.h; sourceTree = "<group>"; };
 		BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorBarPicker.m; sourceTree = "<group>"; };
 		BA7D5A4616DC5B2F005E21F7 /* InfColorIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorIndicatorView.h; sourceTree = "<group>"; };
@@ -166,6 +193,8 @@
 		BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA7D5A6316DC679F005E21F7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA7D5A6516DC67A9005E21F7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerRootViewController.h; sourceTree = "<group>"; };
+		BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerRootViewController.m; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB81E716D1D13D00005C86 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BADB81E916D1D13D00005C86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,8 +210,6 @@
 		BADB81FD16D1D13D00005C86 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BADB820016D1D13D00005C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		BADB820316D1D13D00005C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		BADB820516D1D13D00005C86 /* ColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
-		BADB820616D1D13D00005C86 /* ColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
 		BADB821116D1D6F200005C86 /* PickerInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerInitViewController.h; sourceTree = "<group>"; };
 		BADB821216D1D6F200005C86 /* PickerInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerInitViewController.m; sourceTree = "<group>"; };
 		BADB821516D1DA5600005C86 /* ColorPickerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerBaseViewController.h; sourceTree = "<group>"; };
@@ -207,6 +234,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0E73B916DE597400DBA37D /* QuartzCore.framework in Frameworks */,
+				7E0E73B716DE595C00DBA37D /* EventKit.framework in Frameworks */,
+				7E0E73B516DE595000DBA37D /* CoreTelephony.framework in Frameworks */,
+				7E0E73B316DE594800DBA37D /* CoreMedia.framework in Frameworks */,
+				7E0E73B116DE593B00DBA37D /* AddressBook.framework in Frameworks */,
+				7E0E73AF16DE593100DBA37D /* AudioToolbox.framework in Frameworks */,
+				7E0E73AD16DE592000DBA37D /* AVFoundation.framework in Frameworks */,
 				BA7D5A6616DC67A9005E21F7 /* PassKit.framework in Frameworks */,
 				BA7D5A6416DC67A0005E21F7 /* StoreKit.framework in Frameworks */,
 				BA7D5A6216DC6797005E21F7 /* CoreLocation.framework in Frameworks */,
@@ -218,6 +252,7 @@
 				BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */,
 				BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */,
 				7E8F818916D9056F0086258D /* libDomobAdSDK.a in Frameworks */,
+				BA66343B16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +289,16 @@
 				BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */,
 			);
 			name = Business;
+			sourceTree = "<group>";
+		};
+		BA4DF9F216DDF0930065AB04 /* WebChat */ = {
+			isa = PBXGroup;
+			children = (
+				BA66343A16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a */,
+				BA4DF9F516DDF0AA0065AB04 /* WXApi.h */,
+				BA4DF9F616DDF0AA0065AB04 /* WXApiObject.h */,
+			);
+			name = WebChat;
 			sourceTree = "<group>";
 		};
 		BA7D5A4316DC5B2F005E21F7 /* InfColorPicker */ = {
@@ -297,6 +342,13 @@
 		BADB81E616D1D13D00005C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E0E73B816DE597400DBA37D /* QuartzCore.framework */,
+				7E0E73B616DE595C00DBA37D /* EventKit.framework */,
+				7E0E73B416DE595000DBA37D /* CoreTelephony.framework */,
+				7E0E73B216DE594800DBA37D /* CoreMedia.framework */,
+				7E0E73B016DE593B00DBA37D /* AddressBook.framework */,
+				7E0E73AE16DE593100DBA37D /* AudioToolbox.framework */,
+				7E0E73AC16DE592000DBA37D /* AVFoundation.framework */,
 				BA7D5A6516DC67A9005E21F7 /* PassKit.framework */,
 				BA7D5A6316DC679F005E21F7 /* StoreKit.framework */,
 				BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */,
@@ -342,6 +394,9 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA66343E16DF15F400F160CD /* Favourite.png */,
+				BA66343C16DF15EE00F160CD /* History.png */,
+				BA4DF9F916DDF1C90065AB04 /* WebChat.png */,
 				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
 				BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */,
 				BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */,
@@ -374,6 +429,7 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA4DF9F216DDF0930065AB04 /* WebChat */,
 				BA7D5A4316DC5B2F005E21F7 /* InfColorPicker */,
 				7E8F818A16D9057E0086258D /* AdSDK */,
 				BA05DB7916D8579300F44750 /* CoreDataTableViewController.h */,
@@ -401,10 +457,10 @@
 		BADB820F16D1D6B400005C86 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */,
+				BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */,
 				BA7D5A5A16DC6420005E21F7 /* ColorPickerTabBarController.h */,
 				BA7D5A5B16DC6420005E21F7 /* ColorPickerTabBarController.m */,
-				BADB820516D1D13D00005C86 /* ColorPickerViewController.h */,
-				BADB820616D1D13D00005C86 /* ColorPickerViewController.m */,
 				BADB821116D1D6F200005C86 /* PickerInitViewController.h */,
 				BADB821216D1D6F200005C86 /* PickerInitViewController.m */,
 				BADB822516D213B600005C86 /* ImageChopperViewController.h */,
@@ -484,6 +540,7 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = BADB81DB16D1D13D00005C86;
 			productRefGroup = BADB81E516D1D13D00005C86 /* Products */;
@@ -531,6 +588,9 @@
 				BA0C1DA516DC8DAA000D534A /* weibo64_Black.png in Resources */,
 				BA0C1DA616DC8DAA000D534A /* weibo64.png in Resources */,
 				BA0C1DAE16DC8E83000D534A /* UserInfoPropertyList.plist in Resources */,
+				BA4DF9FA16DDF1C90065AB04 /* WebChat.png in Resources */,
+				BA66343D16DF15EE00F160CD /* History.png in Resources */,
+				BA66343F16DF15F400F160CD /* Favourite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +603,6 @@
 			files = (
 				BADB81F416D1D13D00005C86 /* main.m in Sources */,
 				BADB81F816D1D13D00005C86 /* ColorPickerAppDelegate.m in Sources */,
-				BADB820716D1D13D00005C86 /* ColorPickerViewController.m in Sources */,
 				BADB821316D1D6F200005C86 /* PickerInitViewController.m in Sources */,
 				BADB821716D1DA5600005C86 /* ColorPickerBaseViewController.m in Sources */,
 				BADB821A16D1DAE300005C86 /* LocalPicPicker.m in Sources */,
@@ -573,6 +632,7 @@
 				BA0C1DAC16DC8E47000D534A /* UserTokenFileOperate.m in Sources */,
 				BA0C1DB116DC8EA7000D534A /* UserOauthData.m in Sources */,
 				BA0C1DB416DC8F08000D534A /* OauthKey.m in Sources */,
+				BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +644,7 @@
 			children = (
 				BADB81F116D1D13D00005C86 /* en */,
 				BA0C1DB716DC9B03000D534A /* zh-Hans */,
+				BA4DF9F116DDE8C00065AB04 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -593,6 +654,7 @@
 			children = (
 				BADB820016D1D13D00005C86 /* en */,
 				BA0C1DB516DC9B03000D534A /* zh-Hans */,
+				BA4DF9EF16DDE8C00065AB04 /* ja */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -602,6 +664,7 @@
 			children = (
 				BADB820316D1D13D00005C86 /* en */,
 				BA0C1DB616DC9B03000D534A /* zh-Hans */,
+				BA4DF9F016DDE8C00065AB04 /* ja */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -664,6 +727,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "629F01EE-3AAA-48D1-9889-8DB52A667CE5";
@@ -685,6 +749,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DomobAdSDK\"",
+					"\"$(SRCROOT)/ColorPicker\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -706,6 +771,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DomobAdSDK\"",
+					"\"$(SRCROOT)/ColorPicker\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

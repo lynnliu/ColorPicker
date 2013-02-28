@@ -12,8 +12,10 @@
 #import "AlertViewManager.h"
 #import <QuartzCore/QuartzCore.h>
 #import "TimerManager.h"
+#import "WXApi.h"
+#import "ColorPickerRootViewController.h"
 
-@interface ShareSendViewController ()
+@interface ShareSendViewController () <UIActionSheetDelegate,WXApiDelegate,UIAlertViewDelegate>
 {
     UserOauthData *oauth;
     BOOL isBond_Sina;
@@ -26,6 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *sendTextView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigation;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationTitle;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightButton;
 
@@ -68,15 +71,27 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
+    [super viewDidLoad];    
     self.sendTextView.layer.cornerRadius = 6;
     
-    self.sendTextView.text = self.txt;
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+        self.sendTextView.text = self.txt;
+        self.navigationTitle.title = @"分享";
+    }else if ([currentLanguage isEqualToString:@"ja"]){
+        self.sendTextView.text = [NSString stringWithFormat:@"推奨する:%@",ITUNESURL];
+        self.navigationTitle.title = @"分かち合う";
+    }else{
+        self.sendTextView.text = [NSString stringWithFormat:@"I found this app is fun::%@",ITUNESURL];
+        self.navigationTitle.title = @"Share";
+    }
+    
     self.sinaStatus = YES;
     self.tcStatus = YES;
 }
 
+//微博认证
 - (IBAction)sinaAuth:(UIButton *)sender
 {
     if (self.sinaStatus && isBond_Sina) self.sinaStatus = NO;
@@ -101,6 +116,7 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+//微博分享
 - (IBAction)rightConfirm:(UIBarButtonItem *)sender {
     [self.sendTextView resignFirstResponder];
     
@@ -166,13 +182,10 @@
                 [indicator stopAnimating];
             });
         });
-    }else if(sum >140){
-        AlertViewManager *alert = [[AlertViewManager alloc] init];
-        [alert alertNewView:self msg:@"对不起, 字数大于140, 超过了微博的限制"];
-    }else{
-        AlertViewManager *alert = [[AlertViewManager alloc] init];
-        [alert alertNewView:self msg:@"对不起, 请不要发送空内容"];
-    }
+    }else if(sum >140)
+        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"对不起, 字数大于140, 超过了微博的限制"];
+    else
+        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"对不起, 请不要发送空内容"];
         
     return nil;
 }
@@ -226,20 +239,102 @@
                 [indicator stopAnimating];
             });
         });
-    }else if(sum >140){
-        AlertViewManager *alert = [[AlertViewManager alloc] init];
-        [alert alertNewView:self msg:@"对不起, 字数大于140, 超过了微博的限制"];
-    }else{
-        AlertViewManager *alert = [[AlertViewManager alloc] init];
-        [alert alertNewView:self msg:@"对不起, 请不要发送空内容"];
-    }
-    
+    }else if(sum >140)
+        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"对不起, 字数大于140, 超过了微博的限制"];
+    else
+        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"对不起, 请不要发送空内容"];
+
     return nil;
+}
+
+
+//微信分享
+- (IBAction)weiXinShare:(UIButton *)sender
+{
+    if (![WXApi isWXAppInstalled]){
+        NSString *title = @"";
+        NSString *cancel = @"";
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+            title = @"没有安装微信，要去下载吗？";
+            cancel = @"取消";
+        }else if ([currentLanguage isEqualToString:@"ja"]){
+            title = @"WeChat インストールされていません, これをダウンロードしよう";
+            cancel = @"キャンセル";
+        }else{
+            title = @"WeChat is not installed, would you like to download?";
+            cancel = @"Cancel";
+        }
+        [AlertViewManager alertViewShow:self cancel:cancel confirm:@"OK" msg:title];
+    }
+    else{
+        NSString *title = @"";
+        NSString *cancel = @"";
+        NSString *button1 = @"";
+        NSString *button2 = @"";
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+            title = @"微信分享";
+            cancel = @"取消";
+            button1 = @"分享到朋友圈";
+            button2 =@"分享到会话";
+        }else if ([currentLanguage isEqualToString:@"ja"]){
+            title = @"WeChat 分かち合う";
+            cancel = @"キャンセル";
+            button1 = @"友達の輪";
+            button2 =@"会話";
+        }else{
+            title = @"WeChat Share";
+            cancel = @"Cancel";
+            button1 = @"To Circle";
+            button2 =@"To Conversation";
+        }
+        
+        UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:title
+                                                            delegate:self
+                                                   cancelButtonTitle:cancel
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:button1,button2, nil];
+        [action showInView:self.view];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 1:
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://itunes.apple.com/us/app/wechat/id414478124?mt=8"]];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            [self sendReqWebChat:1 txt:self.sendTextView.text];
+            break;
+        case 1:
+            [self sendReqWebChat:0 txt:self.sendTextView.text];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)sendReqWebChat:(BOOL)reqType txt:(NSString *)msg
+{
+    [[(ColorPickerRootViewController *)self.presentingViewController rootViewDelegate] sendReqWebChat:reqType txt:msg];
 }
 
 - (void)viewDidUnload {
     [self setSina:nil];
     [self setTc:nil];
+    [self setNavigationTitle:nil];
     [super viewDidUnload];
 }
 @end

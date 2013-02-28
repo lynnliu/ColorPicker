@@ -7,15 +7,102 @@
 //
 
 #import "ColorPickerAppDelegate.h"
+#import "ColorPickerBaseViewController.h"
+#import "TimerManager.h"
 
 @implementation ColorPickerAppDelegate
+
+ColorPickerRootViewController *cptbc;
+DMSplashAdController *_splashAd;
+UIImageView *coverView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    cptbc = [[ColorPickerRootViewController alloc] init];
+    cptbc = (ColorPickerRootViewController *)self.window.rootViewController;
+    cptbc.rootViewDelegate = self;
+    [self.window makeKeyAndVisible];
+    [WXApi registerApp:WXAppID];
+    
+    // 初始化开屏广告控制器，此处使用的是测试ID，请登陆多盟官网（www.domob.cn）获取新的ID
+    _splashAd = [[DMSplashAdController alloc] initWithPublisherId:AdKey
+                                                           window:self.window
+                                                       background:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Default@2x.png"]]
+                                                        animation:YES];
+    _splashAd.delegate = self;
+    _splashAd.rootViewController = cptbc;
+    
+    coverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default@2x.png"]];
+    coverView.frame = CGRectMake(0, 20, 320, 940);
+    [self.window.rootViewController.view addSubview:coverView];
+    
+    [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
+    
     return YES;
 }
-							
+
+-(void)showAd:(id)sender
+{
+    if (_splashAd.isReady) [_splashAd present];
+}
+
+#pragma DMSplashAdController delegate
+// 加载广告成功后，回调该方法
+-(void)dmSplashAdWillPresentScreen:(DMSplashAdController *)dmSplashAd
+{
+    [coverView removeFromSuperview];
+    coverView = nil;
+}
+
+// 加载广告失败后，回调该方法
+-(void)dmSplashAdFailToLoadAd:(DMSplashAdController *)dmSplashAd withError:(NSError *)err
+{
+    [coverView removeFromSuperview];
+    coverView = nil;
+    NSLog(@"dmAd error = %@",err);
+}
+
+// 微信 分享
+-(void)sendReqWebChat:(BOOL)reqType txt:(NSString *)msg
+{
+    WXMediaMessage *message = [WXMediaMessage message];
+    [message setThumbImage:[UIImage imageNamed:@"icon.png"]];
+    
+    WXImageObject *ext = [WXImageObject object];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"icon@2x" ofType:@"png"];
+    ext.imageData = [NSData dataWithContentsOfFile:filePath] ;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = reqType ? WXSceneTimeline : WXSceneSession;
+    
+    [WXApi sendReq:req];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+-(void)onReq:(BaseReq *)req
+{
+    NSLog(@"req = %@",req);
+}
+
+-(void)onResp:(BaseResp *)resp
+{
+    NSLog(@"resp = %@",resp);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
