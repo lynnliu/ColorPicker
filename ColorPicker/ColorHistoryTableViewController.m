@@ -58,6 +58,7 @@
 {
     [super viewWillAppear:animated];
     self.tableView.rowHeight = 60;
+    self.title = @"Color Data";
     
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Default Color Database"];
