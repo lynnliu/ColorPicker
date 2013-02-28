@@ -44,6 +44,7 @@
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.distanceFilter = 500;
     }
+    [TimerManager timer:self timeInterval:25 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -55,17 +56,7 @@
         _dmTools = [[DMTools alloc] initWithPublisherId:AdKey];
         [_dmTools checkRateInfo];
     }
-    
-    //创建广告视图
-    if (!_dmAdView){
-        _dmAdView = [[DMAdView alloc] initWithPublisherId:AdKey size:DOMOB_AD_SIZE_320x50];
-        _dmAdView.delegate = self; // 设置 Delegate
-        _dmAdView.rootViewController = self; // 设置 RootViewController
-        [self.view addSubview:_dmAdView];
-        
-        [TimerManager timer:self timeInterval:25 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
-    }
-    
+
     if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
         [locationManager startUpdatingLocation];
 }
@@ -83,7 +74,11 @@
 -(void)showAd:(id)sender
 {
     if (self.tabBar.frame.origin.x == 0){
-        [_dmAdView loadAd];
+        _dmAdView = [[DMAdView alloc] initWithPublisherId:AdKey size:DOMOB_AD_SIZE_320x50];
+        _dmAdView.delegate = self; // 设置 Delegate
+        _dmAdView.rootViewController = self; // 设置 RootViewController
+        [self.view addSubview:_dmAdView];
+        
         UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
         [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
             // 设置⼲⼴广告视图的位置
@@ -120,10 +115,13 @@
 -(void)dismissAdView:(id)sender{
     UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
     [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
+        [closeButton removeFromSuperview];
         _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
     } completion:^(BOOL finished){
+        _dmAdView.delegate = nil;
+        _dmAdView.rootViewController =  nil;
+        _dmAdView = nil;
         [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
-        [closeButton removeFromSuperview];
     }];
 }
 
