@@ -76,7 +76,7 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="O1J-aI-FOD">
-                                <rect key="frame" x="20" y="90" width="280" height="128"/>
+                                <rect key="frame" x="20" y="90" width="280" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6vT-At-8Ct">
-                                <rect key="frame" x="100" y="236" width="48" height="41"/>
+                                <rect key="frame" x="100" y="206" width="48" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="WebChat.png">
@@ -162,7 +162,6 @@
         <class className="OauthViewController" superclassName="ColorPickerBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OauthViewController.h"/>
             <relationships>
-                <relationship kind="action" name="leftConfirm:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navigation" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
@@ -171,11 +170,6 @@
         <class className="ShareSendViewController" superclassName="ColorPickerBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareSendViewController.h"/>
             <relationships>
-                <relationship kind="action" name="leftConfirm:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="rightConfirm:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="sinaAuth:" candidateClass="UIButton"/>
-                <relationship kind="action" name="tcAuth:" candidateClass="UIButton"/>
-                <relationship kind="action" name="weiXinShare:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navigation" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="navigationTitle" candidateClass="UINavigationItem"/>
