@@ -35,22 +35,12 @@
 -(void)sendMail
 {
     MFMailComposeViewController *mail_send = [[MFMailComposeViewController alloc] init];
-    mail_send.mailComposeDelegate = self;
+    mail_send.mailComposeDelegate = self.viewController;
     [mail_send setSubject:@"About ColorPicker"];
     NSArray *array = [NSArray arrayWithObject:@"ulynncom@gmail.com"];
     [mail_send setToRecipients:array];
     [mail_send setMessageBody:self.msg isHTML:NO];
     [self.viewController presentModalViewController:mail_send animated:YES];
-}
-
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    switch (result) {
-        case MFMailComposeResultCancelled: break;
-        case MFMailComposeResultSent: break;
-        default: break;
-    }
-    [self.viewController dismissModalViewControllerAnimated:YES];
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "AboutViewController.h"
 #import "SMSAndMailManager.h"
 
-@interface AboutViewController ()
+@interface AboutViewController () <MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *version;
 @end
@@ -48,6 +48,16 @@
     mail.msg = @"to Developer:";
     mail.viewController = self;
     [mail sendMail];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result) {
+        case MFMailComposeResultCancelled: break;
+        case MFMailComposeResultSent: break;
+        default: break;
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload {

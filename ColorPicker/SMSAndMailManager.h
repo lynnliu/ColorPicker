@@ -12,7 +12,7 @@
 
 @class SMSAndMailManager;
 
-@interface SMSAndMailManager : NSObject <MFMessageComposeViewControllerDelegate,MFMailComposeViewControllerDelegate>
+@interface SMSAndMailManager : NSObject <MFMessageComposeViewControllerDelegate>
 
 @property (nonatomic,strong) id viewController;
 @property (nonatomic,strong) NSString *msg;
