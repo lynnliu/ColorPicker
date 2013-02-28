@@ -22,6 +22,7 @@
     UILabel *blue;
     UILabel *alpha;
     NSDictionary *colorsDictionary;
+    UIActivityIndicatorView *indicator;
 }
 @property (strong, nonatomic) UIImageView *choosedImageView;
 @end
@@ -120,24 +121,27 @@
 
 -(void)saveTheColor:(id)sender
 {
-    if (!red.text.length && !green.text.length && !blue.text.length && !alpha.text.length)
-        [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"请先触摸图片，选择颜色"];
-    else{
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"Default Color Database"];
-        
-        UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:[document.fileURL path]]){
-            [document openWithCompletionHandler:^(BOOL success){
-                if (success) [self documentIsReady:document];
-                if (!success) NSLog(@"couldn’t open document at %@", url);
-            }];
-        }else{
-            [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
-                if (success) [self documentIsReady:document];
-                if (!success) NSLog(@"couldn’t create document at %@", url);
-            }];
+    if (!indicator){
+        if (!red.text.length && !green.text.length && !blue.text.length && !alpha.text.length)
+            [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"请先触摸图片，选择颜色"];
+        else{
+            NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+            url = [url URLByAppendingPathComponent:@"Default Color Database"];
+            
+            UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:[document.fileURL path]]){
+                [document openWithCompletionHandler:^(BOOL success){
+                    if (success) [self documentIsReady:document];
+                    if (!success) NSLog(@"couldn’t open document at %@", url);
+                }];
+            }else{
+                [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+                    if (success) [self documentIsReady:document];
+                    if (!success) NSLog(@"couldn’t create document at %@", url);
+                }];
+            }
         }
+
     }
 }
 
@@ -162,14 +166,18 @@
                                                                         [colorsDictionary valueForKey:@"pointy"],@"pointy",
                                                                         dataString,@"createtime",
                                                                         nil];
+        indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicator startAnimating];
+        
         [document.managedObjectContext performBlock:^{
-            ColorsData *color = [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];
+            ColorsData *color = [ColorsData ColorWithPickerInfo:info inManagedObjectContext:context];    
             
-            if (color){
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [AlertViewManager alertViewShow:self cancel:@"返回" confirm:@"查看" msg:@"保存成功，您可以进行如下操作！"];
-                });
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [indicator stopAnimating];
+                indicator = nil;
+                if (color) [AlertViewManager alertViewShow:self cancel:@"返回" confirm:@"查看" msg:@"保存成功，您可以进行如下操作！"];
+                else [AlertViewManager alertViewShow:nil cancel:@"重试" confirm:nil msg:@"操作失败！"];
+            });
         }];
     }
 }
