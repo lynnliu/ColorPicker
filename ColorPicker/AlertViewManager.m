@@ -26,7 +26,18 @@
     [WCAlertView setDefaultStyle:WCAlertViewStyleWhite];
     if ([msg isKindOfClass:[NSNull class]]) msg = nil;
     
-    WCAlertView *alert = [[WCAlertView alloc] initWithTitle:@"温馨提示"
+    NSString *title = @"";
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+        title = @"温馨提示";
+    }else if ([currentLanguage isEqualToString:@"ja"]){
+        title = @"ヒント";
+    }else{
+        title = @"Tips";
+    }
+    
+    WCAlertView *alert = [[WCAlertView alloc] initWithTitle:title
                                                     message:msg
                                                    delegate:viewController
                                           cancelButtonTitle:cancelTitle
