@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ColorPickerBaseViewController.h"
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : ColorPickerBaseViewController
 
 @end
