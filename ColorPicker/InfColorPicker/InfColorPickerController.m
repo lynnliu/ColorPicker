@@ -111,8 +111,19 @@ static void HSVFromUIColor( UIColor* color, float* h, float* s, float* v )
 	self = [ super initWithNibName: nibNameOrNil bundle: nibBundleOrNil ];
 	
 	if( self ) {
-		self.navigationItem.title = NSLocalizedString( @"色卡", 
-									@"InfColorPicker default nav item title" );
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+            self.navigationItem.title = NSLocalizedString( @"色卡",
+                                                          @"InfColorPicker default nav item title" );
+        }else if ([currentLanguage isEqualToString:@"ja"]){
+            self.navigationItem.title = NSLocalizedString( @"标准色",
+                                                          @"InfColorPicker default nav item title" );
+        }else{
+            self.navigationItem.title = NSLocalizedString( @"Color",
+                                                          @"InfColorPicker default nav item title" );
+        }
+		
 	}
 	
 	return self;
