@@ -12,11 +12,16 @@
 #import "AlertViewManager.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ShareSendViewController.h"
+#import "DMTools.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface ColorPickerTabBarController () <DMAdViewDelegate>
+@interface ColorPickerTabBarController () <DMAdViewDelegate,CLLocationManagerDelegate>
 {
     DMAdView *_dmAdView;
     UIButton *closeButton;
+    DMTools *_dmTools;
+    CLLocationManager *locationManager;
 }
 @end
 
@@ -33,13 +38,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // 创建⼲⼴广告视图，此处使⽤用的是测试ID，请登陆多盟官⺴⽹网（www.domob.cn）获取新的ID
-    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJzXIIuNaulQzdc5" size:DOMOB_AD_SIZE_320x50];
-    _dmAdView.delegate = self; // 设置 Delegate
-    _dmAdView.rootViewController = self; // 设置 RootViewController
-    [self.view addSubview:_dmAdView]; //
+    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied){
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.distanceFilter = 500;
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    [TimerManager timer:self timeInterval:5 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
+    // 检查更新提醒
+    if (!_dmTools){
+        _dmTools = [[DMTools alloc] initWithPublisherId:AdKey];
+        [_dmTools checkRateInfo];
+    }
+    
+    //创建广告视图
+    if (!_dmAdView){
+        _dmAdView = [[DMAdView alloc] initWithPublisherId:AdKey size:DOMOB_AD_SIZE_320x50];
+        _dmAdView.delegate = self; // 设置 Delegate
+        _dmAdView.rootViewController = self; // 设置 RootViewController
+        [self.view addSubview:_dmAdView];
+        
+        [TimerManager timer:self timeInterval:25 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
+    }
+    
+    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
+        [locationManager startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    [_dmAdView setLocation:newLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"location error = %@",error);
 }
 
 -(void)showAd:(id)sender
@@ -54,9 +92,20 @@
                                          DOMOB_AD_SIZE_320x50.height);   
         } completion:^(BOOL finished){
             [_dmAdView loadAd];
-            [self closeButton];
         }];
     }
+}
+
+#pragma DMAdView delegate
+// 加载广告成功后，回调该方法
+- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
+{
+    [self closeButton];
+}
+// 加载广告失败后，回调该方法
+- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
+{
+    NSLog(@"dmAd error = %@",error);
 }
 
 -(void)closeButton
@@ -73,7 +122,7 @@
     [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
         _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
     } completion:^(BOOL finished){
-        [TimerManager timer:self timeInterval:25 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
+        [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
         [closeButton removeFromSuperview];
     }];
 }
@@ -81,7 +130,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)addWeiboShare:(UIBarButtonItem *)sender
@@ -91,11 +139,5 @@
     ssvc = story.instantiateInitialViewController;
     ssvc.txt = @"发现这个程序，屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! https://itunes.apple.com/us/app/color-picker-for-developer/id608956277?ls=1&mt=8";
     [self presentModalViewController:ssvc animated:YES];
-}
-
-#pragma DMAdView delegate
-- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
-{
-    NSLog(@"error = %@",error);
 }
 @end
