@@ -19,21 +19,13 @@
 @interface ColorPickerTabBarController () <DMAdViewDelegate,CLLocationManagerDelegate>
 {
     DMAdView *_dmAdView;
-    UIButton *closeButton;
+    UIView *menu;
     DMTools *_dmTools;
     CLLocationManager *locationManager;
 }
 @end
 
 @implementation ColorPickerTabBarController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -91,11 +83,26 @@
     }
 }
 
+-(void)dismissAdView:(id)sender{
+    UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
+    [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
+        menu.frame = CGRectMake(280, self.view.frame.size.height, 0, 0);
+        _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
+    } completion:^(BOOL finished){
+        [menu removeFromSuperview];
+        menu = nil;
+        _dmAdView.delegate = nil;
+        _dmAdView.rootViewController =  nil;
+        _dmAdView = nil;
+        [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
+    }];
+}
+
 #pragma DMAdView delegate
 // 加载广告成功后，回调该方法
 - (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
 {
-    [self closeButton];
+    if (!menu) [self showMenu];
 }
 // 加载广告失败后，回调该方法
 - (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
@@ -103,26 +110,43 @@
     NSLog(@"dmAd error = %@",error);
 }
 
--(void)closeButton
+-(void)showMenu
 {
-    closeButton = [[UIButton alloc] initWithFrame:CGRectMake(290, self.view.frame.size.height - 35, 20, 20)];
+    menu = [[UIView alloc] initWithFrame:CGRectMake(280, self.view.frame.size.height, 0, 0)];
+    menu.backgroundColor = [UIColor darkGrayColor];
+    [menu.layer setCornerRadius:8];
+    
+    UIButton *chooseButton = [[UIButton alloc] initWithFrame:CGRectMake(7, 5, 30, 30)];
+    [chooseButton addTarget:self action:@selector(switchView:) forControlEvents:UIControlEventTouchUpInside];
+    [chooseButton setBackgroundImage:[UIImage imageNamed:@"History.png"] forState:UIControlStateNormal]; //Favourite.png
+    chooseButton.tag = 100;
+    [menu addSubview:chooseButton];
+    
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(5, 40, 30, 30)];
     [closeButton addTarget:self action:@selector(dismissAdView:) forControlEvents:UIControlEventTouchUpInside];
     [closeButton setBackgroundImage:[AlertViewManager closeButtonImage] forState:UIControlStateNormal];
     closeButton.layer.cornerRadius = 10;
-    [self.view addSubview:closeButton];
+    [menu addSubview:closeButton];
+    
+    [self.view addSubview:menu];
+    
+    UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
+    [UIView animateWithDuration:0.4 delay:0.4 options:options animations:^{
+        menu.frame = CGRectMake(280, self.view.frame.size.height - 125, 455, 75);
+    } completion:^(BOOL finished){}];
 }
 
--(void)dismissAdView:(id)sender{
-    UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
-    [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
-        [closeButton removeFromSuperview];
-        _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
-    } completion:^(BOOL finished){
-        _dmAdView.delegate = nil;
-        _dmAdView.rootViewController =  nil;
-        _dmAdView = nil;
-        [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
-    }];
+-(void)switchView:(UIButton *)sender
+{
+    if (sender.tag == 100){
+        self.selectedIndex = 1;
+        sender.tag = 101;
+        [sender setBackgroundImage:[UIImage imageNamed:@"Favourite.png"] forState:UIControlStateNormal];
+    }else{
+        self.selectedIndex = 0;
+        sender.tag = 100;
+        [sender setBackgroundImage:[UIImage imageNamed:@"History.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)didReceiveMemoryWarning
