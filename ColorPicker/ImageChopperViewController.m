@@ -122,9 +122,20 @@
 -(void)saveTheColor:(id)sender
 {
     if (!indicator){
-        if (!red.text.length && !green.text.length && !blue.text.length && !alpha.text.length)
-            [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"请先触摸图片，选择颜色"];
-        else{
+        if (!red.text.length && !green.text.length && !blue.text.length && !alpha.text.length){
+            NSString *msg = @"";
+            NSArray *languages = [NSLocale preferredLanguages];
+            NSString *currentLanguage = [languages objectAtIndex:0];
+            if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+                msg = @"请先触摸图片，选择颜色";
+            }else if ([currentLanguage isEqualToString:@"ja"]){
+                msg = @"画像をタッチ";
+            }else{
+                msg = @"touch the screen first";
+            }
+
+            [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:msg];
+        }else{
             NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
             url = [url URLByAppendingPathComponent:@"Default Color Database"];
             
@@ -175,8 +186,31 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [indicator stopAnimating];
                 indicator = nil;
-                if (color) [AlertViewManager alertViewShow:self cancel:@"返回" confirm:@"查看" msg:@"保存成功，您可以进行如下操作！"];
-                else [AlertViewManager alertViewShow:nil cancel:@"重试" confirm:nil msg:@"操作失败！"];
+                NSString *msg = @""; NSString *cancel = @""; NSString *confirm = @"";
+                if (color){
+                    NSArray *languages = [NSLocale preferredLanguages];
+                    NSString *currentLanguage = [languages objectAtIndex:0];
+                    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+                        msg = @"保存成功，您可以进行如下操作！"; cancel = @"返回"; confirm = @"查看";
+                    }else if ([currentLanguage isEqualToString:@"ja"]){
+                        msg = @"OK！接下来："; cancel = @"帰る"; confirm = @"查看";
+                    }else{
+                        msg = @"Success！You can:"; cancel = @"cancel"; confirm = @"check";
+                    }
+                    [AlertViewManager alertViewShow:self cancel:cancel confirm:confirm msg:msg];
+                }else{
+                    NSArray *languages = [NSLocale preferredLanguages];
+                    NSString *currentLanguage = [languages objectAtIndex:0];
+                    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+                        msg = @"操作失败！"; cancel = @"重试"; 
+                    }else if ([currentLanguage isEqualToString:@"ja"]){
+                        msg = @"Failed！"; cancel = @"再来";
+                    }else{
+                        msg = @"Failed！"; cancel = @"Again";
+                    }
+
+                    [AlertViewManager alertViewShow:nil cancel:@"重试" confirm:nil msg:@"操作失败！"];
+                }
             });
         }];
     }

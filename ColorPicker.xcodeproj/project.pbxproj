@@ -49,6 +49,8 @@
 		BA1B54CB16E04B9300C1AC6E /* LINEActivityIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C616E04B9300C1AC6E /* LINEActivityIcon@2x.png */; };
 		BA1B54CC16E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C716E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png */; };
 		BA1B54CD16E04B9300C1AC6E /* LINEActivityIcon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C816E04B9300C1AC6E /* LINEActivityIcon~ipad.png */; };
+		BA1B54D716E05B1300C1AC6E /* Tc32_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54D516E05B1300C1AC6E /* Tc32_Black.png */; };
+		BA1B54D816E05B1300C1AC6E /* TCweiboicon32.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54D616E05B1300C1AC6E /* TCweiboicon32.png */; };
 		BA23901F16D73B85001E79AC /* magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23901E16D73B85001E79AC /* magnifier.png */; };
 		BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902016D7682B001E79AC /* ChoosePhoto.png */; };
 		BA23902816D76EF8001E79AC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902216D76EF8001E79AC /* Icon-72.png */; };
@@ -164,6 +166,8 @@
 		BA1B54C616E04B9300C1AC6E /* LINEActivityIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LINEActivityIcon@2x.png"; sourceTree = "<group>"; };
 		BA1B54C716E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LINEActivityIcon@2x~ipad.png"; sourceTree = "<group>"; };
 		BA1B54C816E04B9300C1AC6E /* LINEActivityIcon~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LINEActivityIcon~ipad.png"; sourceTree = "<group>"; };
+		BA1B54D516E05B1300C1AC6E /* Tc32_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tc32_Black.png; sourceTree = "<group>"; };
+		BA1B54D616E05B1300C1AC6E /* TCweiboicon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TCweiboicon32.png; sourceTree = "<group>"; };
 		BA23901E16D73B85001E79AC /* magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier.png; sourceTree = "<group>"; };
 		BA23902016D7682B001E79AC /* ChoosePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChoosePhoto.png; sourceTree = "<group>"; };
 		BA23902216D76EF8001E79AC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -411,8 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				BADB820D16D1D66D00005C86 /* Resources */,
-				BADB81F616D1D13D00005C86 /* ColorPickerAppDelegate.h */,
-				BADB81F716D1D13D00005C86 /* ColorPickerAppDelegate.m */,
 				BADB81F316D1D13D00005C86 /* main.m */,
 				BADB81F516D1D13D00005C86 /* ColorPicker-Prefix.pch */,
 			);
@@ -425,6 +427,8 @@
 				BA66343E16DF15F400F160CD /* Favourite.png */,
 				BA66343C16DF15EE00F160CD /* History.png */,
 				BA4DF9F916DDF1C90065AB04 /* WebChat.png */,
+				BA1B54D516E05B1300C1AC6E /* Tc32_Black.png */,
+				BA1B54D616E05B1300C1AC6E /* TCweiboicon32.png */,
 				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
 				BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */,
 				BA0C1D9E16DC8DAA000D534A /* weibo32.png */,
@@ -524,6 +528,8 @@
 		BADB821416D1DA3800005C86 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				BADB81F616D1D13D00005C86 /* ColorPickerAppDelegate.h */,
+				BADB81F716D1D13D00005C86 /* ColorPickerAppDelegate.m */,
 				BADB821516D1DA5600005C86 /* ColorPickerBaseViewController.h */,
 				BADB821616D1DA5600005C86 /* ColorPickerBaseViewController.m */,
 			);
@@ -620,6 +626,8 @@
 				BA1B54CB16E04B9300C1AC6E /* LINEActivityIcon@2x.png in Resources */,
 				BA1B54CC16E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png in Resources */,
 				BA1B54CD16E04B9300C1AC6E /* LINEActivityIcon~ipad.png in Resources */,
+				BA1B54D716E05B1300C1AC6E /* Tc32_Black.png in Resources */,
+				BA1B54D816E05B1300C1AC6E /* TCweiboicon32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
