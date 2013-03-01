@@ -15,6 +15,9 @@
 #import "DMTools.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import <Social/Social.h>
+#import <ACCOUNTS/ACAccount.h>
+#import "LINEActivity.h"
 
 @interface ColorPickerTabBarController () <DMAdViewDelegate,CLLocationManagerDelegate>
 {
@@ -36,7 +39,10 @@
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.distanceFilter = 500;
     }
-    [TimerManager timer:self timeInterval:25 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
+    [TimerManager timer:self timeInterval:10 timeSinceNow:0 selector:@selector(showAd:) repeats:NO];
+    
+    self.sharingText = @"发现这个程序，屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! https://itunes.apple.com/us/app/color-picker-for-developer/id608956277?ls=1&mt=8";
+    self.sharingImage = [UIImage imageNamed:@"Icon@2x.png"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -156,10 +162,34 @@
 
 - (IBAction)addWeiboShare:(UIBarButtonItem *)sender
 {
+    if([SLComposeViewController class] != nil){
+        NSArray *activityItems;
+        
+        if (self.sharingImage != nil) {
+            activityItems = @[self.sharingText, self.sharingImage];
+        } else {
+            activityItems = @[self.sharingText];
+        }
+        
+        NSArray *applicationActivities = @[[[LINEActivity alloc] init]];
+        UIActivityViewController *activityController =
+        [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                          applicationActivities:applicationActivities];
+        
+        [self presentViewController:activityController animated:YES completion:nil];
+    
+    }else{
+        [self shareToTencent];
+    }
+}
+
+-(void)shareToTencent
+{
     ShareSendViewController *ssvc = [[ShareSendViewController alloc] init];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"ShareSend" bundle:nil];
     ssvc = story.instantiateInitialViewController;
-    ssvc.txt = @"发现这个程序，屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! https://itunes.apple.com/us/app/color-picker-for-developer/id608956277?ls=1&mt=8";
+    ssvc.txt = self.sharingText;
     [self presentModalViewController:ssvc animated:YES];
 }
+
 @end

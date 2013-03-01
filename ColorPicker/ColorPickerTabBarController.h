@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ColorPickerTabBarController : UITabBarController
+@class SLComposeViewController;
 
+@interface ColorPickerTabBarController : UITabBarController
+{
+    SLComposeViewController *slComposerSheet;
+}
+@property (nonatomic) NSString *sharingText;
+@property (nonatomic) UIImage *sharingImage;
 @end

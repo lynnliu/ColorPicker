@@ -25,8 +25,6 @@
 		BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */; };
 		BA0C1D9716DC8D30000D534A /* ShareSend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */; };
 		BA0C1D9A16DC8D42000D534A /* ShareSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */; };
-		BA0C1DA116DC8DAA000D534A /* Tc32_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */; };
-		BA0C1DA216DC8DAA000D534A /* TCweiboicon32.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */; };
 		BA0C1DA316DC8DAA000D534A /* weibo32_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */; };
 		BA0C1DA416DC8DAA000D534A /* weibo32.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9E16DC8DAA000D534A /* weibo32.png */; };
 		BA0C1DA516DC8DAA000D534A /* weibo64_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */; };
@@ -44,6 +42,13 @@
 		BA0C5F3616DB3F4B001EB5DB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */; };
 		BA0C5F3916DB3FA2001EB5DB /* SMSAndMailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */; };
 		BA0C5F3B16DB40BA001EB5DB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */; };
+		BA1B54BF16E0377700C1AC6E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1B54BE16E0377700C1AC6E /* Social.framework */; };
+		BA1B54C116E0390100C1AC6E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1B54C016E0390100C1AC6E /* Accounts.framework */; };
+		BA1B54C916E04B9300C1AC6E /* LINEActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1B54C416E04B9300C1AC6E /* LINEActivity.m */; };
+		BA1B54CA16E04B9300C1AC6E /* LINEActivityIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C516E04B9300C1AC6E /* LINEActivityIcon.png */; };
+		BA1B54CB16E04B9300C1AC6E /* LINEActivityIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C616E04B9300C1AC6E /* LINEActivityIcon@2x.png */; };
+		BA1B54CC16E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C716E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png */; };
+		BA1B54CD16E04B9300C1AC6E /* LINEActivityIcon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B54C816E04B9300C1AC6E /* LINEActivityIcon~ipad.png */; };
 		BA23901F16D73B85001E79AC /* magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23901E16D73B85001E79AC /* magnifier.png */; };
 		BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902016D7682B001E79AC /* ChoosePhoto.png */; };
 		BA23902816D76EF8001E79AC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BA23902216D76EF8001E79AC /* Icon-72.png */; };
@@ -123,8 +128,6 @@
 		BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShareSend.storyboard; sourceTree = "<group>"; };
 		BA0C1D9816DC8D42000D534A /* ShareSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSendViewController.h; sourceTree = "<group>"; };
 		BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSendViewController.m; sourceTree = "<group>"; };
-		BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tc32_Black.png; sourceTree = "<group>"; };
-		BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TCweiboicon32.png; sourceTree = "<group>"; };
 		BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo32_Black.png; sourceTree = "<group>"; };
 		BA0C1D9E16DC8DAA000D534A /* weibo32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo32.png; sourceTree = "<group>"; };
 		BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo64_Black.png; sourceTree = "<group>"; };
@@ -153,6 +156,14 @@
 		BA0C5F3716DB3FA2001EB5DB /* SMSAndMailManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSAndMailManager.h; sourceTree = "<group>"; };
 		BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSAndMailManager.m; sourceTree = "<group>"; };
 		BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		BA1B54BE16E0377700C1AC6E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		BA1B54C016E0390100C1AC6E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BA1B54C316E04B9300C1AC6E /* LINEActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LINEActivity.h; sourceTree = "<group>"; };
+		BA1B54C416E04B9300C1AC6E /* LINEActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LINEActivity.m; sourceTree = "<group>"; };
+		BA1B54C516E04B9300C1AC6E /* LINEActivityIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LINEActivityIcon.png; sourceTree = "<group>"; };
+		BA1B54C616E04B9300C1AC6E /* LINEActivityIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LINEActivityIcon@2x.png"; sourceTree = "<group>"; };
+		BA1B54C716E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LINEActivityIcon@2x~ipad.png"; sourceTree = "<group>"; };
+		BA1B54C816E04B9300C1AC6E /* LINEActivityIcon~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LINEActivityIcon~ipad.png"; sourceTree = "<group>"; };
 		BA23901E16D73B85001E79AC /* magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier.png; sourceTree = "<group>"; };
 		BA23902016D7682B001E79AC /* ChoosePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChoosePhoto.png; sourceTree = "<group>"; };
 		BA23902216D76EF8001E79AC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -234,6 +245,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1B54C116E0390100C1AC6E /* Accounts.framework in Frameworks */,
+				BA1B54BF16E0377700C1AC6E /* Social.framework in Frameworks */,
 				7E0E73B916DE597400DBA37D /* QuartzCore.framework in Frameworks */,
 				7E0E73B716DE595C00DBA37D /* EventKit.framework in Frameworks */,
 				7E0E73B516DE595000DBA37D /* CoreTelephony.framework in Frameworks */,
@@ -291,6 +304,19 @@
 			name = Business;
 			sourceTree = "<group>";
 		};
+		BA1B54C216E04B9300C1AC6E /* LINEActivity */ = {
+			isa = PBXGroup;
+			children = (
+				BA1B54C316E04B9300C1AC6E /* LINEActivity.h */,
+				BA1B54C416E04B9300C1AC6E /* LINEActivity.m */,
+				BA1B54C516E04B9300C1AC6E /* LINEActivityIcon.png */,
+				BA1B54C616E04B9300C1AC6E /* LINEActivityIcon@2x.png */,
+				BA1B54C716E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png */,
+				BA1B54C816E04B9300C1AC6E /* LINEActivityIcon~ipad.png */,
+			);
+			path = LINEActivity;
+			sourceTree = "<group>";
+		};
 		BA4DF9F216DDF0930065AB04 /* WebChat */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +368,8 @@
 		BADB81E616D1D13D00005C86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B54C016E0390100C1AC6E /* Accounts.framework */,
+				BA1B54BE16E0377700C1AC6E /* Social.framework */,
 				7E0E73B816DE597400DBA37D /* QuartzCore.framework */,
 				7E0E73B616DE595C00DBA37D /* EventKit.framework */,
 				7E0E73B416DE595000DBA37D /* CoreTelephony.framework */,
@@ -398,8 +426,6 @@
 				BA66343C16DF15EE00F160CD /* History.png */,
 				BA4DF9F916DDF1C90065AB04 /* WebChat.png */,
 				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
-				BA0C1D9B16DC8DAA000D534A /* Tc32_Black.png */,
-				BA0C1D9C16DC8DAA000D534A /* TCweiboicon32.png */,
 				BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */,
 				BA0C1D9E16DC8DAA000D534A /* weibo32.png */,
 				BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */,
@@ -429,6 +455,7 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B54C216E04B9300C1AC6E /* LINEActivity */,
 				BA4DF9F216DDF0930065AB04 /* WebChat */,
 				BA7D5A4316DC5B2F005E21F7 /* InfColorPicker */,
 				7E8F818A16D9057E0086258D /* AdSDK */,
@@ -581,8 +608,6 @@
 				BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */,
 				BA7D5A5516DC5B2F005E21F7 /* InfColorPickerView.xib in Resources */,
 				BA0C1D9716DC8D30000D534A /* ShareSend.storyboard in Resources */,
-				BA0C1DA116DC8DAA000D534A /* Tc32_Black.png in Resources */,
-				BA0C1DA216DC8DAA000D534A /* TCweiboicon32.png in Resources */,
 				BA0C1DA316DC8DAA000D534A /* weibo32_Black.png in Resources */,
 				BA0C1DA416DC8DAA000D534A /* weibo32.png in Resources */,
 				BA0C1DA516DC8DAA000D534A /* weibo64_Black.png in Resources */,
@@ -591,6 +616,10 @@
 				BA4DF9FA16DDF1C90065AB04 /* WebChat.png in Resources */,
 				BA66343D16DF15EE00F160CD /* History.png in Resources */,
 				BA66343F16DF15F400F160CD /* Favourite.png in Resources */,
+				BA1B54CA16E04B9300C1AC6E /* LINEActivityIcon.png in Resources */,
+				BA1B54CB16E04B9300C1AC6E /* LINEActivityIcon@2x.png in Resources */,
+				BA1B54CC16E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png in Resources */,
+				BA1B54CD16E04B9300C1AC6E /* LINEActivityIcon~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +662,7 @@
 				BA0C1DB116DC8EA7000D534A /* UserOauthData.m in Sources */,
 				BA0C1DB416DC8F08000D534A /* OauthKey.m in Sources */,
 				BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */,
+				BA1B54C916E04B9300C1AC6E /* LINEActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

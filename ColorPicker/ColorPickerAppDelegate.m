@@ -22,7 +22,7 @@ UIImageView *coverView;
     cptbc = [[ColorPickerRootViewController alloc] init];
     cptbc = (ColorPickerRootViewController *)self.window.rootViewController;
     cptbc.rootViewDelegate = self;
-    [self.window makeKeyAndVisible];
+
     [WXApi registerApp:WXAppID];
     
     // 初始化开屏广告控制器，此处使用的是测试ID，请登陆多盟官网（www.domob.cn）获取新的ID
@@ -34,11 +34,12 @@ UIImageView *coverView;
     _splashAd.rootViewController = cptbc;
     
     coverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default@2x.png"]];
-    coverView.frame = CGRectMake(0, 20, 320, 940);
+    coverView.frame = CGRectMake(0, 20, 320, self.window.rootViewController.view.frame.size.height);
     [self.window.rootViewController.view addSubview:coverView];
     
-    [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
-    
+    [TimerManager timer:self timeInterval:5 timeSinceNow:0 selector:@selector(showAd:) repeats:NO];
+    [TimerManager timer:self timeInterval:5 timeSinceNow:5 selector:@selector(removeBackground:) repeats:NO];
+
     return YES;
 }
 
@@ -47,7 +48,20 @@ UIImageView *coverView;
     if (_splashAd.isReady) [_splashAd present];
 }
 
+-(void)removeBackground:(id)sender
+{
+    if (coverView){
+        [coverView removeFromSuperview];
+        coverView = nil;
+    }
+}
+
 #pragma DMSplashAdController delegate
+-(void)dmSplashAdSuccessToLoadAd:(DMSplashAdController *)dmSplashAd
+{
+    NSLog(@"success");
+}
+
 // 加载广告成功后，回调该方法
 -(void)dmSplashAdWillPresentScreen:(DMSplashAdController *)dmSplashAd
 {

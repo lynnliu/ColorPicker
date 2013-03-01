@@ -82,23 +82,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GNb-fL-Yys">
-                                <rect key="frame" x="104" y="46" width="40" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                                <state key="normal" image="weibo32.png">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sinaAuth:" destination="WWK-es-OgQ" eventType="touchUpInside" id="Xeq-Im-A4D"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="APt-xS-7LL">
-                                <rect key="frame" x="177" y="46" width="40" height="41"/>
+                                <rect key="frame" x="103" y="46" width="40" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="TCweiboicon32.png">
@@ -113,7 +98,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6vT-At-8Ct">
-                                <rect key="frame" x="100" y="206" width="48" height="41"/>
+                                <rect key="frame" x="170" y="46" width="48" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="WebChat.png">
@@ -139,9 +124,9 @@
                         <outlet property="navigationTitle" destination="Jsh-yq-9HM" id="ONM-xT-TVe"/>
                         <outlet property="rightButton" destination="i88-Vb-7cu" id="v7z-zb-Q1W"/>
                         <outlet property="sendTextView" destination="O1J-aI-FOD" id="wu7-MM-9CW"/>
-                        <outlet property="sina" destination="GNb-fL-Yys" id="3fU-B8-901"/>
                         <outlet property="tc" destination="APt-xS-7LL" id="yqu-Cd-1oc"/>
                         <outlet property="view" destination="qsi-Cv-9Bb" id="045-w6-mkw"/>
+                        <outlet property="wechat" destination="6vT-At-8Ct" id="Zsf-BZ-JAP"/>
                         <segue destination="kek-mc-hRF" kind="modal" identifier="oauth 2.0" id="slT-xe-Rkm"/>
                     </connections>
                 </viewController>
@@ -151,9 +136,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TCweiboicon32.png" width="32" height="32"/>
+        <image name="TCweiboicon32.png" width="16" height="16"/>
         <image name="WebChat.png" width="89" height="73"/>
-        <image name="weibo32.png" width="32" height="32"/>
     </resources>
     <classes>
         <class className="ColorPickerBaseViewController" superclassName="UIViewController">
@@ -162,6 +146,7 @@
         <class className="OauthViewController" superclassName="ColorPickerBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OauthViewController.h"/>
             <relationships>
+                <relationship kind="action" name="leftConfirm:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navigation" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
@@ -170,13 +155,17 @@
         <class className="ShareSendViewController" superclassName="ColorPickerBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareSendViewController.h"/>
             <relationships>
+                <relationship kind="action" name="leftConfirm:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="rightConfirm:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="tcAuth:" candidateClass="UIButton"/>
+                <relationship kind="action" name="weiXinShare:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="navigation" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="navigationTitle" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="rightButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="sendTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="sina" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tc" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wechat" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>
