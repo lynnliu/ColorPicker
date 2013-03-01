@@ -105,7 +105,7 @@
 {
     UserOauthData *oauth = [[UserOauthData alloc] init];
     
-    NSRange rang = NSMakeRange(52, 32);  
+    NSRange rang = NSMakeRange(55, 32);
     oauth.userToken_TC = [url substringWithRange:rang];      
     oauth.userBond_TC = @"YES";
     
@@ -139,7 +139,7 @@
     
     para = [para stringByAppendingString:@"&format=json"];
     para = [para stringByAppendingString:@"&syncflag=0"];    
-    para = [para stringByAppendingFormat:@"&content=%@",text];
+    para = [para stringByAppendingFormat:@"&content= //@liuzechenLynn// %@",text];
     
     return [self uploadWeiBo:APP_SEND_TEXT para:para];
 }
