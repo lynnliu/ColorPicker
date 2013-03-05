@@ -15,7 +15,6 @@
 @property (nonatomic,strong) UIImage *image;
 @property (nonatomic,strong) UIColor *color;
 
-@property (weak, nonatomic) IBOutlet UIImageView *savedimageView;
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 

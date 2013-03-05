@@ -32,4 +32,29 @@
     return imageNSData;
 }
 
++ (BOOL)writeImage:(UIImage*)image toFileAtPath:(NSString*)aPath
+{
+    //此处首先指定了图片存取路径（默认写到应用程序沙盒 中）
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    //并给文件起个文件名
+    NSString *uniquePath=[[paths objectAtIndex:0] stringByAppendingPathComponent:aPath];
+    
+    //此处的方法是将图片写到Documents文件中 如果写入成功会弹出一个警告框,提示图片保存成功
+    BOOL result = [UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
+    
+    return result;
+}
+
+//从本地获取图片
++ (UIImage*)GetImageFromLocal:(NSString*)imgPath {
+    //拿到应用程序沙盒里面的路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    //读取存在沙盒里面的文件图片
+    NSString *imageFullPath=[[paths objectAtIndex:0] stringByAppendingPathComponent:imgPath];
+    //因为拿到的是个路径 把它加载成一个data对象
+    NSData *data=[NSData dataWithContentsOfFile:imageFullPath];
+    //直接把该 图片读出来
+    UIImage *img=[UIImage imageWithData:data];
+    return img;
+}
 @end

@@ -15,7 +15,6 @@
 @synthesize time = _time;
 @synthesize image = _image;
 @synthesize color = _color;
-@synthesize savedimageView = _savedimageView;
 @synthesize colorLabel = _colorLabel;
 @synthesize timeLabel = _timeLabel;
 
@@ -48,7 +47,7 @@
 {
     if (_image != image){
         _image = image;
-        self.savedimageView.image = image;
+        self.imageView.image = image;
     }
 }
 

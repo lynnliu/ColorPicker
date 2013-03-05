@@ -12,4 +12,6 @@
 
 +(NSData *)getImageData:(UIImage *)image height:(NSUInteger)height width:(NSUInteger)width;
 
++ (BOOL)writeImage:(UIImage*)image toFileAtPath:(NSString*)aPath;
++ (UIImage*)GetImageFromLocal:(NSString*)imgPath ;
 @end

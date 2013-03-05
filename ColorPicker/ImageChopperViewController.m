@@ -126,9 +126,13 @@
     colorPatone.backgroundColor = color;
     colorsDictionary = colorInfo;
     red.text = [NSString stringWithFormat:@"red     : %.0f",redValue];
+    red.textColor = [UIColor colorWithRed:(255 - redValue) / 255.f green:(255 - greenValue) / 255.f blue:(255 - blueValue) / 255.f alpha:1];
     green.text = [NSString stringWithFormat:@"green : %.0f",greenValue];
+    green.textColor = red.textColor;
     blue.text = [NSString stringWithFormat:@"blue   : %.0f",blueValue];
+    blue.textColor = red.textColor;
     alpha.text = [NSString stringWithFormat:@"alpha : %.0f",alphaValue];
+    alpha.textColor = red.textColor;
 }
 
 -(void)saveTheColor:(id)sender
@@ -173,6 +177,7 @@
     if (document.documentState == UIDocumentStateNormal) {
         NSManagedObjectContext *context = document.managedObjectContext;
         
+        //保存时间
         NSDate *date = [NSDate date];
         NSTimeZone *zone = [NSTimeZone systemTimeZone];
         NSInteger interval = [zone secondsFromGMTForDate: date];
@@ -181,12 +186,18 @@
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *dataString = [formatter stringFromDate:localDate];
         
+        //保存图片到本地
+        UIImage *image = [self.choosedImageInfo objectForKey:@"UIImagePickerControllerEditedImage"];
+        NSString *filePath = [NSString stringWithFormat:@"%@.png",dataString];
+        [ImageOperate writeImage:image toFileAtPath:filePath];
+        
         NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:[colorsDictionary valueForKey:@"red"],@"red",
                                                                         [colorsDictionary valueForKey:@"green"],@"green",
                                                                         [colorsDictionary valueForKey:@"blue"],@"blue",
                                                                         [colorsDictionary valueForKey:@"alpha"],@"alpha",
                                                                         [colorsDictionary valueForKey:@"pointx"],@"pointx",
                                                                         [colorsDictionary valueForKey:@"pointy"],@"pointy",
+                                                                        filePath,@"savedimage",
                                                                         dataString,@"createtime",
                                                                         nil];
         indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -207,7 +218,7 @@
                     }else if ([currentLanguage isEqualToString:@"ja"]){
                         msg = @"OK！接下来："; cancel = @"帰る"; confirm = @"查看";
                     }else{
-                        msg = @"Success！You can:"; cancel = @"cancel"; confirm = @"check";
+                        msg = @"Success！You can:"; cancel = @"Go back"; confirm = @"Check";
                     }
                     [AlertViewManager alertViewShow:self cancel:cancel confirm:confirm msg:msg];
                 }else{

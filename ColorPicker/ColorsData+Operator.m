@@ -37,6 +37,7 @@
         color.pointx = [colorInfo valueForKey:@"pointx"];
         color.pointy = [colorInfo valueForKey:@"pointy"];
         color.createtime = [colorInfo valueForKey:@"createtime"];
+        color.savedimage = [colorInfo valueForKey:@"savedimage"];
         return color;
     }else{
         [AlertViewManager alertViewShow:nil cancel:@"OK" confirm:nil msg:@"您已经保存了此颜色"];

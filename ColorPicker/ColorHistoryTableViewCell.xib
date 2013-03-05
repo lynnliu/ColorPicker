@@ -42,7 +42,7 @@
 							<object class="IBUILabel" id="880350650">
 								<reference key="NSNextResponder" ref="159757620"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{27, 5}, {273, 21}}</string>
+								<string key="NSFrame">{{77, 5}, {233, 21}}</string>
 								<reference key="NSSuperview" ref="159757620"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="707859839"/>
@@ -63,6 +63,7 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">2</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
@@ -77,7 +78,7 @@
 							<object class="IBUILabel" id="707859839">
 								<reference key="NSNextResponder" ref="159757620"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{27, 34}, {273, 21}}</string>
+								<string key="NSFrame">{{77, 34}, {233, 21}}</string>
 								<reference key="NSSuperview" ref="159757620"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -98,6 +99,7 @@
 								</object>
 								<string key="IBUIShadowOffset">{0, 0}</string>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUITextAlignment">2</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">14</double>
@@ -113,7 +115,6 @@
 						<string key="NSFrameSize">{320, 59}</string>
 						<reference key="NSSuperview" ref="432073744"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -220,17 +221,12 @@
 					<string key="superclassName">UITableViewCell</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="colorLabel">UILabel</string>
-						<string key="savedimageView">UIImageView</string>
 						<string key="timeLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="colorLabel">
 							<string key="name">colorLabel</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="savedimageView">
-							<string key="name">savedimageView</string>
-							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="timeLabel">
 							<string key="name">timeLabel</string>

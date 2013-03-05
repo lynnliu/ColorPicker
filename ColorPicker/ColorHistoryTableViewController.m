@@ -9,6 +9,7 @@
 #import "ColorHistoryTableViewController.h"
 #import "ColorHistoryTableViewCell.h"
 #import "ColorsData+Operator.h"
+#import "ImageOperate.h"
 
 @interface ColorHistoryTableViewController ()
 
@@ -80,8 +81,12 @@
     
     ColorsData *color = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.colorValue = [NSString stringWithFormat:@"r:%d g:%d b:%d a:%d",[color.red intValue],[color.green intValue],[color.blue intValue],[color.alpha intValue]];
+    cell.colorLabel.textColor = [UIColor colorWithRed:(255 - [color.red intValue]) / 255.f green:(255 - [color.green intValue]) / 255.f blue:(255 - [color.blue intValue]) / 255.f alpha:1];
     cell.time = [NSString stringWithFormat:@"%@",color.createtime];
+    cell.timeLabel.textColor = cell.colorLabel.textColor;
     cell.color = [UIColor colorWithRed:[color.red intValue]/255.0f green:[color.green intValue]/255.0f blue:[color.blue intValue]/255.0 alpha:[color.alpha intValue]/255.0];
+    UIImage *image = [ImageOperate GetImageFromLocal:color.savedimage];
+    if (image) cell.image = image;
     return cell;
 }
 
@@ -93,6 +98,16 @@
                                color.green,@"green",
                                color.blue,@"blue",
                                color.alpha,@"alpha",nil];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    //读取存在沙盒里面的文件图片
+    NSString *imageFullPath=[[paths objectAtIndex:0] stringByAppendingPathComponent:color.savedimage];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:imageFullPath]) {
+        //如果存在就删除
+        [[NSFileManager defaultManager] removeItemAtPath:imageFullPath error:nil];
+    }
+
     [ColorsData prepareToDeletion:colorInfo inManagedObjectContext:self.fetchedResultsController.managedObjectContext];
 }
 

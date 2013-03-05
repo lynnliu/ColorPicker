@@ -208,6 +208,7 @@
 		BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA7D5A6316DC679F005E21F7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA7D5A6516DC67A9005E21F7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		BA85AA8A16E58FE3000EEBC6 /* ColorPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ColorPicker.entitlements; sourceTree = "<group>"; };
 		BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerRootViewController.h; sourceTree = "<group>"; };
 		BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerRootViewController.m; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +292,9 @@
 		BA05DB7F16D86FE400F44750 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */,
+				BA85AA8A16E58FE3000EEBC6 /* ColorPicker.entitlements */,
+				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
 				BA0C5F2E16DB31F9001EB5DB /* ColorsData.h */,
 				BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */,
 				BA0C1DAF16DC8EA7000D534A /* UserOauthData.h */,
@@ -429,7 +433,6 @@
 				BA4DF9F916DDF1C90065AB04 /* WebChat.png */,
 				BA1B54D516E05B1300C1AC6E /* Tc32_Black.png */,
 				BA1B54D616E05B1300C1AC6E /* TCweiboicon32.png */,
-				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
 				BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */,
 				BA0C1D9E16DC8DAA000D534A /* weibo32.png */,
 				BA0C1D9F16DC8DAA000D534A /* weibo64_Black.png */,
@@ -451,7 +454,6 @@
 				BADB81F916D1D13D00005C86 /* Default.png */,
 				BADB81FB16D1D13D00005C86 /* Default@2x.png */,
 				BADB81FD16D1D13D00005C86 /* Default-568h@2x.png */,
-				BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
