@@ -123,7 +123,6 @@ static void HSVFromUIColor( UIColor* color, float* h, float* s, float* v )
             self.navigationItem.title = NSLocalizedString( @"Color",
                                                           @"InfColorPicker default nav item title" );
         }
-		
 	}
 	
 	return self;
@@ -169,6 +168,15 @@ static void HSVFromUIColor( UIColor* color, float* h, float* s, float* v )
 	self.sourceColorView = nil;
 	self.resultColorView = nil;
 	self.navController = nil;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.barPicker.frame = CGRectMake(200, self.barPicker.frame.origin.y, 624, self.barPicker.frame.size.height);
+        self.squarePicker.frame = CGRectMake(100, 100, 824, 500);
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated

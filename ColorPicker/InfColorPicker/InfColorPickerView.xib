@@ -41,11 +41,11 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIView" id="905743537">
 								<reference key="NSNextResponder" ref="407640069"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">306</int>
 								<array class="NSMutableArray" key="NSSubviews">
 									<object class="IBUIView" id="998465631">
 										<reference key="NSNextResponder" ref="905743537"/>
-										<int key="NSvFlags">292</int>
+										<int key="NSvFlags">306</int>
 										<string key="NSFrame">{{1, 1}, {256, 256}}</string>
 										<reference key="NSSuperview" ref="905743537"/>
 										<reference key="NSWindow"/>
@@ -75,7 +75,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrame">{{12, 69}, {296, 296}}</string>
+						<string key="NSFrame">{{12, 69}, {296, 286}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="905743537"/>
@@ -92,11 +92,11 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIView" id="804282275">
 								<reference key="NSNextResponder" ref="65830691"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">290</int>
 								<array class="NSMutableArray" key="NSSubviews">
 									<object class="IBUIView" id="830998350">
 										<reference key="NSNextResponder" ref="804282275"/>
-										<int key="NSvFlags">292</int>
+										<int key="NSvFlags">290</int>
 										<string key="NSFrame">{{1, 1}, {256, 40}}</string>
 										<reference key="NSSuperview" ref="804282275"/>
 										<reference key="NSWindow"/>
