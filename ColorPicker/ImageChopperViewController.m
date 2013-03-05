@@ -41,16 +41,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"])
+        self.title = @"选取";
+    else
+        self.title = @"Pick Color";
+    
     for (id gesture in  [self.view gestureRecognizers])
         [self.view removeGestureRecognizer:gesture];
+    [self patoneCanvas];
     
     UIImage *image = [self.choosedImageInfo objectForKey:@"UIImagePickerControllerEditedImage"];
     PickedImageVIew *pickedImageView = [[PickedImageVIew alloc] initWithFrame:CGRectMake(0, 0, 320, 320 * image.size.height / image.size.width)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) pickedImageView.frame = CGRectMake(192, 0, 640, 640 * image.size.height / image.size.width);
     pickedImageView.sendImage = image;
     pickedImageView.delegate = self;
     [self.view addSubview:pickedImageView];
     
-    [self patoneCanvas];
     [self saveButton];
 }
 
@@ -58,6 +66,8 @@
 {
     colorPatone = [[UIView alloc] initWithFrame:CGRectMake(0, 320, 320, self.view.frame.size.height - 320)];
     colorPatone.backgroundColor = [UIColor clearColor];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) colorPatone.frame = CGRectMake(0, 400, 1024, self.view.frame.size.height - 400);
     
     red = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 80, 20)];
     red.textColor = [UIColor lightGrayColor];
@@ -97,6 +107,8 @@
 -(void)saveButton
 {
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(230, 330, 80, 80)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        button.frame = CGRectMake(934, 410, 80, 80);
     [button setTitle:@"保存" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(saveTheColor:) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundImage:[UIImage imageNamed:@"SaveButton.png"] forState:UIControlStateNormal];

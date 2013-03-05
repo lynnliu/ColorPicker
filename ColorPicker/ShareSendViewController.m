@@ -52,12 +52,18 @@
     
     if (isBond_TC && self.tcStatus) [self.tc setImage:[UIImage imageNamed:@"TCweiboicon32.png"] forState:UIControlStateNormal];
     else [self.tc setImage:[UIImage imageNamed:@"Tc32_Black.png"] forState:UIControlStateNormal];
+    
+    self.sendTextView.layer.cornerRadius = 6;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.sendTextView.frame = CGRectMake(50, 100, 920, 250);
+        self.sendTextView.font = [UIFont systemFontOfSize:25.];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
-    self.sendTextView.layer.cornerRadius = 6;
+    
     self.wechat.hidden = YES;
     NSArray *languages = [NSLocale preferredLanguages];
     NSString *currentLanguage = [languages objectAtIndex:0];
@@ -68,7 +74,7 @@
         self.sendTextView.text = [NSString stringWithFormat:@"推奨する:%@",ITUNESURL];
         self.navigationTitle.title = @"分かち合う";
     }else{
-        self.sendTextView.text = [NSString stringWithFormat:@"I found this app is fun::%@",ITUNESURL];
+        self.sendTextView.text = [NSString stringWithFormat:@"I found this app is fun:%@",ITUNESURL];
         self.navigationTitle.title = @"Share";
     }
     

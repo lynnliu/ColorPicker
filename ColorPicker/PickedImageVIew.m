@@ -28,8 +28,8 @@
 {
     if (_sendImage != sendImage){
         self.image = sendImage;
-        width = CGImageGetWidth([self.image CGImage]);
-        height = CGImageGetHeight([self.image CGImage]);
+        width = CGImageGetWidth([sendImage CGImage]);
+        height = CGImageGetHeight([sendImage CGImage]);
         imageData = [NSData dataWithData:[ImageOperate getImageData:sendImage height:height width:width]];
     }
 }
@@ -55,19 +55,33 @@
     //开启图片放大镜
     point = [[touches anyObject] locationInView:self];
 
-    if (point.y < self.frame.size.height && point.x < 320){
-        [self addMagnifier:point.x and:point.y];
-        [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        if (point.y < self.frame.size.height && point.x < 640){
+            [self addMagnifier:point.x and:point.y];
+            [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+        }
+
+    }else{
+        if (point.y < self.frame.size.height && point.x < 320){
+            [self addMagnifier:point.x and:point.y];
+            [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+        }
     }
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     point = [[touches anyObject] locationInView:self];
-    
-    if (point.y < self.frame.size.height && point.x < 320){
-        [self moveMagnifier:point.x and:point.y];
-        [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        if (point.y < self.frame.size.height && point.x < 640 && point.x > 0){
+            [self moveMagnifier:point.x and:point.y];
+            [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+        }
+    }else{
+        if (point.y < self.frame.size.height && point.x < 320){
+            [self moveMagnifier:point.x and:point.y];
+            [self.delegate getColor:[self fetchColor:point.x and:point.y]];
+        }
     }
 }
 
@@ -84,6 +98,9 @@
     
     //一定要进行像素比点的比例，图像是压缩在固定尺寸的点上的，点的坐标要转换成像素才能取得准确的数据。
     float pixelToPoint = width / 320;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) pixelToPoint = width / 640;
+    if (pixelToPoint < 1) pixelToPoint = 1;
+    
     int byteIndex = (bytesPerRow * y * pixelToPoint) + x * pixelToPoint * bytesPerPixel;
     float r = 0;
     float g = 0;
@@ -121,7 +138,7 @@
     [[magnifierImage layer] setShadowColor:[UIColor grayColor].CGColor];
     [magnifier addSubview:magnifierImage];
 
-    [[self superview] addSubview:magnifier];
+    [self addSubview:magnifier];
 }
 
 -(void)moveMagnifier:(int)x and:(int)y
@@ -138,6 +155,8 @@
 -(UIImage *)magnifierImageView:(int)x and:(int)y
 {
     float pixelToPoint = width / 320;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) pixelToPoint = width / 640;
+    if (pixelToPoint < 1) pixelToPoint = 1;
     CGImageRef img = CGImageCreateWithImageInRect(self.image.CGImage, CGRectMake(x * pixelToPoint - 5 , y * pixelToPoint - 5, 10, 10));
     UIImage *newimage = [UIImage imageWithCGImage:img];
     return newimage;

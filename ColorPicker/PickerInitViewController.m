@@ -12,7 +12,9 @@
 #import "InfColorPickerController.h"
 
 @interface PickerInitViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,InfColorPickerControllerDelegate>
-
+{
+    UIPopoverController *popoverController;
+}
 @end
 
 @implementation PickerInitViewController
@@ -29,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,17 +41,32 @@
 
 - (IBAction)chooseLocalPic:(UIButton *)sender
 {
-    [LocalPicPicker localPicPicker:self pickerSource:UIImagePickerControllerSourceTypePhotoLibrary];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)  [LocalPicPicker localPicPicker:self pickerSource:UIImagePickerControllerSourceTypePhotoLibrary imageButton:sender];
+    else{
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+
+        popoverController = [[UIPopoverController alloc] initWithContentViewController:picker];
+        [popoverController setPopoverContentSize:CGSizeMake(480,320) animated:YES];//大小
+        [popoverController presentPopoverFromRect:CGRectMake(sender.center.x,sender.center.y,10,10)//弹出位置
+                                           inView:self.view
+                         permittedArrowDirections:UIPopoverArrowDirectionDown//弹出方向
+                                         animated:YES];
+    }
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    [popoverController dismissPopoverAnimated:YES];
+	
     [LocalPicPicker picProcesser:picker viewController:self mediaInfo:info];
 }
 
 - (IBAction)cameraPhoto:(UIButton *)sender
 {
-    [LocalPicPicker localPicPicker:self pickerSource:UIImagePickerControllerSourceTypeCamera];
+    [LocalPicPicker localPicPicker:self pickerSource:UIImagePickerControllerSourceTypeCamera imageButton:sender];
 }
 
 - (IBAction)showColors:(id)sender

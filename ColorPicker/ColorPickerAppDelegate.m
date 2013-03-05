@@ -18,13 +18,6 @@ UIImageView *coverView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    cptbc = [[ColorPickerRootViewController alloc] init];
-    cptbc = (ColorPickerRootViewController *)self.window.rootViewController;
-    cptbc.rootViewDelegate = self;
-
-    [WXApi registerApp:WXAppID];
-    
     // 初始化开屏广告控制器，此处使用的是测试ID，请登陆多盟官网（www.domob.cn）获取新的ID
     _splashAd = [[DMSplashAdController alloc] initWithPublisherId:AdKey
                                                            window:self.window
@@ -34,12 +27,19 @@ UIImageView *coverView;
     _splashAd.rootViewController = cptbc;
     
     coverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default@2x.png"]];
-    coverView.frame = CGRectMake(0, 20, 320, self.window.rootViewController.view.frame.size.height);
     [self.window.rootViewController.view addSubview:coverView];
-    
+    coverView.frame = [UIApplication sharedApplication].keyWindow.frame;
     [TimerManager timer:self timeInterval:5 timeSinceNow:0 selector:@selector(showAd:) repeats:NO];
-    [TimerManager timer:self timeInterval:5 timeSinceNow:5 selector:@selector(removeBackground:) repeats:NO];
+    [TimerManager timer:self timeInterval:15 timeSinceNow:5 selector:@selector(removeBackground:) repeats:NO];
 
+    // Override point for customization after application launch.
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
+        cptbc = [[ColorPickerRootViewController alloc] init];
+        cptbc = (ColorPickerRootViewController *)self.window.rootViewController;
+        cptbc.rootViewDelegate = self;
+    }
+    [WXApi registerApp:WXAppID];
+    
     return YES;
 }
 

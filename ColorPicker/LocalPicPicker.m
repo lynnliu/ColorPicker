@@ -16,7 +16,7 @@
 
 @implementation LocalPicPicker
 
-+(void)localPicPicker:(id)viewController pickerSource:(UIImagePickerControllerSourceType)pickerSource
++(void)localPicPicker:(id)viewController pickerSource:(UIImagePickerControllerSourceType)pickerSource imageButton:(UIButton *)sender
 {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = viewController;

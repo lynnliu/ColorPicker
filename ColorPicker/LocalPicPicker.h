@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface LocalPicPicker : NSObject
-
-+(void)localPicPicker:(id)viewController pickerSource:(UIImagePickerControllerSourceType)pickerSource;
+ 
++(void)localPicPicker:(id)viewController pickerSource:(UIImagePickerControllerSourceType)pickerSource imageButton:(UIButton *)sender;
 
 +(void)picProcesser:(UIImagePickerController *)picker viewController:(id)viewController mediaInfo:(NSDictionary *)info;
 

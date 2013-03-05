@@ -12,7 +12,6 @@
 #import "AlertViewManager.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ShareSendViewController.h"
-#import "DMTools.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import <Social/Social.h>
@@ -23,7 +22,8 @@
 {
     DMAdView *_dmAdView;
     UIView *menu;
-    DMTools *_dmTools;
+    UIButton *closeButtoniPad;
+    DMAdView *_dmAdViewiPad;
     CLLocationManager *locationManager;
 }
 @end
@@ -48,12 +48,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // 检查更新提醒
-    if (!_dmTools){
-        _dmTools = [[DMTools alloc] initWithPublisherId:AdKey];
-        [_dmTools checkRateInfo];
-    }
 
     if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
         [locationManager startUpdatingLocation];
@@ -71,35 +65,45 @@
 
 -(void)showAd:(id)sender
 {
-    if (self.tabBar.frame.origin.x == 0){
-        _dmAdView = [[DMAdView alloc] initWithPublisherId:AdKey size:DOMOB_AD_SIZE_320x50];
-        _dmAdView.delegate = self; // 设置 Delegate
-        _dmAdView.rootViewController = self; // 设置 RootViewController
-        [self.view addSubview:_dmAdView];
-        
-        UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
-        [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
-            // 设置⼲⼴广告视图的位置
-            _dmAdView.frame = CGRectMake(0, self.view.frame.size.height - 50,
-                                         DOMOB_AD_SIZE_320x50.width,
-                                         DOMOB_AD_SIZE_320x50.height);   
-        } completion:^(BOOL finished){
-            [_dmAdView loadAd];
-        }];
-    }
+    _dmAdView = [[DMAdView alloc] initWithPublisherId:AdKey size:DOMOB_AD_SIZE_320x50];
+    _dmAdView.delegate = self; // 设置 Delegate
+    _dmAdView.rootViewController = self; // 设置 RootViewController
+    _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
+    [self.view addSubview:_dmAdView];
+    [_dmAdView loadAd];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) [self showAdiPad:sender];
+}
+
+-(void)showAdiPad:(id)sender
+{
+    _dmAdViewiPad = [[DMAdView alloc] initWithPublisherId:AdKey size:DOMOB_AD_SIZE_320x50];
+    _dmAdViewiPad.delegate = self; // 设置 Delegate
+    _dmAdViewiPad.rootViewController = self; // 设置 RootViewController
+    _dmAdViewiPad.frame = CGRectMake(self.view.frame.size.width, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
+    [self.view addSubview:_dmAdViewiPad];
+    [_dmAdViewiPad loadAd];
 }
 
 -(void)dismissAdView:(id)sender{
+
     UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
     [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
-        menu.frame = CGRectMake(280, self.view.frame.size.height, 0, 0);
+        [closeButtoniPad removeFromSuperview];
+        menu.frame = CGRectMake(320, self.view.frame.size.height - 125, 455, 75);
         _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
+        _dmAdViewiPad.frame = CGRectMake(self.view.frame.size.width, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
+        
     } completion:^(BOOL finished){
         [menu removeFromSuperview];
         menu = nil;
         _dmAdView.delegate = nil;
         _dmAdView.rootViewController =  nil;
         _dmAdView = nil;
+        _dmAdViewiPad.delegate = nil;
+        _dmAdViewiPad.rootViewController = nil;
+        _dmAdViewiPad = nil;
+        closeButtoniPad = nil;
         [TimerManager timer:self timeInterval:55 timeSinceNow:5 selector:@selector(showAd:) repeats:NO];
     }];
 }
@@ -108,17 +112,48 @@
 // 加载广告成功后，回调该方法
 - (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView
 {
-    if (!menu) [self showMenu];
+    UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
+    [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
+        // 设置⼲⼴广告视图的位置
+        _dmAdView.frame = CGRectMake(0, self.view.frame.size.height - 50,
+                                     DOMOB_AD_SIZE_320x50.width,
+                                     DOMOB_AD_SIZE_320x50.height);
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+            _dmAdViewiPad.frame = CGRectMake(self.view.frame.size.width - 320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
+            [self showCloseInIpad];
+        }
+    } completion:^(BOOL finished){
+        if (!menu){
+            if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) [self showMenu];
+        } 
+    }];
 }
 // 加载广告失败后，回调该方法
 - (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error
 {
+    _dmAdView.delegate = nil;
+    _dmAdView.rootViewController =  nil;
+    _dmAdView = nil;
+    _dmAdViewiPad.delegate = nil;
+    _dmAdViewiPad.rootViewController = nil;
+    _dmAdViewiPad = nil;
     NSLog(@"dmAd error = %@",error);
+}
+
+-(void)showCloseInIpad
+{
+    if (!closeButtoniPad){
+        closeButtoniPad = [[UIButton alloc] initWithFrame:CGRectMake(290, self.view.frame.size.height - 40, 30, 30)];
+        [closeButtoniPad addTarget:self action:@selector(dismissAdView:) forControlEvents:UIControlEventTouchUpInside];
+        [closeButtoniPad setBackgroundImage:[AlertViewManager closeButtonImage] forState:UIControlStateNormal];
+        closeButtoniPad.layer.cornerRadius = 10;
+        [self.view addSubview:closeButtoniPad];
+    }
 }
 
 -(void)showMenu
 {
-    menu = [[UIView alloc] initWithFrame:CGRectMake(280, self.view.frame.size.height, 0, 0)];
+    menu = [[UIView alloc] initWithFrame:CGRectMake(320, self.view.frame.size.height - 125, 455, 75)];
     menu.backgroundColor = [UIColor darkGrayColor];
     [menu.layer setCornerRadius:8];
     
@@ -165,19 +200,15 @@
     if([SLComposeViewController class] != nil){
         NSArray *activityItems;
         
-        if (self.sharingImage != nil) {
-            activityItems = @[self.sharingText, self.sharingImage];
-        } else {
-            activityItems = @[self.sharingText];
-        }
+        if (self.sharingImage != nil) activityItems = @[self.sharingText, self.sharingImage];
+        else activityItems = @[self.sharingText];
         
         NSArray *applicationActivities = @[[[LINEActivity alloc] init]];
         UIActivityViewController *activityController =
         [[UIActivityViewController alloc] initWithActivityItems:activityItems
                                           applicationActivities:applicationActivities];
-        
         [self presentViewController:activityController animated:YES completion:nil];
-    
+
     }else{
         [self shareToTencent];
     }
