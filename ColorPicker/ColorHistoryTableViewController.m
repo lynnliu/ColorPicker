@@ -82,7 +82,16 @@
     ColorsData *color = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.colorValue = [NSString stringWithFormat:@"r:%d g:%d b:%d a:%d",[color.red intValue],[color.green intValue],[color.blue intValue],[color.alpha intValue]];
     cell.colorLabel.textColor = [UIColor colorWithRed:(255 - [color.red intValue]) / 255.f green:(255 - [color.green intValue]) / 255.f blue:(255 - [color.blue intValue]) / 255.f alpha:1];
-    cell.time = [NSString stringWithFormat:@"%@",color.createtime];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [formatter dateFromString:color.createtime];
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
+    [formatter2 setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [formatter2 setDateFormat:@"yyyy-MM-dd"];
+    NSString *dataString = [formatter2 stringFromDate:date];
+    cell.time = [NSString stringWithFormat:@"%@",dataString];
+    
     cell.timeLabel.textColor = cell.colorLabel.textColor;
     cell.color = [UIColor colorWithRed:[color.red intValue]/255.0f green:[color.green intValue]/255.0f blue:[color.blue intValue]/255.0 alpha:[color.alpha intValue]/255.0];
     UIImage *image = [ImageOperate GetImageFromLocal:color.savedimage];
