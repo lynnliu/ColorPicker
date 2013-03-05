@@ -25,6 +25,8 @@
     UIButton *closeButtoniPad;
     DMAdView *_dmAdViewiPad;
     CLLocationManager *locationManager;
+
+    UIPopoverController *popoverController;
 }
 @end
 
@@ -207,11 +209,21 @@
         UIActivityViewController *activityController =
         [[UIActivityViewController alloc] initWithActivityItems:activityItems
                                           applicationActivities:applicationActivities];
-        [self presentViewController:activityController animated:YES completion:nil];
+        
+        
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+            [self presentViewController:activityController animated:YES completion:nil];
+        else{
+            popoverController = [[UIPopoverController alloc] initWithContentViewController:activityController];
+            [popoverController setPopoverContentSize:CGSizeMake(400,460) animated:YES];//大小
+            [popoverController presentPopoverFromRect:CGRectMake(1000,0,10,10)//弹出位置
+                                               inView:self.view
+                             permittedArrowDirections:UIPopoverArrowDirectionUp//弹出方向
+                                             animated:YES];
+        }
 
-    }else{
+    }else
         [self shareToTencent];
-    }
 }
 
 -(void)shareToTencent
