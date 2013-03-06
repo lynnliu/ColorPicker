@@ -17,6 +17,8 @@
 #import <Social/Social.h>
 #import <ACCOUNTS/ACAccount.h>
 #import "LINEActivity.h"
+#import "CHTumbletailActivity.h"
+#import "DMActivityInstagram.h"
 
 @interface ColorPickerTabBarController () <DMAdViewDelegate,CLLocationManagerDelegate>
 {
@@ -200,17 +202,19 @@
 - (IBAction)addWeiboShare:(UIBarButtonItem *)sender
 {
     if([SLComposeViewController class] != nil){
-        NSArray *activityItems;
         
-        if (self.sharingImage != nil) activityItems = @[self.sharingText, self.sharingImage];
-        else activityItems = @[self.sharingText];
+        NSURL *shareURL = [NSURL URLWithString:@"http://weibo.com/u/2048718212?wvr=5&"];
+        NSArray *activityItems = @[self.sharingImage,self.sharingText, shareURL];
         
-        NSArray *applicationActivities = @[[[LINEActivity alloc] init]];
+        DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
+        instagramActivity.presentFromButton = (UIBarButtonItem *)sender;
+        
+        NSArray *applicationActivities = @[[[LINEActivity alloc] init],instagramActivity,[[CHTumbletailActivityPhoto alloc] init]];
         UIActivityViewController *activityController =
         [[UIActivityViewController alloc] initWithActivityItems:activityItems
                                           applicationActivities:applicationActivities];
         
-        
+
         if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
             [self presentViewController:activityController animated:YES completion:nil];
         else{
@@ -225,6 +229,36 @@
     }else
         [self shareToTencent];
 }
+//
+//-(void)instagram{
+//    /* iOS 6 sharing, including instagram */
+//    
+//    DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
+//    
+//    instagramActivity.presentFromButton = (UIBarButtonItem *)sender;
+//    // this will only be used if the image doesn't need to be resized.
+//    
+//    NSString *shareText = @"CatPaint #catpaint";
+//    NSURL *shareURL = [NSURL URLWithString:@"http://catpaint.info"];
+//    
+//    NSArray *activityItems = @[self.imageView.image, shareText, shareURL];
+//    NSArray *applicationActivities = @[instagramActivity];
+//    NSArray *excludeActivities = @[];
+//    
+//    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
+//    activityController.excludedActivityTypes = excludeActivities;
+//    
+//    // switch for iPhone and iPad.
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//        self.popover = [[UIPopoverController alloc] initWithContentViewController:activityController];
+//        self.popover.delegate = self;
+//        [self.popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//    } else {
+//        [self presentViewController:activityController animated:YES completion:^{
+//            NSLog(@"Activity complete");
+//        }];
+//    }
+//}
 
 -(void)shareToTencent
 {

@@ -78,6 +78,14 @@
 		BA7D5A6216DC6797005E21F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */; };
 		BA7D5A6416DC67A0005E21F7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6316DC679F005E21F7 /* StoreKit.framework */; };
 		BA7D5A6616DC67A9005E21F7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7D5A6516DC67A9005E21F7 /* PassKit.framework */; };
+		BAB31E3116E6F43D00884C52 /* DMActivityInstagram.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB31E3016E6F43D00884C52 /* DMActivityInstagram.m */; };
+		BAB31E3616E6F44700884C52 /* instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3216E6F44700884C52 /* instagram.png */; };
+		BAB31E3716E6F44700884C52 /* instagram@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3316E6F44700884C52 /* instagram@2x.png */; };
+		BAB31E3816E6F44700884C52 /* instagram~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3416E6F44700884C52 /* instagram~ipad.png */; };
+		BAB31E3916E6F44700884C52 /* instagram~ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3516E6F44700884C52 /* instagram~ipad@2x.png */; };
+		BAB31E3D16E6F49200884C52 /* DMResizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB31E3B16E6F49200884C52 /* DMResizerViewController.m */; };
+		BAB31E3E16E6F49200884C52 /* DMResizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3C16E6F49200884C52 /* DMResizerViewController.xib */; };
+		BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3F16E6F89500884C52 /* Icon1024.png */; };
 		BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */; };
 		BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E716D1D13D00005C86 /* UIKit.framework */; };
 		BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E916D1D13D00005C86 /* Foundation.framework */; };
@@ -208,6 +216,16 @@
 		BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA7D5A6316DC679F005E21F7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA7D5A6516DC67A9005E21F7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		BAB31E2F16E6F43D00884C52 /* DMActivityInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMActivityInstagram.h; sourceTree = "<group>"; };
+		BAB31E3016E6F43D00884C52 /* DMActivityInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMActivityInstagram.m; sourceTree = "<group>"; };
+		BAB31E3216E6F44700884C52 /* instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram.png; sourceTree = "<group>"; };
+		BAB31E3316E6F44700884C52 /* instagram@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram@2x.png"; sourceTree = "<group>"; };
+		BAB31E3416E6F44700884C52 /* instagram~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram~ipad.png"; sourceTree = "<group>"; };
+		BAB31E3516E6F44700884C52 /* instagram~ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram~ipad@2x.png"; sourceTree = "<group>"; };
+		BAB31E3A16E6F49200884C52 /* DMResizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMResizerViewController.h; sourceTree = "<group>"; };
+		BAB31E3B16E6F49200884C52 /* DMResizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMResizerViewController.m; sourceTree = "<group>"; };
+		BAB31E3C16E6F49200884C52 /* DMResizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMResizerViewController.xib; sourceTree = "<group>"; };
+		BAB31E3F16E6F89500884C52 /* Icon1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon1024.png; sourceTree = "<group>"; };
 		BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerRootViewController.h; sourceTree = "<group>"; };
 		BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerRootViewController.m; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,6 +372,22 @@
 			path = InfColorPicker;
 			sourceTree = "<group>";
 		};
+		BAB31E2E16E6F42C00884C52 /* InstragramActivity */ = {
+			isa = PBXGroup;
+			children = (
+				BAB31E3A16E6F49200884C52 /* DMResizerViewController.h */,
+				BAB31E3B16E6F49200884C52 /* DMResizerViewController.m */,
+				BAB31E3C16E6F49200884C52 /* DMResizerViewController.xib */,
+				BAB31E2F16E6F43D00884C52 /* DMActivityInstagram.h */,
+				BAB31E3016E6F43D00884C52 /* DMActivityInstagram.m */,
+				BAB31E3216E6F44700884C52 /* instagram.png */,
+				BAB31E3316E6F44700884C52 /* instagram@2x.png */,
+				BAB31E3416E6F44700884C52 /* instagram~ipad.png */,
+				BAB31E3516E6F44700884C52 /* instagram~ipad@2x.png */,
+			);
+			name = InstragramActivity;
+			sourceTree = "<group>";
+		};
 		BADB81DB16D1D13D00005C86 = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +460,7 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BAB31E3F16E6F89500884C52 /* Icon1024.png */,
 				BA66343E16DF15F400F160CD /* Favourite.png */,
 				BA66343C16DF15EE00F160CD /* History.png */,
 				BA4DF9F916DDF1C90065AB04 /* WebChat.png */,
@@ -459,6 +494,7 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BAB31E2E16E6F42C00884C52 /* InstragramActivity */,
 				BA1B54C216E04B9300C1AC6E /* LINEActivity */,
 				BA4DF9F216DDF0930065AB04 /* WebChat */,
 				BA7D5A4316DC5B2F005E21F7 /* InfColorPicker */,
@@ -628,6 +664,12 @@
 				BA1B54CD16E04B9300C1AC6E /* LINEActivityIcon~ipad.png in Resources */,
 				BA1B54D716E05B1300C1AC6E /* Tc32_Black.png in Resources */,
 				BA1B54D816E05B1300C1AC6E /* TCweiboicon32.png in Resources */,
+				BAB31E3616E6F44700884C52 /* instagram.png in Resources */,
+				BAB31E3716E6F44700884C52 /* instagram@2x.png in Resources */,
+				BAB31E3816E6F44700884C52 /* instagram~ipad.png in Resources */,
+				BAB31E3916E6F44700884C52 /* instagram~ipad@2x.png in Resources */,
+				BAB31E3E16E6F49200884C52 /* DMResizerViewController.xib in Resources */,
+				BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +713,8 @@
 				BA0C1DB416DC8F08000D534A /* OauthKey.m in Sources */,
 				BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */,
 				BA1B54C916E04B9300C1AC6E /* LINEActivity.m in Sources */,
+				BAB31E3116E6F43D00884C52 /* DMActivityInstagram.m in Sources */,
+				BAB31E3D16E6F49200884C52 /* DMResizerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
