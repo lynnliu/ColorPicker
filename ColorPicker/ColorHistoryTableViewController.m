@@ -10,6 +10,7 @@
 #import "ColorHistoryTableViewCell.h"
 #import "ColorsData+Operator.h"
 #import "ImageOperate.h"
+#import "ColorHistoryDetailViewController.h"
 
 @interface ColorHistoryTableViewController ()
 
@@ -59,7 +60,12 @@
 {
     [super viewWillAppear:animated];
     self.tableView.rowHeight = 60;
-    self.title = @"Color Data";
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"])
+        self.title = @"历史纪录";
+    else
+        self.title = @"Color Data";
     
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Default Color Database"];
@@ -118,6 +124,21 @@
     }
 
     [ColorsData prepareToDeletion:colorInfo inManagedObjectContext:self.fetchedResultsController.managedObjectContext];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ColorsData *color = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ColorHistoryDetailViewController *chdvc = [[ColorHistoryDetailViewController alloc] init];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"ColorHistoryDetail" bundle:nil];
+    chdvc = story.instantiateInitialViewController;
+    
+    chdvc.colorName = [NSString stringWithFormat:@"r:%d g:%d b:%d a:%d",[color.red intValue],[color.green intValue],[color.blue intValue],[color.alpha intValue]];
+    chdvc.color = [UIColor colorWithRed:[color.red intValue] / 255.f green:[color.green intValue] / 255.f blue:[color.blue intValue] / 255.f alpha:1];
+    chdvc.textColor = [UIColor colorWithRed:(255 - [color.red intValue]) / 255.f green:(255 - [color.green intValue]) / 255.f blue:(255 - [color.blue intValue]) / 255.f alpha:1];
+    chdvc.image = [ImageOperate GetImageFromLocal:color.savedimage];
+    
+    [self.navigationController pushViewController:chdvc animated:YES];
 }
 
 @end

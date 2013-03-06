@@ -86,6 +86,8 @@
 		BAB31E3D16E6F49200884C52 /* DMResizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB31E3B16E6F49200884C52 /* DMResizerViewController.m */; };
 		BAB31E3E16E6F49200884C52 /* DMResizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3C16E6F49200884C52 /* DMResizerViewController.xib */; };
 		BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3F16E6F89500884C52 /* Icon1024.png */; };
+		BAB31E4316E7173E00884C52 /* ColorHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E4216E7173E00884C52 /* ColorHistoryDetail.storyboard */; };
+		BAB31E4616E717C300884C52 /* ColorHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB31E4516E717C300884C52 /* ColorHistoryDetailViewController.m */; };
 		BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */; };
 		BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E716D1D13D00005C86 /* UIKit.framework */; };
 		BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E916D1D13D00005C86 /* Foundation.framework */; };
@@ -226,6 +228,9 @@
 		BAB31E3B16E6F49200884C52 /* DMResizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMResizerViewController.m; sourceTree = "<group>"; };
 		BAB31E3C16E6F49200884C52 /* DMResizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMResizerViewController.xib; sourceTree = "<group>"; };
 		BAB31E3F16E6F89500884C52 /* Icon1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon1024.png; sourceTree = "<group>"; };
+		BAB31E4216E7173E00884C52 /* ColorHistoryDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorHistoryDetail.storyboard; sourceTree = "<group>"; };
+		BAB31E4416E717C300884C52 /* ColorHistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHistoryDetailViewController.h; sourceTree = "<group>"; };
+		BAB31E4516E717C300884C52 /* ColorHistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHistoryDetailViewController.m; sourceTree = "<group>"; };
 		BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerRootViewController.h; sourceTree = "<group>"; };
 		BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerRootViewController.m; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -538,6 +543,8 @@
 				BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */,
 				BA0C5F2816DB0CB4001EB5DB /* ColorHistoryTableViewCell.h */,
 				BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */,
+				BAB31E4416E717C300884C52 /* ColorHistoryDetailViewController.h */,
+				BAB31E4516E717C300884C52 /* ColorHistoryDetailViewController.m */,
 				BA0C5F3416DB3F4B001EB5DB /* AboutViewController.h */,
 				BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */,
 				BA0C1D9816DC8D42000D534A /* ShareSendViewController.h */,
@@ -556,6 +563,7 @@
 				BADB822816D3163A00005C86 /* ImageChopper.storyboard */,
 				BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */,
 				BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */,
+				BAB31E4216E7173E00884C52 /* ColorHistoryDetail.storyboard */,
 				BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */,
 			);
 			name = Views;
@@ -670,6 +678,7 @@
 				BAB31E3916E6F44700884C52 /* instagram~ipad@2x.png in Resources */,
 				BAB31E3E16E6F49200884C52 /* DMResizerViewController.xib in Resources */,
 				BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */,
+				BAB31E4316E7173E00884C52 /* ColorHistoryDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +724,7 @@
 				BA1B54C916E04B9300C1AC6E /* LINEActivity.m in Sources */,
 				BAB31E3116E6F43D00884C52 /* DMActivityInstagram.m in Sources */,
 				BAB31E3D16E6F49200884C52 /* DMResizerViewController.m in Sources */,
+				BAB31E4616E717C300884C52 /* ColorHistoryDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
