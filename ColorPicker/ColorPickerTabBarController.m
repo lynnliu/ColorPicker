@@ -17,7 +17,6 @@
 #import <Social/Social.h>
 #import <ACCOUNTS/ACAccount.h>
 #import "LINEActivity.h"
-#import "CHTumbletailActivity.h"
 #import "DMActivityInstagram.h"
 
 @interface ColorPickerTabBarController () <DMAdViewDelegate,CLLocationManagerDelegate>
