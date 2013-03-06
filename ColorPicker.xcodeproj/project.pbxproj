@@ -208,7 +208,6 @@
 		BA7D5A6116DC6797005E21F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA7D5A6316DC679F005E21F7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA7D5A6516DC67A9005E21F7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
-		BA85AA8A16E58FE3000EEBC6 /* ColorPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ColorPicker.entitlements; sourceTree = "<group>"; };
 		BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerRootViewController.h; sourceTree = "<group>"; };
 		BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerRootViewController.m; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				BA05DB7C16D85FD800F44750 /* ColorTable.xcdatamodeld */,
-				BA85AA8A16E58FE3000EEBC6 /* ColorPicker.entitlements */,
 				BA0C1DAD16DC8E83000D534A /* UserInfoPropertyList.plist */,
 				BA0C5F2E16DB31F9001EB5DB /* ColorsData.h */,
 				BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */,
