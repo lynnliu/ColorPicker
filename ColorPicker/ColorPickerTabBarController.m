@@ -229,36 +229,6 @@
     }else
         [self shareToTencent];
 }
-//
-//-(void)instagram{
-//    /* iOS 6 sharing, including instagram */
-//    
-//    DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
-//    
-//    instagramActivity.presentFromButton = (UIBarButtonItem *)sender;
-//    // this will only be used if the image doesn't need to be resized.
-//    
-//    NSString *shareText = @"CatPaint #catpaint";
-//    NSURL *shareURL = [NSURL URLWithString:@"http://catpaint.info"];
-//    
-//    NSArray *activityItems = @[self.imageView.image, shareText, shareURL];
-//    NSArray *applicationActivities = @[instagramActivity];
-//    NSArray *excludeActivities = @[];
-//    
-//    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
-//    activityController.excludedActivityTypes = excludeActivities;
-//    
-//    // switch for iPhone and iPad.
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-//        self.popover = [[UIPopoverController alloc] initWithContentViewController:activityController];
-//        self.popover.delegate = self;
-//        [self.popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-//    } else {
-//        [self presentViewController:activityController animated:YES completion:^{
-//            NSLog(@"Activity complete");
-//        }];
-//    }
-//}
 
 -(void)shareToTencent
 {
