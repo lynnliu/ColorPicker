@@ -208,7 +208,7 @@
         DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
         instagramActivity.presentFromButton = (UIBarButtonItem *)sender;
         
-        NSArray *applicationActivities = @[[[LINEActivity alloc] init],instagramActivity,[[CHTumbletailActivityPhoto alloc] init]];
+        NSArray *applicationActivities = @[[[LINEActivity alloc] init],instagramActivity];
         UIActivityViewController *activityController =
         [[UIActivityViewController alloc] initWithActivityItems:activityItems
                                           applicationActivities:applicationActivities];
