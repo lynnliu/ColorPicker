@@ -64,7 +64,6 @@
 {
     [super viewDidLoad];    
     
-    self.wechat.hidden = YES;
     NSArray *languages = [NSLocale preferredLanguages];
     NSString *currentLanguage = [languages objectAtIndex:0];
     if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
@@ -243,19 +242,19 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (buttonIndex) {
         case 0:
-            [self sendReqWebChat:1 txt:self.sendTextView.text];
+            [self sendReqWebChat:1];
             break;
         case 1:
-            [self sendReqWebChat:0 txt:self.sendTextView.text];
+            [self sendReqWebChat:0];
             break;
         default:
             break;
     }
 }
 
--(void)sendReqWebChat:(BOOL)reqType txt:(NSString *)msg
+-(void)sendReqWebChat:(BOOL)reqType
 {
-    [[(ColorPickerRootViewController *)self.presentingViewController rootViewDelegate] sendReqWebChat:reqType txt:msg];
+    [[(ColorPickerRootViewController *)self.presentingViewController rootViewDelegate] sendAppContent:reqType];
 }
 
 - (void)viewDidUnload {

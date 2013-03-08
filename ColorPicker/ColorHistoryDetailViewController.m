@@ -13,6 +13,7 @@
 #import <ACCOUNTS/ACAccount.h>
 #import "LINEActivity.h"
 #import "DMActivityInstagram.h"
+#import "WeiXinActivity.h"
 
 @interface ColorHistoryDetailViewController ()
 {
@@ -60,7 +61,7 @@
     NSArray *languages = [NSLocale preferredLanguages];
     NSString *currentLanguage = [languages objectAtIndex:0];
     if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
-        self.shareText = [NSString stringWithFormat:@"我发现这个程序，屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! %@",ITUNESURL];
+        self.shareText = [NSString stringWithFormat:@"推荐一个应用：屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! %@",ITUNESURL];
     }else if ([currentLanguage isEqualToString:@"ja"]){
         self.shareText = [NSString stringWithFormat:@"推奨する:%@",ITUNESURL];
     }else{
@@ -73,12 +74,11 @@
         DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
         instagramActivity.presentFromButton = (UIBarButtonItem *)sender;
         
-        NSArray *applicationActivities = @[[[LINEActivity alloc] init],instagramActivity];
+        NSArray *applicationActivities = @[[[LINEActivity alloc] init],instagramActivity,[[WeiXinActivity alloc] init]];
         UIActivityViewController *activityController =
         [[UIActivityViewController alloc] initWithActivityItems:activityItems
                                           applicationActivities:applicationActivities];
-        
-        
+                
         if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
             [self presentViewController:activityController animated:YES completion:nil];
         else{

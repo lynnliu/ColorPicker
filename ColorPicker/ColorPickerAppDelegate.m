@@ -38,6 +38,7 @@ UIImageView *coverView;
         cptbc = (ColorPickerRootViewController *)self.window.rootViewController;
         cptbc.rootViewDelegate = self;
     }
+    
     [WXApi registerApp:WXAppID];
     
     return YES;
@@ -77,26 +78,6 @@ UIImageView *coverView;
     NSLog(@"dmAd error = %@",err);
 }
 
-// 微信 分享
--(void)sendReqWebChat:(BOOL)reqType txt:(NSString *)msg
-{
-    WXMediaMessage *message = [WXMediaMessage message];
-    [message setThumbImage:[UIImage imageNamed:@"icon.png"]];
-    
-    WXImageObject *ext = [WXImageObject object];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"icon@2x" ofType:@"png"];
-    ext.imageData = [NSData dataWithContentsOfFile:filePath] ;
-    
-    message.mediaObject = ext;
-    
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = reqType ? WXSceneTimeline : WXSceneSession;
-    
-    [WXApi sendReq:req];
-}
-
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
     return [WXApi handleOpenURL:url delegate:self];
@@ -109,8 +90,78 @@ UIImageView *coverView;
 
 -(void)onReq:(BaseReq *)req
 {
+    //在此处接收到微信的消息请求，直接进行了分享应用程序。也可以打开特定页面，跟用户交互分享
+    if ([req isKindOfClass:[GetMessageFromWXReq class]])
+        [self sendAppResponse];
+    
     NSLog(@"req = %@",req);
 }
+
+#define TITLE @"推荐一个应用：屏幕取色（ColorPicker)"
+#define Description @"这个程序可以轻松取得你看到的图片上的颜色值。下载试试吧。"
+//向微信发送消息
+- (void) sendAppContent:(BOOL)reqType
+{
+    // 发送内容给微信
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = TITLE;
+    message.description = Description;
+    [message setThumbImage:[UIImage imageNamed:@"Icon.png"]];
+    
+    WXAppExtendObject *ext = [WXAppExtendObject object];
+    ext.extInfo = Description;
+    ext.url = ITUNESURL;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = reqType ? WXSceneTimeline : WXSceneSession;
+    
+    [WXApi sendReq:req];
+}
+
+//微信中请求
+-(void)sendAppResponse
+{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"推荐一个应用：屏幕取色（ColorPicker)";
+    [message setThumbImage:[UIImage imageNamed:@"Icon.png"]];
+    
+    WXAppExtendObject *ext = [WXAppExtendObject object];
+    ext.extInfo = Description;
+    ext.url = ITUNESURL;
+    
+    message.mediaObject = ext;
+    
+    GetMessageFromWXResp* resp = [[GetMessageFromWXResp alloc] init];
+    resp.message = message;
+    resp.bText = NO;
+
+    [WXApi sendResp:resp];
+}
+
+- (void) sendNewsContent:(BOOL)reqType image:(UIImage *)image descript:(NSString *)descript
+{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = TITLE;
+    message.description = descript;
+    [message setThumbImage:image];
+    
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = ITUNESURL;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = reqType ? WXSceneTimeline : WXSceneSession;
+    
+    [WXApi sendReq:req];
+}
+
 
 -(void)onResp:(BaseResp *)resp
 {

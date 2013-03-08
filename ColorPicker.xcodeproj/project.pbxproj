@@ -23,6 +23,11 @@
 		BA05DB9216D89EFC00F44750 /* ColorHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9116D89EFC00F44750 /* ColorHistoryTableViewController.m */; };
 		BA05DB9616D8AF6600F44750 /* ImageOperate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9516D8AF6600F44750 /* ImageOperate.m */; };
 		BA05DB9D16D8B5CF00F44750 /* ColorsData+Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */; };
+		BA061CAA16E9E0D600BF9391 /* WeiXinActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = BA061CA516E9E0D600BF9391 /* WeiXinActivity.m */; };
+		BA061CAB16E9E0D600BF9391 /* WeiXinActivityIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BA061CA616E9E0D600BF9391 /* WeiXinActivityIcon.png */; };
+		BA061CAC16E9E0D600BF9391 /* WeiXinActivityIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA061CA716E9E0D600BF9391 /* WeiXinActivityIcon@2x.png */; };
+		BA061CAD16E9E0D600BF9391 /* WeiXinActivityIcon@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BA061CA816E9E0D600BF9391 /* WeiXinActivityIcon@2x~ipad.png */; };
+		BA061CAE16E9E0D600BF9391 /* WeiXinActivityIcon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = BA061CA916E9E0D600BF9391 /* WeiXinActivityIcon~ipad.png */; };
 		BA0C1D9716DC8D30000D534A /* ShareSend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */; };
 		BA0C1D9A16DC8D42000D534A /* ShareSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */; };
 		BA0C1DA316DC8DAA000D534A /* weibo32_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0C1D9D16DC8DAA000D534A /* weibo32_Black.png */; };
@@ -137,6 +142,12 @@
 		BA05DB9516D8AF6600F44750 /* ImageOperate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageOperate.m; sourceTree = "<group>"; };
 		BA05DB9B16D8B5CF00F44750 /* ColorsData+Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ColorsData+Operator.h"; sourceTree = "<group>"; };
 		BA05DB9C16D8B5CF00F44750 /* ColorsData+Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ColorsData+Operator.m"; sourceTree = "<group>"; };
+		BA061CA416E9E0D600BF9391 /* WeiXinActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiXinActivity.h; sourceTree = "<group>"; };
+		BA061CA516E9E0D600BF9391 /* WeiXinActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiXinActivity.m; sourceTree = "<group>"; };
+		BA061CA616E9E0D600BF9391 /* WeiXinActivityIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WeiXinActivityIcon.png; sourceTree = "<group>"; };
+		BA061CA716E9E0D600BF9391 /* WeiXinActivityIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeiXinActivityIcon@2x.png"; sourceTree = "<group>"; };
+		BA061CA816E9E0D600BF9391 /* WeiXinActivityIcon@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeiXinActivityIcon@2x~ipad.png"; sourceTree = "<group>"; };
+		BA061CA916E9E0D600BF9391 /* WeiXinActivityIcon~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeiXinActivityIcon~ipad.png"; sourceTree = "<group>"; };
 		BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShareSend.storyboard; sourceTree = "<group>"; };
 		BA0C1D9816DC8D42000D534A /* ShareSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSendViewController.h; sourceTree = "<group>"; };
 		BA0C1D9916DC8D42000D534A /* ShareSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSendViewController.m; sourceTree = "<group>"; };
@@ -333,6 +344,19 @@
 			name = Business;
 			sourceTree = "<group>";
 		};
+		BA061CA316E9E0D600BF9391 /* WeiXinActivity */ = {
+			isa = PBXGroup;
+			children = (
+				BA061CA416E9E0D600BF9391 /* WeiXinActivity.h */,
+				BA061CA516E9E0D600BF9391 /* WeiXinActivity.m */,
+				BA061CA616E9E0D600BF9391 /* WeiXinActivityIcon.png */,
+				BA061CA716E9E0D600BF9391 /* WeiXinActivityIcon@2x.png */,
+				BA061CA816E9E0D600BF9391 /* WeiXinActivityIcon@2x~ipad.png */,
+				BA061CA916E9E0D600BF9391 /* WeiXinActivityIcon~ipad.png */,
+			);
+			path = WeiXinActivity;
+			sourceTree = "<group>";
+		};
 		BA1B54C216E04B9300C1AC6E /* LINEActivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +523,7 @@
 		BADB820E16D1D68E00005C86 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA061CA316E9E0D600BF9391 /* WeiXinActivity */,
 				BAB31E2E16E6F42C00884C52 /* InstragramActivity */,
 				BA1B54C216E04B9300C1AC6E /* LINEActivity */,
 				BA4DF9F216DDF0930065AB04 /* WebChat */,
@@ -679,6 +704,10 @@
 				BAB31E3E16E6F49200884C52 /* DMResizerViewController.xib in Resources */,
 				BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */,
 				BAB31E4316E7173E00884C52 /* ColorHistoryDetail.storyboard in Resources */,
+				BA061CAB16E9E0D600BF9391 /* WeiXinActivityIcon.png in Resources */,
+				BA061CAC16E9E0D600BF9391 /* WeiXinActivityIcon@2x.png in Resources */,
+				BA061CAD16E9E0D600BF9391 /* WeiXinActivityIcon@2x~ipad.png in Resources */,
+				BA061CAE16E9E0D600BF9391 /* WeiXinActivityIcon~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +754,7 @@
 				BAB31E3116E6F43D00884C52 /* DMActivityInstagram.m in Sources */,
 				BAB31E3D16E6F49200884C52 /* DMResizerViewController.m in Sources */,
 				BAB31E4616E717C300884C52 /* ColorHistoryDetailViewController.m in Sources */,
+				BA061CAA16E9E0D600BF9391 /* WeiXinActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

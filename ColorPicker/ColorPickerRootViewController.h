@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @protocol ColorPickerRootViewControllerDelegate <NSObject>
--(void)sendReqWebChat:(BOOL)reqType txt:(NSString *)msg;
+@optional
+- (void) sendAppContent:(BOOL)reqType;
+- (void) sendNewsContent:(BOOL)reqType image:(UIImage *)image descript:(NSString *)descript;
 @end
 
 @interface ColorPickerRootViewController : UINavigationController
