@@ -78,20 +78,8 @@
 
 -(void)openWechat
 {
-    
-}
-
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 0:
-            [self sendReqWebChat:1];
-            break;
-        case 1:
-            [self sendReqWebChat:0];
-            break;
-        default:
-            break;
-    }
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:@"OK",@"Wechat",nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"wechat share" object:self userInfo:userInfo];
 }
 
 -(void)sendReqWebChat:(BOOL)reqType

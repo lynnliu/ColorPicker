@@ -8,13 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ColorPicker/WeiXinActivity/WeiXinActivity.m"
-         timestampString = "384426842.542931"
+         timestampString = "384483199.74304"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "141"
-         endingLineNumber = "141"
-         landmarkName = "-sendReqWebChat:"
-         landmarkType = "5">
+         startingLineNumber = "129"
+         endingLineNumber = "129">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

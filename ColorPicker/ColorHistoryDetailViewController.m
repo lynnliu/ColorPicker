@@ -14,8 +14,9 @@
 #import "LINEActivity.h"
 #import "DMActivityInstagram.h"
 #import "WeiXinActivity.h"
+#import "ColorPickerRootViewController.h"
 
-@interface ColorHistoryDetailViewController ()
+@interface ColorHistoryDetailViewController () <UIActionSheetDelegate>
 {
     UIPopoverController *popoverController;
 }
@@ -54,6 +55,70 @@
     [[self.imageView layer] setShadowColor:[UIColor grayColor].CGColor];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkWechatShare:) name:@"wechat share" object:nil];
+}
+
+-(void)checkWechatShare:(NSNotification *)notification
+{
+    if ([[notification.userInfo valueForKey:@"Wechat"] isEqualToString:@"OK"]){
+        NSString *title = @"";
+        NSString *cancel = @"";
+        NSString *button1 = @"";
+        NSString *button2 = @"";
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *currentLanguage = [languages objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
+            title = @"微信分享";
+            cancel = @"取消";
+            button1 = @"分享到朋友圈";
+            button2 =@"分享到会话";
+        }else if ([currentLanguage isEqualToString:@"ja"]){
+            title = @"WeChat 分かち合う";
+            cancel = @"キャンセル";
+            button1 = @"友達の輪";
+            button2 =@"会話";
+        }else{
+            title = @"WeChat Share";
+            cancel = @"Cancel";
+            button1 = @"To Circle";
+            button2 =@"To Conversation";
+        }
+        
+        UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:title
+                                                            delegate:self
+                                                   cancelButtonTitle:cancel
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:button1,button2, nil];
+        [action showInView:self.view];
+
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            [self sendReqWebChat:1];
+            break;
+        case 1:
+            [self sendReqWebChat:0];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)sendReqWebChat:(BOOL)reqType
+{
+    NSString *descript = @"";
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"])
+        descript = @"这张图片怎么样？知道它的颜色构成吗？用这个软件试试吧!";
+    else
+        descript = @"Do you like this picture？User this app to try！";
+
+    [[(ColorPickerRootViewController *)self.parentViewController rootViewDelegate] sendNewsContent:reqType image:self.image descript:descript];
 }
 
 -(void)share:(id)sender
@@ -114,5 +179,9 @@
     [self setImageView:nil];
     [self setColorDetail:nil];
     [super viewDidUnload];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"wechat share" object:nil];
 }
 @end

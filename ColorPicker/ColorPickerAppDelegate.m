@@ -144,13 +144,14 @@ UIImageView *coverView;
 
 - (void) sendNewsContent:(BOOL)reqType image:(UIImage *)image descript:(NSString *)descript
 {
+    //发送内容给微信
     WXMediaMessage *message = [WXMediaMessage message];
-    message.title = TITLE;
+    [message setThumbImage:[UIImage imageNamed:@"Icon.png"]];
     message.description = descript;
-    [message setThumbImage:image];
     
-    WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = ITUNESURL;
+    WXImageObject *ext = [WXImageObject object];
+    ext.imageData = UIImagePNGRepresentation(image);
+    ext.imageUrl = ITUNESURL;
     
     message.mediaObject = ext;
     
@@ -161,7 +162,6 @@ UIImageView *coverView;
     
     [WXApi sendReq:req];
 }
-
 
 -(void)onResp:(BaseResp *)resp
 {
