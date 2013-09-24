@@ -34,12 +34,14 @@
             if (success) [self setupFetchedResultsController];
             if (!success) NSLog(@"couldn’t create document at %@", self.colorDatabase.fileURL);
         }];
-    }else if (self.colorDatabase.documentState == UIDocumentStateClosed){
+    }
+    else if (self.colorDatabase.documentState == UIDocumentStateClosed){
         [self.colorDatabase openWithCompletionHandler:^(BOOL success){
             if (success) [self setupFetchedResultsController];
             if (!success) NSLog(@"couldn’t open document at %@", self.colorDatabase.fileURL);
         }];
-    }else if (self.colorDatabase.documentState == UIDocumentStateNormal){
+    }
+    else if (self.colorDatabase.documentState == UIDocumentStateNormal){
         [self setupFetchedResultsController];
     }
 }
@@ -62,11 +64,12 @@
     self.tableView.rowHeight = 60;
     NSArray *languages = [NSLocale preferredLanguages];
     NSString *currentLanguage = [languages objectAtIndex:0];
-    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"])
+    if ([currentLanguage isEqualToString:@"zh-Hans"] || [currentLanguage isEqualToString:@"zh-Hant"]){
         self.title = @"历史纪录";
-    else
+    }
+    else{
         self.title = @"Color Data";
-    
+    }
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Default Color Database"];
     self.colorDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
@@ -138,6 +141,7 @@
     chdvc.textColor = [UIColor colorWithRed:(255 - [color.red intValue]) / 255.f green:(255 - [color.green intValue]) / 255.f blue:(255 - [color.blue intValue]) / 255.f alpha:1];
     chdvc.image = [ImageOperate GetImageFromLocal:color.savedimage];
     
+    chdvc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chdvc animated:YES];
 }
 

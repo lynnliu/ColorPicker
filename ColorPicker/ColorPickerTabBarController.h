@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class SLComposeViewController;
+#import "ColorPickerBaseViewController.h"
 
 @interface ColorPickerTabBarController : UITabBarController
-{
-    SLComposeViewController *slComposerSheet;
-}
-@property (nonatomic) NSString *sharingText;
-@property (nonatomic) UIImage *sharingImage;
+
 @end

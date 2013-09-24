@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="N6D-9F-VBE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="o2N-E9-n1D">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Color History Table View Controller-->
+        <!--Color History Table View Controller - History-->
         <scene sceneID="Lep-Nx-hoF">
             <objects>
                 <tableViewController id="tpO-nF-Ymu" customClass="ColorHistoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GGl-8B-UL6">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Color Cell" id="cSd-OF-faO">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cSd-OF-faO" id="kpk-xD-nbA">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -29,27 +29,27 @@
                             <outlet property="delegate" destination="tpO-nF-Ymu" id="EGD-8x-nqL"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="8bX-5t-oT3"/>
+                    <navigationItem key="navigationItem" title="History" id="v0Y-yy-oi2"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKb-U7-b8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="85"/>
+            <point key="canvasLocation" x="3484" y="85"/>
         </scene>
-        <!--About View Controller-->
+        <!--About View Controller - about-->
         <scene sceneID="3nJ-NE-B1x">
             <objects>
                 <viewController id="X4q-k6-1j4" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wJQ-Rr-eYZ">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon@2x.png" id="wbl-qy-MBm">
-                                <rect key="frame" x="412" y="68" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="icon_76@2x.png" id="wbl-qy-MBm">
+                                <rect key="frame" x="412" y="101" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eC7-Ns-WcF">
-                                <rect key="frame" x="197" y="378" width="631" height="73"/>
+                                <rect key="frame" x="197" y="414" width="631" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="Rate Me" backgroundImage="TakePhoto.png">
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="taQ-YQ-j4N">
-                                <rect key="frame" x="197" y="452" width="631" height="73"/>
+                                <rect key="frame" x="197" y="488" width="631" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Contact me：ulynncom@gmail.com" backgroundImage="TakePhoto.png">
@@ -79,32 +79,17 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Squ-Zz-QOS">
-                                <rect key="frame" x="197" y="290" width="631" height="76"/>
+                                <rect key="frame" x="197" y="301" width="631" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="0.84534438779999999" green="0.84534438779999999" blue="0.84534438779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rAQ-4R-N0Z">
-                                <rect key="frame" x="197" y="526" width="631" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Share To Tencent" backgroundImage="TakePhoto.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="share:" destination="X4q-k6-1j4" eventType="touchUpInside" id="MFm-6F-1wd"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="65v-jy-0iU"/>
+                    <navigationItem key="navigationItem" title="about" id="wXd-4r-1Q1"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="version" destination="Squ-Zz-QOS" id="G9v-da-e3f"/>
@@ -112,22 +97,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnS-Eh-CtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="1222"/>
+            <point key="canvasLocation" x="3484" y="1222"/>
         </scene>
-        <!--Picker Init View Controller-->
+        <!--Picker Init View Controller - ColorPicker-->
         <scene sceneID="llp-sq-upN">
             <objects>
                 <viewController id="6Xd-xe-953" customClass="PickerInitViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxH-n4-nDZ">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon@2x.png" id="tIE-2f-1yd">
-                                <rect key="frame" x="412" y="60" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="icon_76@2x.png" id="tIE-2f-1yd">
+                                <rect key="frame" x="412" y="90" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bE8-l5-MIc">
-                                <rect key="frame" x="197" y="312" width="631" height="73"/>
+                                <rect key="frame" x="197" y="327" width="631" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Camera" backgroundImage="TakePhoto.png">
@@ -142,7 +127,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LVG-ho-665">
-                                <rect key="frame" x="197" y="425" width="631" height="73"/>
+                                <rect key="frame" x="197" y="440" width="631" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Photos" backgroundImage="TakePhoto.png">
@@ -157,7 +142,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ndj-Oo-BOx">
-                                <rect key="frame" x="197" y="537" width="631" height="73"/>
+                                <rect key="frame" x="197" y="552" width="631" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Pantone" backgroundImage="TakePhoto.png">
@@ -172,15 +157,15 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="G7m-M5-CmN"/>
+                    <navigationItem key="navigationItem" title="ColorPicker" id="BBY-eS-lPz"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPQ-14-uQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="-1023"/>
+            <point key="canvasLocation" x="3484" y="-1023"/>
         </scene>
         <!--Color Picker Tab Bar Controller - Color Picker-->
         <scene sceneID="iJ3-aO-Mic">
@@ -201,67 +186,79 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6Xd-xe-953" kind="relationship" relationship="viewControllers" id="Tah-Vm-VCB"/>
-                        <segue destination="tpO-nF-Ymu" kind="relationship" relationship="viewControllers" id="KFu-PU-Qqp"/>
-                        <segue destination="X4q-k6-1j4" kind="relationship" relationship="viewControllers" id="K8h-Pr-kvh"/>
+                        <segue destination="ogU-lH-lPC" kind="relationship" relationship="viewControllers" id="Tah-Vm-VCB"/>
+                        <segue destination="PoW-ch-XDX" kind="relationship" relationship="viewControllers" id="KFu-PU-Qqp"/>
+                        <segue destination="KWI-oq-cOd" kind="relationship" relationship="viewControllers" id="K8h-Pr-kvh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJk-Th-ZER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958" y="77"/>
         </scene>
-        <!--Color Picker Root View Controller-->
-        <scene sceneID="csO-82-Cq4">
+        <!--Navigation Controller-->
+        <scene sceneID="28h-Fu-rrR">
             <objects>
-                <navigationController id="N6D-9F-VBE" customClass="ColorPickerRootViewController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PoW-ch-XDX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="8bX-5t-oT3"/>
                     <toolbarItems/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dMm-kS-9Mk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YP8-vw-2OW">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="o2N-E9-n1D" kind="relationship" relationship="rootViewController" id="1sH-aB-bDw"/>
+                        <segue destination="tpO-nF-Ymu" kind="relationship" relationship="rootViewController" id="7AS-dX-rXe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xya-hN-uQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9B-Tl-xme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-221" y="77"/>
+            <point key="canvasLocation" x="2254" y="85"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nap-EU-Leb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ogU-lH-lPC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="G7m-M5-CmN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqw-ky-Bw2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Xd-xe-953" kind="relationship" relationship="rootViewController" id="FoI-i9-VP6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sw0-Wx-kRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="-1023"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="io2-bj-s0v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KWI-oq-cOd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="65v-jy-0iU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f3N-l7-MDX">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X4q-k6-1j4" kind="relationship" relationship="rootViewController" id="GDN-Rb-dDY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOM-rO-ev3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="1222"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Icon@2x.png" width="114" height="114"/>
         <image name="TakePhoto.png" width="548" height="89"/>
+        <image name="icon_76@2x.png" width="57" height="57"/>
     </resources>
-    <classes>
-        <class className="AboutViewController" superclassName="ColorPickerBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="version" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ColorHistoryTableViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorHistoryTableViewController.h"/>
-        </class>
-        <class className="ColorPickerBaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerBaseViewController.h"/>
-        </class>
-        <class className="ColorPickerRootViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerRootViewController.h"/>
-        </class>
-        <class className="ColorPickerTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorPickerTabBarController.h"/>
-        </class>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="PickerInitViewController" superclassName="ColorPickerBaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PickerInitViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>

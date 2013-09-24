@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "WXApi.h"
-#import "ColorPickerRootViewController.h"
+#import "ColorPickerTabBarController.h"
 #import "DMSplashAdController.h"
 
-@interface ColorPickerAppDelegate : UIResponder <UIApplicationDelegate,DMSplashAdControllerDelegate,WXApiDelegate,ColorPickerRootViewControllerDelegate>
+@interface ColorPickerAppDelegate : UIResponder <UIApplicationDelegate,DMSplashAdControllerDelegate,WXApiDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

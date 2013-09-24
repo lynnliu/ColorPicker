@@ -14,10 +14,7 @@
 #import "ShareSendViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-#import <Social/Social.h>
 #import <ACCOUNTS/ACAccount.h>
-#import "LINEActivity.h"
-#import "DMActivityInstagram.h"
 
 @interface ColorPickerTabBarController () <DMAdViewDelegate,CLLocationManagerDelegate>
 {
@@ -26,8 +23,6 @@
     UIButton *closeButtoniPad;
     DMAdView *_dmAdViewiPad;
     CLLocationManager *locationManager;
-
-    UIPopoverController *popoverController;
 }
 @end
 
@@ -44,16 +39,14 @@
     }
     [TimerManager timer:self timeInterval:10 timeSinceNow:0 selector:@selector(showAd:) repeats:NO];
     
-    self.sharingText = @"推荐一个应用：屏幕取色，可以轻松取得看到图片上的颜色，挺有趣的! https://itunes.apple.com/us/app/color-picker-for-developer/id608956277?ls=1&mt=8";
-    self.sharingImage = [UIImage imageNamed:@"Icon@2x.png"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied)
+    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied){
         [locationManager startUpdatingLocation];
+    }
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -74,7 +67,6 @@
     _dmAdView.frame = CGRectMake(-320, self.view.frame.size.height - 50,DOMOB_AD_SIZE_320x50.width,DOMOB_AD_SIZE_320x50.height);
     [self.view addSubview:_dmAdView];
     [_dmAdView loadAd];
-    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) [self showAdiPad:sender];
 }
 
@@ -88,8 +80,8 @@
     [_dmAdViewiPad loadAd];
 }
 
--(void)dismissAdView:(id)sender{
-
+-(void)dismissAdView:(id)sender
+{
     UIViewAnimationOptions options = UIViewAnimationOptionCurveLinear;
     [UIView animateWithDuration:0.4 delay:0 options:options animations:^{
         [closeButtoniPad removeFromSuperview];
@@ -196,46 +188,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-- (IBAction)addWeiboShare:(UIBarButtonItem *)sender
-{
-    if([SLComposeViewController class] != nil){
-        
-        NSURL *shareURL = [NSURL URLWithString:@"http://weibo.com/u/2048718212?wvr=5&"];
-        NSArray *activityItems = @[self.sharingImage,self.sharingText, shareURL];
-        
-        DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
-        instagramActivity.presentFromButton = (UIBarButtonItem *)sender;
-        
-        NSArray *applicationActivities = @[[[LINEActivity alloc] init],instagramActivity];
-        UIActivityViewController *activityController =
-        [[UIActivityViewController alloc] initWithActivityItems:activityItems
-                                          applicationActivities:applicationActivities];
-        
-
-        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-            [self presentViewController:activityController animated:YES completion:nil];
-        else{
-            popoverController = [[UIPopoverController alloc] initWithContentViewController:activityController];
-            [popoverController setPopoverContentSize:CGSizeMake(400,460) animated:YES];//大小
-            [popoverController presentPopoverFromRect:CGRectMake(1000,0,10,10)//弹出位置
-                                               inView:self.view
-                             permittedArrowDirections:UIPopoverArrowDirectionUp//弹出方向
-                                             animated:YES];
-        }
-
-    }else
-        [self shareToTencent];
-}
-
--(void)shareToTencent
-{
-    ShareSendViewController *ssvc = [[ShareSendViewController alloc] init];
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"ShareSend" bundle:nil];
-    ssvc = story.instantiateInitialViewController;
-    ssvc.txt = self.sharingText;
-    [self presentModalViewController:ssvc animated:YES];
 }
 
 @end

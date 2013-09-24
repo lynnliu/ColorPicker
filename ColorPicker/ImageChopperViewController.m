@@ -257,6 +257,7 @@
             ColorHistoryTableViewController *chtvc = [[ColorHistoryTableViewController alloc] init];
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"ColorHistoryTableViewController" bundle:nil];
             chtvc = story.instantiateInitialViewController;
+            chtvc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:chtvc animated:YES];
         }
             break;

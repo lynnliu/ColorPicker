@@ -73,6 +73,7 @@
 {
     InfColorPickerController* picker = [ InfColorPickerController colorPickerViewController ];
     picker.delegate = self;
+    picker.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:picker animated:YES];
 }
 @end

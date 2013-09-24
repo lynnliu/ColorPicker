@@ -6,9 +6,9 @@
 //
 
 #import "WeiXinActivity.h"
-#import "ColorPickerRootViewController.h"
+#import "ColorPickerTabBarController.h"
 
-@interface WeiXinActivity() <ColorPickerRootViewControllerDelegate>
+@interface WeiXinActivity()
 
 @end
 
@@ -84,7 +84,7 @@
 
 -(void)sendReqWebChat:(BOOL)reqType
 {
-    [[(ColorPickerRootViewController *)self rootViewDelegate] sendAppContent:reqType];
+
 }
 
 

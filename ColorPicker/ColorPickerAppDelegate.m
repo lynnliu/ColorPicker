@@ -7,14 +7,13 @@
 //
 
 #import "ColorPickerAppDelegate.h"
-#import "ColorPickerBaseViewController.h"
+#import "ColorPickerTabBarController.h"
 #import "TimerManager.h"
 
 @implementation ColorPickerAppDelegate
 
-ColorPickerRootViewController *cptbc;
+ColorPickerTabBarController *cptbc;
 DMSplashAdController *_splashAd;
-UIImageView *coverView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,36 +24,20 @@ UIImageView *coverView;
                                                         animation:YES];
     _splashAd.delegate = self;
     _splashAd.rootViewController = cptbc;
-    
-    coverView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default@2x.png"]];
-    [self.window.rootViewController.view addSubview:coverView];
-    coverView.frame = [UIApplication sharedApplication].keyWindow.frame;
     [TimerManager timer:self timeInterval:5 timeSinceNow:0 selector:@selector(showAd:) repeats:NO];
-    [TimerManager timer:self timeInterval:15 timeSinceNow:5 selector:@selector(removeBackground:) repeats:NO];
 
     // Override point for customization after application launch.
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad){
-        cptbc = [[ColorPickerRootViewController alloc] init];
-        cptbc = (ColorPickerRootViewController *)self.window.rootViewController;
-        cptbc.rootViewDelegate = self;
+        cptbc = [[ColorPickerTabBarController alloc] init];
+        cptbc = (ColorPickerTabBarController *)self.window.rootViewController;
     }
-    
-    [WXApi registerApp:WXAppID];
-    
+
     return YES;
 }
 
 -(void)showAd:(id)sender
 {
     if (_splashAd.isReady) [_splashAd present];
-}
-
--(void)removeBackground:(id)sender
-{
-    if (coverView){
-        [coverView removeFromSuperview];
-        coverView = nil;
-    }
 }
 
 #pragma DMSplashAdController delegate
@@ -66,15 +49,12 @@ UIImageView *coverView;
 // 加载广告成功后，回调该方法
 -(void)dmSplashAdWillPresentScreen:(DMSplashAdController *)dmSplashAd
 {
-    [coverView removeFromSuperview];
-    coverView = nil;
+    
 }
 
 // 加载广告失败后，回调该方法
 -(void)dmSplashAdFailToLoadAd:(DMSplashAdController *)dmSplashAd withError:(NSError *)err
 {
-    [coverView removeFromSuperview];
-    coverView = nil;
     NSLog(@"dmAd error = %@",err);
 }
 
@@ -91,9 +71,9 @@ UIImageView *coverView;
 -(void)onReq:(BaseReq *)req
 {
     //在此处接收到微信的消息请求，直接进行了分享应用程序。也可以打开特定页面，跟用户交互分享
-    if ([req isKindOfClass:[GetMessageFromWXReq class]])
+    if ([req isKindOfClass:[GetMessageFromWXReq class]]){
         [self sendAppResponse];
-    
+    }
     NSLog(@"req = %@",req);
 }
 

@@ -14,6 +14,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ColorPickerBaseViewController : UIViewController
+@class SLComposeViewController;
 
+@interface ColorPickerBaseViewController : UIViewController
+{
+    SLComposeViewController *slComposerSheet;
+}
 @end

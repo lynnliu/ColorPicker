@@ -43,7 +43,6 @@
 		BA0C5F2A16DB0CB4001EB5DB /* ColorHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F2916DB0CB4001EB5DB /* ColorHistoryTableViewCell.m */; };
 		BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */; };
 		BA0C5F3016DB31F9001EB5DB /* ColorsData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */; };
-		BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */; };
 		BA0C5F3616DB3F4B001EB5DB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */; };
 		BA0C5F3916DB3FA2001EB5DB /* SMSAndMailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F3816DB3FA2001EB5DB /* SMSAndMailManager.m */; };
 		BA0C5F3B16DB40BA001EB5DB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0C5F3A16DB40B9001EB5DB /* MessageUI.framework */; };
@@ -70,6 +69,15 @@
 		BA66343B16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA66343A16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a */; };
 		BA66343D16DF15EE00F160CD /* History.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66343C16DF15EE00F160CD /* History.png */; };
 		BA66343F16DF15F400F160CD /* Favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66343E16DF15F400F160CD /* Favourite.png */; };
+		BA69847517F1355C00DEAF3C /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69847417F1355C00DEAF3C /* Icon-72@2x.png */; };
+		BA69847717F1358300DEAF3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA69847617F1358300DEAF3C /* Images.xcassets */; };
+		BA69847917F1388600DEAF3C /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69847817F1388600DEAF3C /* Icon-Small-50@2x.png */; };
+		BA69847B17F13A0300DEAF3C /* icon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69847A17F13A0300DEAF3C /* icon_60.png */; };
+		BA69847D17F13A4D00DEAF3C /* icon_60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69847C17F13A4D00DEAF3C /* icon_60@2x.png */; };
+		BA69848017F13AA900DEAF3C /* icon_76.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69847E17F13AA900DEAF3C /* icon_76.png */; };
+		BA69848117F13AA900DEAF3C /* icon_76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69847F17F13AA900DEAF3C /* icon_76@2x.png */; };
+		BA69848417F13AE500DEAF3C /* icon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69848217F13AE500DEAF3C /* icon_40.png */; };
+		BA69848517F13AE500DEAF3C /* icon_40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA69848317F13AE500DEAF3C /* icon_40@2x.png */; };
 		BA7D5A5216DC5B2F005E21F7 /* InfColorBarPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA7D5A5316DC5B2F005E21F7 /* InfColorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4716DC5B2F005E21F7 /* InfColorIndicatorView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA7D5A5416DC5B2F005E21F7 /* InfColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5A4A16DC5B2F005E21F7 /* InfColorPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -93,7 +101,6 @@
 		BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E3F16E6F89500884C52 /* Icon1024.png */; };
 		BAB31E4316E7173E00884C52 /* ColorHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB31E4216E7173E00884C52 /* ColorHistoryDetail.storyboard */; };
 		BAB31E4616E717C300884C52 /* ColorHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB31E4516E717C300884C52 /* ColorHistoryDetailViewController.m */; };
-		BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */; };
 		BADB81E816D1D13D00005C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E716D1D13D00005C86 /* UIKit.framework */; };
 		BADB81EA16D1D13D00005C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81E916D1D13D00005C86 /* Foundation.framework */; };
 		BADB81EC16D1D13D00005C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADB81EB16D1D13D00005C86 /* CoreGraphics.framework */; };
@@ -173,7 +180,6 @@
 		BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		BA0C5F2E16DB31F9001EB5DB /* ColorsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsData.h; sourceTree = "<group>"; };
 		BA0C5F2F16DB31F9001EB5DB /* ColorsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorsData.m; sourceTree = "<group>"; };
-		BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorHistoryTableViewController.storyboard; sourceTree = "<group>"; };
 		BA0C5F3416DB3F4B001EB5DB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		BA0C5F3516DB3F4B001EB5DB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		BA0C5F3716DB3FA2001EB5DB /* SMSAndMailManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSAndMailManager.h; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 		BA23902716D76EF8001E79AC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BA23902E16D76F02001E79AC /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		BA23903016D7708C001E79AC /* SaveButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveButton.png; sourceTree = "<group>"; };
+		BA2C80DB17F13075006C7E5E /* ColorPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ColorPicker.entitlements; sourceTree = "<group>"; };
 		BA4DF9EF16DDE8C00065AB04 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		BA4DF9F016DDE8C00065AB04 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		BA4DF9F116DDE8C00065AB04 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -208,6 +215,15 @@
 		BA66343A16DF0A9100F160CD /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 		BA66343C16DF15EE00F160CD /* History.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = History.png; sourceTree = "<group>"; };
 		BA66343E16DF15F400F160CD /* Favourite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Favourite.png; sourceTree = "<group>"; };
+		BA69847417F1355C00DEAF3C /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		BA69847617F1358300DEAF3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BA69847817F1388600DEAF3C /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		BA69847A17F13A0300DEAF3C /* icon_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_60.png; sourceTree = "<group>"; };
+		BA69847C17F13A4D00DEAF3C /* icon_60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_60@2x.png"; sourceTree = "<group>"; };
+		BA69847E17F13AA900DEAF3C /* icon_76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_76.png; sourceTree = "<group>"; };
+		BA69847F17F13AA900DEAF3C /* icon_76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_76@2x.png"; sourceTree = "<group>"; };
+		BA69848217F13AE500DEAF3C /* icon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_40.png; sourceTree = "<group>"; };
+		BA69848317F13AE500DEAF3C /* icon_40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_40@2x.png"; sourceTree = "<group>"; };
 		BA7D5A4416DC5B2F005E21F7 /* InfColorBarPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorBarPicker.h; sourceTree = "<group>"; };
 		BA7D5A4516DC5B2F005E21F7 /* InfColorBarPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfColorBarPicker.m; sourceTree = "<group>"; };
 		BA7D5A4616DC5B2F005E21F7 /* InfColorIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfColorIndicatorView.h; sourceTree = "<group>"; };
@@ -242,8 +258,6 @@
 		BAB31E4216E7173E00884C52 /* ColorHistoryDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorHistoryDetail.storyboard; sourceTree = "<group>"; };
 		BAB31E4416E717C300884C52 /* ColorHistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHistoryDetailViewController.h; sourceTree = "<group>"; };
 		BAB31E4516E717C300884C52 /* ColorHistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHistoryDetailViewController.m; sourceTree = "<group>"; };
-		BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerRootViewController.h; sourceTree = "<group>"; };
-		BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerRootViewController.m; sourceTree = "<group>"; };
 		BADB81E416D1D13D00005C86 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB81E716D1D13D00005C86 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BADB81E916D1D13D00005C86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -465,12 +479,14 @@
 		BADB81ED16D1D13D00005C86 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				BA2C80DB17F13075006C7E5E /* ColorPicker.entitlements */,
 				BA05DB7F16D86FE400F44750 /* Data */,
 				BA05DB9316D8A8E000F44750 /* Business */,
 				BADB821016D1D6BF00005C86 /* Views */,
 				BADB820F16D1D6B400005C86 /* Controllers */,
 				BADB820E16D1D68E00005C86 /* Tools */,
 				BADB821416D1DA3800005C86 /* BaseClass */,
+				BA69847617F1358300DEAF3C /* Images.xcassets */,
 				BADB81EE16D1D13D00005C86 /* Supporting Files */,
 			);
 			path = ColorPicker;
@@ -489,7 +505,15 @@
 		BADB820D16D1D66D00005C86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA69848217F13AE500DEAF3C /* icon_40.png */,
+				BA69848317F13AE500DEAF3C /* icon_40@2x.png */,
+				BA69847E17F13AA900DEAF3C /* icon_76.png */,
+				BA69847F17F13AA900DEAF3C /* icon_76@2x.png */,
+				BA69847C17F13A4D00DEAF3C /* icon_60@2x.png */,
+				BA69847A17F13A0300DEAF3C /* icon_60.png */,
+				BA69847817F1388600DEAF3C /* Icon-Small-50@2x.png */,
 				BAB31E3F16E6F89500884C52 /* Icon1024.png */,
+				BA69847417F1355C00DEAF3C /* Icon-72@2x.png */,
 				BA66343E16DF15F400F160CD /* Favourite.png */,
 				BA66343C16DF15EE00F160CD /* History.png */,
 				BA4DF9F916DDF1C90065AB04 /* WebChat.png */,
@@ -554,8 +578,6 @@
 		BADB820F16D1D6B400005C86 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BAD581A416DEF7ED0078A655 /* ColorPickerRootViewController.h */,
-				BAD581A516DEF7ED0078A655 /* ColorPickerRootViewController.m */,
 				BA7D5A5A16DC6420005E21F7 /* ColorPickerTabBarController.h */,
 				BA7D5A5B16DC6420005E21F7 /* ColorPickerTabBarController.m */,
 				BADB821116D1D6F200005C86 /* PickerInitViewController.h */,
@@ -586,7 +608,6 @@
 				BADB81FF16D1D13D00005C86 /* MainStoryboard_iPhone.storyboard */,
 				BADB820216D1D13D00005C86 /* MainStoryboard_iPad.storyboard */,
 				BADB822816D3163A00005C86 /* ImageChopper.storyboard */,
-				BA0C5F3216DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard */,
 				BA0C5F2B16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib */,
 				BAB31E4216E7173E00884C52 /* ColorHistoryDetail.storyboard */,
 				BA0C1D9616DC8D30000D534A /* ShareSend.storyboard */,
@@ -660,6 +681,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADB81F216D1D13D00005C86 /* InfoPlist.strings in Resources */,
+				BA69847717F1358300DEAF3C /* Images.xcassets in Resources */,
+				BA69848417F13AE500DEAF3C /* icon_40.png in Resources */,
 				BADB81FA16D1D13D00005C86 /* Default.png in Resources */,
 				BADB81FC16D1D13D00005C86 /* Default@2x.png in Resources */,
 				BADB81FE16D1D13D00005C86 /* Default-568h@2x.png in Resources */,
@@ -670,6 +693,7 @@
 				BA23902116D7682B001E79AC /* ChoosePhoto.png in Resources */,
 				BA23902816D76EF8001E79AC /* Icon-72.png in Resources */,
 				BA23902916D76EF8001E79AC /* Icon-Small-50.png in Resources */,
+				BA69847B17F13A0300DEAF3C /* icon_60.png in Resources */,
 				BA23902A16D76EF8001E79AC /* Icon-Small.png in Resources */,
 				BA23902B16D76EF8001E79AC /* Icon-Small@2x.png in Resources */,
 				BA23902C16D76EF8001E79AC /* Icon.png in Resources */,
@@ -680,12 +704,13 @@
 				7E8F819016D9059D0086258D /* DomobAdSDKBundle.bundle in Resources */,
 				BA0C5F2716DB0B99001EB5DB /* Placeholder.png in Resources */,
 				BA0C5F2C16DB0CCD001EB5DB /* ColorHistoryTableViewCell.xib in Resources */,
-				BA0C5F3316DB3A00001EB5DB /* ColorHistoryTableViewController.storyboard in Resources */,
+				BA69847517F1355C00DEAF3C /* Icon-72@2x.png in Resources */,
 				BA7D5A5516DC5B2F005E21F7 /* InfColorPickerView.xib in Resources */,
 				BA0C1D9716DC8D30000D534A /* ShareSend.storyboard in Resources */,
 				BA0C1DA316DC8DAA000D534A /* weibo32_Black.png in Resources */,
 				BA0C1DA416DC8DAA000D534A /* weibo32.png in Resources */,
 				BA0C1DA516DC8DAA000D534A /* weibo64_Black.png in Resources */,
+				BA69848517F13AE500DEAF3C /* icon_40@2x.png in Resources */,
 				BA0C1DA616DC8DAA000D534A /* weibo64.png in Resources */,
 				BA0C1DAE16DC8E83000D534A /* UserInfoPropertyList.plist in Resources */,
 				BA4DF9FA16DDF1C90065AB04 /* WebChat.png in Resources */,
@@ -694,6 +719,7 @@
 				BA1B54CA16E04B9300C1AC6E /* LINEActivityIcon.png in Resources */,
 				BA1B54CB16E04B9300C1AC6E /* LINEActivityIcon@2x.png in Resources */,
 				BA1B54CC16E04B9300C1AC6E /* LINEActivityIcon@2x~ipad.png in Resources */,
+				BA69847917F1388600DEAF3C /* Icon-Small-50@2x.png in Resources */,
 				BA1B54CD16E04B9300C1AC6E /* LINEActivityIcon~ipad.png in Resources */,
 				BA1B54D716E05B1300C1AC6E /* Tc32_Black.png in Resources */,
 				BA1B54D816E05B1300C1AC6E /* TCweiboicon32.png in Resources */,
@@ -703,8 +729,11 @@
 				BAB31E3916E6F44700884C52 /* instagram~ipad@2x.png in Resources */,
 				BAB31E3E16E6F49200884C52 /* DMResizerViewController.xib in Resources */,
 				BAB31E4016E6F89500884C52 /* Icon1024.png in Resources */,
+				BA69848117F13AA900DEAF3C /* icon_76@2x.png in Resources */,
 				BAB31E4316E7173E00884C52 /* ColorHistoryDetail.storyboard in Resources */,
 				BA061CAB16E9E0D600BF9391 /* WeiXinActivityIcon.png in Resources */,
+				BA69848017F13AA900DEAF3C /* icon_76.png in Resources */,
+				BA69847D17F13A4D00DEAF3C /* icon_60@2x.png in Resources */,
 				BA061CAC16E9E0D600BF9391 /* WeiXinActivityIcon@2x.png in Resources */,
 				BA061CAD16E9E0D600BF9391 /* WeiXinActivityIcon@2x~ipad.png in Resources */,
 				BA061CAE16E9E0D600BF9391 /* WeiXinActivityIcon~ipad.png in Resources */,
@@ -749,7 +778,6 @@
 				BA0C1DAC16DC8E47000D534A /* UserTokenFileOperate.m in Sources */,
 				BA0C1DB116DC8EA7000D534A /* UserOauthData.m in Sources */,
 				BA0C1DB416DC8F08000D534A /* OauthKey.m in Sources */,
-				BAD581A616DEF7ED0078A655 /* ColorPickerRootViewController.m in Sources */,
 				BA1B54C916E04B9300C1AC6E /* LINEActivity.m in Sources */,
 				BAB31E3116E6F43D00884C52 /* DMActivityInstagram.m in Sources */,
 				BAB31E3D16E6F49200884C52 /* DMResizerViewController.m in Sources */,
@@ -862,6 +890,8 @@
 		BADB820B16D1D13D00005C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -884,6 +914,8 @@
 		BADB820C16D1D13D00005C86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

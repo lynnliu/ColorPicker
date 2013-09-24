@@ -13,7 +13,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "TimerManager.h"
 #import "WXApi.h"
-#import "ColorPickerRootViewController.h"
+#import "ColorPickerTabBarController.h"
 
 @interface ShareSendViewController () <UIActionSheetDelegate,WXApiDelegate,UIAlertViewDelegate>
 {
@@ -254,7 +254,7 @@
 
 -(void)sendReqWebChat:(BOOL)reqType
 {
-    [[(ColorPickerRootViewController *)self.presentingViewController rootViewDelegate] sendAppContent:reqType];
+    
 }
 
 - (void)viewDidUnload {

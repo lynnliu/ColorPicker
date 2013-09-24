@@ -14,7 +14,7 @@
 #import "LINEActivity.h"
 #import "DMActivityInstagram.h"
 #import "WeiXinActivity.h"
-#import "ColorPickerRootViewController.h"
+#import "ColorPickerTabBarController.h"
 
 @interface ColorHistoryDetailViewController () <UIActionSheetDelegate>
 {
@@ -118,7 +118,6 @@
     else
         descript = @"Do you like this picture？User this app to try！";
 
-    [[(ColorPickerRootViewController *)self.parentViewController rootViewDelegate] sendNewsContent:reqType image:self.image descript:descript];
 }
 
 -(void)share:(id)sender
@@ -175,13 +174,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setImageView:nil];
     [self setColorDetail:nil];
     [super viewDidUnload];
 }
 
--(void)dealloc{
+-(void)dealloc
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"wechat share" object:nil];
 }
 @end
